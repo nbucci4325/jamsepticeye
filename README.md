@@ -6,10 +6,3 @@ Jam starts Oct 1, ends Oct 5. Submission is done via the link above. If it makes
 
 This project is a team effort submitted by 10 university students in their second year of school.
 
-Team is as follows:
-
-Programmers:
-Nico, Naivn, Adrian, Josh, Tasha
-
-Designers/Artists: 
-Cloey, Matteo, Sam, Harleen, Malak
