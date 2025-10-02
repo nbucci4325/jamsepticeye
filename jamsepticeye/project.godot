@@ -11,5 +11,21 @@ config_version=5
 [application]
 
 config/name="jamsepticeye"
+run/main_scene="uid://b7usohorljqvh"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=4
+window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "pink",
+"res://Scenes/": "teal",
+"res://Scripts/": "red"
+}
