@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=3 uid="uid://n8lnftxt3gyf"]
+
+[ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_f4y0c"]
+[ext_resource type="Script" uid="uid://dqiehh3u0dx2a" path="res://Scripts/game_menu.gd" id="2_f4y0c"]
+
+[node name="GameMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_f4y0c")
+script = ExtResource("2_f4y0c")
+tween_intensity = 1.2
+tween_duration = 0.3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.32156864, 0.09803922, 0.70980394, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="ReturnToGame" type="Button" parent="MarginContainer/ButtonsVBox"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../GridContainer/MusicSlider")
+focus_next = NodePath("../GridContainer/MusicSlider")
+focus_previous = NodePath("../Quit")
+text = "Resume"
+
+[node name="GridContainer" type="VBoxContainer" parent="MarginContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 19
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/ButtonsVBox/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/ButtonsVBox/GridContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../ReturnToGame")
+focus_neighbor_bottom = NodePath("../SFXSlider")
+focus_next = NodePath("../SFXSlider")
+focus_previous = NodePath("../../ReturnToGame")
+
+[node name="SFXLabel" type="Label" parent="MarginContainer/ButtonsVBox/GridContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../MusicSlider")
+focus_neighbor_bottom = NodePath("../SFXSlider")
+focus_next = NodePath("../SFXSlider")
+focus_previous = NodePath("../MusicSlider")
+theme_override_font_sizes/font_size = 30
+text = "CREDITS"
+
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/ButtonsVBox/GridContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../MusicSlider")
+focus_neighbor_bottom = NodePath("../../MainMenu")
+focus_next = NodePath("../../MainMenu")
+focus_previous = NodePath("../MusicSlider")
+
+[node name="MainMenu" type="Button" parent="MarginContainer/ButtonsVBox"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../GridContainer/SFXSlider")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../GridContainer/SFXSlider")
+text = "Return to Menu"
+
+[node name="Quit" type="Button" parent="MarginContainer/ButtonsVBox"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../MainMenu")
+focus_neighbor_bottom = NodePath("../ReturnToGame")
+focus_next = NodePath("../ReturnToGame")
+focus_previous = NodePath("../MainMenu")
+text = "Quit Game"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MarginContainer/ButtonsVBox/ReturnToGame" to="." method="_on_return_to_game_pressed"]
+[connection signal="value_changed" from="MarginContainer/ButtonsVBox/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/ButtonsVBox/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/ButtonsVBox/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsVBox/Quit" to="." method="_on_quit_pressed"]
