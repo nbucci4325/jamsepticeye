@@ -1,0 +1,124 @@
+[gd_scene load_steps=13 format=3 uid="uid://b2kd6yyyk5wiw"]
+
+[ext_resource type="Script" path="res://npc.gd" id="1_qslqm"]
+[ext_resource type="Texture2D" uid="uid://ba33q7tycrsc7" path="res://TESTASSETSNAV/tumblr_inline_o03qftZuni1r4q36m_400.png" id="2_sbqmk"]
+[ext_resource type="Script" path="res://TESTASSETSNAV/state_machine.gd" id="3_earjd"]
+[ext_resource type="Script" path="res://TESTASSETSNAV/Move.gd" id="3_k0j6b"]
+[ext_resource type="Script" path="res://TESTASSETSNAV/Idle.gd" id="5_tbtgh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cmys4"]
+radius = 5.0
+height = 38.0
+
+[sub_resource type="Animation" id="Animation_s3pwt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_njnbd"]
+resource_name = "move_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+
+[sub_resource type="Animation" id="Animation_0vac7"]
+resource_name = "move_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_6wo4x"]
+resource_name = "move_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_cpyis"]
+resource_name = "move_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rr7c8"]
+_data = {
+"RESET": SubResource("Animation_s3pwt"),
+"move_down": SubResource("Animation_njnbd"),
+"move_left": SubResource("Animation_0vac7"),
+"move_right": SubResource("Animation_6wo4x"),
+"move_up": SubResource("Animation_cpyis")
+}
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_qslqm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_cmys4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D2"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_sbqmk")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_earjd")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyWalk" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_k0j6b")
+enemy = NodePath("../..")
+move_speed = 100.0
+
+[node name="EnemyIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_tbtgh")
+enemy = NodePath("../..")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rr7c8")
+}
+autoplay = "move_up"

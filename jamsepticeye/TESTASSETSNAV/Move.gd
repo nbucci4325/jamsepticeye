@@ -1,23 +1,30 @@
-extends CharacterBody2D
+extends State
+class_name EnemyWalk
 
-@export var top_left: Marker2D
-@export var bottom_right: Marker2D
+@export var enemy : CharacterBody2D
+@export var move_speed := 10.0
 
-var speed = 100
-var target_position
-var direction
+var move_direction : Vector2
+var wander_time : float
 
-func awake():
-	set_new_target_position()
+func randomize_wander():
+	move_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+	wander_time = randf_range(4, 7)
 
-func set_new_target_position():
-	var random_offset_x = randf_range(top_left.position.x, bottom_right.position.x)
-	var random_offset_y = randf_range(top_left.position.y, bottom_right.position.y)
-	target_position = Vector2(random_offset_x, random_offset_y)
+func Enter():
+	randomize_wander()
 
-func _physics_process(delta: float): 
-	if (randi() % 50 == 1):
-		set_new_target_position()
-		direction = (target_position - global_position).normalized()
-		velocity = direction * speed
-	move_and_slide()
+func Update(delta: float):
+	if wander_time > 0:
+		wander_time -= delta
+	
+	else:
+		randomize_wander()
+
+func Physics_Update(delta: float):
+	if enemy:
+		enemy.velocity = move_direction * move_speed
+	
+	if (randi() % 500 == 1):
+		enemy.velocity = Vector2.ZERO
+		Transitioned.emit(self, 'enemyidle')
