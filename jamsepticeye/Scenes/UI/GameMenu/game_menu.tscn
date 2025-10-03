@@ -30,6 +30,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 1.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -77,7 +81,7 @@ focus_neighbor_bottom = NodePath("../SFXSlider")
 focus_next = NodePath("../SFXSlider")
 focus_previous = NodePath("../MusicSlider")
 theme_override_font_sizes/font_size = 30
-text = "CREDITS"
+text = "SFX"
 
 [node name="SFXSlider" type="HSlider" parent="MarginContainer/ButtonsVBox/GridContainer"]
 layout_mode = 2

@@ -6,11 +6,14 @@ class_name UI
 @onready var menu = %GameMenu
 @onready var transition: ColorRect = %Transition
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var credits_menu: Control = %CreditsMenu
 
 signal start_game()
 signal menu_opened()
 signal menu_closed()
 signal quit_to_menu()
+signal credits_menu_opened()
+signal credits_menu_closed()
 
 func _on_main_menu_start_game() -> void:
 	start_game.emit()
@@ -43,3 +46,10 @@ func _on_game_menu_return_to_game() -> void:
 		await animation_player.animation_finished
 	menu.hide()
 	menu_closed.emit()
+
+func _on_go_to_credits() -> void:
+	if animation_player.is_playing():
+		await animation_player.animation_finished
+	menu.hide()
+	credits_menu_opened.emit()
+	

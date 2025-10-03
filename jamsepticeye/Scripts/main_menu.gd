@@ -1,6 +1,7 @@
 extends Control
 
 signal start_game()
+signal go_to_credits()
 
 @export var tween_intensity: float
 @export var tween_duration: float
@@ -29,7 +30,7 @@ func _on_play_pressed() -> void:
 	hide()
 	
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	go_to_credits.emit()
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
