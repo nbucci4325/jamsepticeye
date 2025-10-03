@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi2qswl8l12fi"]
+[gd_scene load_steps=7 format=3 uid="uid://xjdxdxagm5k8"]
 
 [ext_resource type="Texture2D" uid="uid://d036qxnobjh1w" path="res://TESTASSETSNAV/jungleTileset.png" id="1_2rfqp"]
-[ext_resource type="Script" path="res://TESTASSETSNAV/Move.gd" id="1_nd7k0"]
+[ext_resource type="Script" uid="uid://dymu4gnkwo1lm" path="res://TESTASSETSNAV/Move.gd" id="1_nd7k0"]
 [ext_resource type="Texture2D" uid="uid://ba33q7tycrsc7" path="res://TESTASSETSNAV/tumblr_inline_o03qftZuni1r4q36m_400.png" id="2_384ke"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itixk"]

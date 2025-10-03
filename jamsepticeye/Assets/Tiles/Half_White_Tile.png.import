@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d036qxnobjh1w"
-path="res://.godot/imported/jungleTileset.png-c813989b145786712b7090ccf4bfbbe7.ctex"
+uid="uid://bftyf72ycg1od"
+path="res://.godot/imported/Half_White_Tile.png-fd9af2017fd87621cf19a8f346479f3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TESTASSETSNAV/jungleTileset.png"
-dest_files=["res://.godot/imported/jungleTileset.png-c813989b145786712b7090ccf4bfbbe7.ctex"]
+source_file="res://Assets/Tiles/Half_White_Tile.png"
+dest_files=["res://.godot/imported/Half_White_Tile.png-fd9af2017fd87621cf19a8f346479f3e.ctex"]
 
 [params]
 
