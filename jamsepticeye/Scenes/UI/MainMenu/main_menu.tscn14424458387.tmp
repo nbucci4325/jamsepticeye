@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bv8c32ujaw355"]
+[gd_scene load_steps=4 format=3 uid="uid://bv8c32ujaw355"]
 
 [ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_o53sk"]
 [ext_resource type="Script" uid="uid://cps6uh5a6ykpg" path="res://Scripts/main_menu.gd" id="2_tik7u"]
 [ext_resource type="Script" uid="uid://b47m7moovdv8j" path="res://Scenes/UI/MainMenu/hover.gd" id="3_tik7u"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_608ul"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -67,7 +65,6 @@ focus_neighbor_bottom = NodePath("../Credits")
 focus_next = NodePath("../Credits")
 focus_previous = NodePath("../Quit")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_608ul")
 text = "PLAY"
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/Buttons"]

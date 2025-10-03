@@ -8,4 +8,7 @@ script = ExtResource("1_qxrlw")
 
 [node name="UI" parent="." instance=ExtResource("2_wrm1d")]
 
+[connection signal="menu_closed" from="UI" to="." method="_on_ui_menu_closed"]
+[connection signal="menu_opened" from="UI" to="." method="_on_ui_menu_opened"]
+[connection signal="quit_to_menu" from="UI" to="." method="_on_ui_quit_to_menu"]
 [connection signal="start_game" from="UI" to="." method="_on_ui_start_game"]
