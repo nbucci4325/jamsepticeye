@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 [gd_scene load_steps=7 format=3 uid="uid://xjdxdxagm5k8"]
 
 [ext_resource type="Texture2D" uid="uid://d036qxnobjh1w" path="res://TESTASSETSNAV/jungleTileset.png" id="1_78066"]
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="3_dx2x1"]
 [ext_resource type="PackedScene" uid="uid://div2vj2j6wwk3" path="res://TESTASSETSNAV/interaction_area.tscn" id="3_igr7e"]
 [ext_resource type="PackedScene" uid="uid://csdlcw0j0odpm" path="res://TESTASSETSNAV/lever_&_gate.tscn" id="4_cuv4p"]
-=======
-[gd_scene load_steps=6 format=3 uid="uid://xjdxdxagm5k8"]
-
-[ext_resource type="Texture2D" uid="uid://d036qxnobjh1w" path="res://TESTASSETSNAV/jungleTileset.png" id="1_78066"]
-[ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="3_dx2x1"]
-[ext_resource type="PackedScene" uid="uid://dancxw65tes5o" path="res://TEST JOSHUA/Scenes/Enemies/enemy_cow.tscn" id="3_pknqu"]
->>>>>>> fa7482075b40950b1ac2698f735c7ee27620f151
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itixk"]
 texture = ExtResource("1_78066")
@@ -108,7 +100,7 @@ texture = ExtResource("1_78066")
 11:9/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_l725g"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 9
 sources/1 = SubResource("TileSetAtlasSource_itixk")
 
 [node name="Test" type="Node2D"]
@@ -124,7 +116,6 @@ layer_0/tile_data = PackedInt32Array(-9175287, 131073, 6, -9109751, 131073, 6, -
 position = Vector2(-961, -539)
 
 [node name="Player_Gurt" parent="." instance=ExtResource("3_dx2x1")]
-<<<<<<< HEAD
 position = Vector2(-1187, -416)
 collision_layer = 19
 collision_mask = 23
@@ -137,9 +128,3 @@ interact_value = "Yay! It Worked!"
 
 [node name="Lever & Gate" parent="." instance=ExtResource("4_cuv4p")]
 position = Vector2(-848, -292)
-=======
-position = Vector2(-1151, -404)
-
-[node name="Enemy_Cow" parent="." instance=ExtResource("3_pknqu")]
-position = Vector2(-780, -303)
->>>>>>> fa7482075b40950b1ac2698f735c7ee27620f151
