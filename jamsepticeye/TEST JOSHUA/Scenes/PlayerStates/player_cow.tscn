@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlm6n5q34u2rt"]
+
+[ext_resource type="Texture2D" uid="uid://bmkabgf5mneov" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected Cow.png" id="1_0n0vp"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_cow.gd" id="1_a3d7n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emd7j"]
+size = Vector2(10, 24)
+
+[node name="Player_Cow" type="CharacterBody2D"]
+collision_layer = 6
+collision_mask = 2
+script = ExtResource("1_a3d7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_0n0vp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_emd7j")

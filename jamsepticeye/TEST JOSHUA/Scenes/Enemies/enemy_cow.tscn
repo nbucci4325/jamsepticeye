@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dancxw65tes5o"]
+
+[ext_resource type="Texture2D" uid="uid://bueregum43e0s" path="res://TEST JOSHUA/Placeholder Assets/Enemies/Cow.png" id="1_k1h14"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlcq"]
+size = Vector2(10, 24)
+
+[node name="Enemy_Cow" type="Area2D" groups=["Cows", "Infectables"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_k1h14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gnlcq")
