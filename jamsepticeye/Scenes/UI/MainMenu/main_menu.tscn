@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bv8c32ujaw355"]
+[gd_scene load_steps=12 format=3 uid="uid://bv8c32ujaw355"]
 
 [ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_o53sk"]
 [ext_resource type="Script" uid="uid://cps6uh5a6ykpg" path="res://Scripts/main_menu.gd" id="2_tik7u"]
-[ext_resource type="Script" uid="uid://b47m7moovdv8j" path="res://Scenes/UI/MainMenu/hover.gd" id="3_tik7u"]
+[ext_resource type="Texture2D" uid="uid://d3fotiiji7q5h" path="res://Assets/Backgrounds/MainMenu/Main_StartMenu_Screen01.png" id="3_608ul"]
+[ext_resource type="Script" uid="uid://b47m7moovdv8j" path="res://Scripts/hover.gd" id="3_tik7u"]
+[ext_resource type="Texture2D" uid="uid://cxbyxd8q4mgxo" path="res://Assets/Backgrounds/MainMenu/Main_StartMenu_Screen03.png" id="4_8t05w"]
 [ext_resource type="Texture2D" uid="uid://bm3wa0hdcrwtt" path="res://Assets/Themes/Main_Menu_Button.png" id="4_bw8va"]
+[ext_resource type="Texture2D" uid="uid://csnspgekv4t6d" path="res://Assets/Backgrounds/MainMenu/Main_StartMenu_Screen02.png" id="5_k7ern"]
+[ext_resource type="Script" uid="uid://e0771nbdlpb8" path="res://Scripts/foreground.gd" id="5_qfxeg"]
+[ext_resource type="Texture2D" uid="uid://b22317jhx5rgi" path="res://Assets/Backgrounds/MainMenu/Main_StartMenu_Screen04.png" id="6_qfxeg"]
+[ext_resource type="Script" uid="uid://br11een7by0tm" path="res://Scripts/clouds.gd" id="7_qfxeg"]
+[ext_resource type="Script" uid="uid://uw4wrefbcyl7" path="res://Scripts/gurt.gd" id="9_kkdrl"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -16,14 +23,32 @@ grow_vertical = 2
 theme = ExtResource("1_o53sk")
 script = ExtResource("2_tik7u")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.321569, 0.0980392, 0.709804, 1)
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-128, -108)
+
+[node name="Background" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+texture = ExtResource("3_608ul")
+centered = false
+
+[node name="Foreground" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+texture = ExtResource("4_8t05w")
+centered = false
+script = ExtResource("5_qfxeg")
+move_force = 2
+
+[node name="Clouds" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+texture = ExtResource("5_k7ern")
+centered = false
+script = ExtResource("7_qfxeg")
+
+[node name="Gurt" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+texture = ExtResource("6_qfxeg")
+centered = false
+script = ExtResource("9_kkdrl")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
