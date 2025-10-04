@@ -2,7 +2,7 @@ extends State
 class_name EnemyAttack
 
 @export var enemy : CharacterBody2D
-@export var move_speed := 10.0
+@export var move_speed :float = 10.0
 
 var player : CharacterBody2D
 

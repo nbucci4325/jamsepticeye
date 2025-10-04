@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://xjdxdxagm5k8"]
 
 [ext_resource type="Texture2D" uid="uid://d036qxnobjh1w" path="res://TESTASSETSNAV/jungleTileset.png" id="1_78066"]
-[ext_resource type="PackedScene" uid="uid://b2kd6yyyk5wiw" path="res://TESTASSETSNAV/npc.tscn" id="2_iwp2v"]
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="3_dx2x1"]
+[ext_resource type="PackedScene" uid="uid://dancxw65tes5o" path="res://TEST JOSHUA/Scenes/Enemies/enemy_cow.tscn" id="3_pknqu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itixk"]
 texture = ExtResource("1_78066")
@@ -114,8 +114,8 @@ layer_0/tile_data = PackedInt32Array(-9175287, 131073, 6, -9109751, 131073, 6, -
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-961, -539)
 
-[node name="NPC2" parent="." instance=ExtResource("2_iwp2v")]
-position = Vector2(-934, -417)
-
 [node name="Player_Gurt" parent="." instance=ExtResource("3_dx2x1")]
 position = Vector2(-1151, -404)
+
+[node name="Enemy_Cow" parent="." instance=ExtResource("3_pknqu")]
+position = Vector2(-780, -303)

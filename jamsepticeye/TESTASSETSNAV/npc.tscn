@@ -96,13 +96,13 @@ _data = {
 }
 
 [node name="NPC" type="CharacterBody2D"]
+safe_margin = 5.0
 script = ExtResource("1_qslqm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_cmys4")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D2"]
-modulate = Color(1, 1, 0, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_sbqmk")
 
