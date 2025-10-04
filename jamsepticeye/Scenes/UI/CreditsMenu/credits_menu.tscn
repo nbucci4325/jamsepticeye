@@ -32,45 +32,49 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LinkButton" type="LinkButton" parent="."]
-z_index = 130
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = 303.0
-offset_right = 218.0
-offset_bottom = 344.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 46
-text = "AUDIO ASSETS"
-underline = 1
-uri = "https://docs.godotengine.org/en/latest/tutorials/animation/playing_videos.html"
-
-[node name="Return" type="Button" parent="."]
-z_index = 95
+top_level = true
+z_index = 1045
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -149.0
-offset_top = -175.0
-offset_right = 490.0
-offset_bottom = 47.0
+offset_left = -117.0
+offset_top = -150.0
+offset_right = 117.0
+offset_bottom = -109.00018
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 46
+text = "AUDIO ASSETS"
+underline = 1
+uri = "https://docs.google.com/document/d/1qwmYf86MeH8N2UJxiwWKMHz2HTf4PR9U9CH6bRrYn98/edit?usp=sharing"
+
+[node name="Return" type="Button" parent="."]
+top_level = true
+z_index = 665
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -280.0
+offset_right = 493.0
+offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.45, 0.45)
+theme_override_font_sizes/font_size = 131
 text = "RETURN"
 icon = ExtResource("3_q61fy")
 flat = true
 icon_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -565
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,5 +83,4 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.25490198, 0.44705883, 0.654902, 1)
 
-[connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]
-[connection signal="pressed" from="Return" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

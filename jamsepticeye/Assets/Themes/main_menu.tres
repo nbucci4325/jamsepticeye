@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://byhrlwtow3f1m"]
 
-[ext_resource type="FontFile" uid="uid://cghj42y6daxgu" path="res://Assets/Fonts/Mushies-Regular.ttf" id="1_fhdih"]
+[ext_resource type="FontFile" uid="uid://cpp2wg1ultyfi" path="res://Assets/Fonts/Stay Pixel DEMO.ttf" id="1_fhdih"]
 
 [resource]
 default_font = ExtResource("1_fhdih")
