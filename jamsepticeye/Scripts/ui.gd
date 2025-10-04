@@ -7,6 +7,7 @@ class_name UI
 @onready var transition: ColorRect = %Transition
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var credits_menu: Control = %CreditsMenu
+@onready var ButtonClick = $Click
 
 signal start_game()
 signal menu_opened()
@@ -21,6 +22,7 @@ func _on_main_menu_start_game() -> void:
 	animation_player.play("screen_transition")
 	await animation_player.animation_finished
 	transition.hide()
+
 
 func _input(event):
 	if !main_menu.visible and event.is_action_pressed("ui_cancel"):
@@ -54,6 +56,7 @@ func _on_go_to_credits() -> void:
 	menu.hide()
 	credits_menu.show()
 	credits_menu_opened.emit()
+	ButtonClick.play()
 
 func _on_credits_menu_closed() -> void:
 	credits_menu.hide()
