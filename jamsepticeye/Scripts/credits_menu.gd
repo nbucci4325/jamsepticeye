@@ -1,9 +1,6 @@
 extends Control
 
-@onready var main_menu: Control = %MainMenu
+signal return_to_menu()
 
-func _on_link_button_pressed() -> void:
-	OS.shell_open("res://Assets/Videos/cat-smile.ogv")
-
-func _on_button_pressed() -> void:
-	main_menu.emit()
+func _on_return_pressed() -> void:
+	return_to_menu.emit()
