@@ -7,8 +7,8 @@
 size = Vector2(10, 24)
 
 [node name="Player_Cow" type="CharacterBody2D"]
-collision_layer = 6
-collision_mask = 2
+collision_layer = 38
+collision_mask = 3
 script = ExtResource("1_a3d7n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

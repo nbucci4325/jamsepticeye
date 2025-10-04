@@ -40,6 +40,7 @@ Cows=""
 Horses=""
 Humans=""
 Gurt=""
+Player_horse=""
 
 [input]
 

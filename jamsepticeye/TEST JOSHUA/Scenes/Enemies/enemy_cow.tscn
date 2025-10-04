@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dancxw65tes5o"]
+[gd_scene load_steps=9 format=3 uid="uid://dancxw65tes5o"]
 
 [ext_resource type="Texture2D" uid="uid://bueregum43e0s" path="res://TEST JOSHUA/Placeholder Assets/Enemies/Cow.png" id="1_k1h14"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/cow.gd" id="1_wxwt2"]
+[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_ydk13"]
+[ext_resource type="Script" path="res://Scripts/Idle.gd" id="3_mht1t"]
+[ext_resource type="Script" path="res://Scripts/Move.gd" id="4_6jvg4"]
+[ext_resource type="Script" path="res://Scripts/Attack.gd" id="5_3xikl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlcq"]
 size = Vector2(10, 24)
 
-[node name="Enemy_Cow" type="Area2D" groups=["Cows", "Infectables"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6h2kp"]
+size = Vector2(12, 26)
+
+[node name="Enemy_Cow" type="CharacterBody2D" groups=["Cows", "Infectables"]]
+safe_margin = 5.0
+script = ExtResource("1_wxwt2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -13,3 +23,26 @@ texture = ExtResource("1_k1h14")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gnlcq")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_ydk13")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_mht1t")
+enemy = NodePath("../..")
+
+[node name="EnemyWalk" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_6jvg4")
+enemy = NodePath("../..")
+move_speed = 80.0
+
+[node name="EnemyAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_3xikl")
+enemy = NodePath("../..")
+move_speed = 100.0
+
+[node name="Infect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Infect"]
+shape = SubResource("RectangleShape2D_6h2kp")

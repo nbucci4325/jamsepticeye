@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://TESTASSETSNAV/npc.gd" id="1_qslqm"]
 [ext_resource type="Texture2D" uid="uid://ba33q7tycrsc7" path="res://TESTASSETSNAV/tumblr_inline_o03qftZuni1r4q36m_400.png" id="2_sbqmk"]
-[ext_resource type="Script" path="res://TESTASSETSNAV/state_machine.gd" id="3_earjd"]
-[ext_resource type="Script" path="res://TESTASSETSNAV/Move.gd" id="3_k0j6b"]
-[ext_resource type="Script" path="res://TESTASSETSNAV/Idle.gd" id="5_tbtgh"]
-[ext_resource type="Script" path="res://TESTASSETSNAV/Attack.gd" id="6_v1ruh"]
+[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="3_earjd"]
+[ext_resource type="Script" path="res://Scripts/Move.gd" id="3_k0j6b"]
+[ext_resource type="Script" path="res://Scripts/Idle.gd" id="5_tbtgh"]
+[ext_resource type="Script" path="res://Scripts/Attack.gd" id="6_v1ruh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cmys4"]
 radius = 5.0
@@ -96,13 +96,13 @@ _data = {
 }
 
 [node name="NPC" type="CharacterBody2D"]
+safe_margin = 5.0
 script = ExtResource("1_qslqm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_cmys4")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D2"]
-modulate = Color(1, 1, 0, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_sbqmk")
 
