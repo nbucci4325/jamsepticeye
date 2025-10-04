@@ -15,17 +15,13 @@ func start_game():
 func _on_ui_start_game() -> void:
 	start_game()
 	
-	
 func _on_ui_quit_to_menu() -> void:
 	if current_level:
 		current_level.queue_free()
 		current_level = null
-	
 
 func _on_ui_menu_closed() -> void:
 	get_tree().paused = false
 
-
 func _on_ui_menu_opened() -> void:
 	get_tree().paused = true
-	

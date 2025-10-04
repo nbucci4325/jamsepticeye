@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bueregum43e0s" path="res://TEST JOSHUA/Placeholder Assets/Enemies/Cow.png" id="1_k1h14"]
 [ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/cow.gd" id="1_wxwt2"]
-[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_ydk13"]
-[ext_resource type="Script" path="res://Scripts/Idle.gd" id="3_mht1t"]
-[ext_resource type="Script" path="res://Scripts/Move.gd" id="4_6jvg4"]
-[ext_resource type="Script" path="res://Scripts/Attack.gd" id="5_3xikl"]
+[ext_resource type="Script" path="res://TESTASSETSNAV/state_machine.gd" id="2_ydk13"]
+[ext_resource type="Script" path="res://TESTASSETSNAV/Idle.gd" id="3_mht1t"]
+[ext_resource type="Script" path="res://TESTASSETSNAV/Move.gd" id="4_6jvg4"]
+[ext_resource type="Script" path="res://TESTASSETSNAV/Attack.gd" id="5_3xikl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlcq"]
 size = Vector2(10, 24)

@@ -29,7 +29,6 @@ func _on_play_pressed() -> void:
 	start_game.emit()
 	hide()
 	
-	
 func _on_credits_pressed() -> void:
 	go_to_credits.emit()
 

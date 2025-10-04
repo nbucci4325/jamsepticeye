@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://drxkgxt5gh0ki"]
+[gd_scene load_steps=5 format=3 uid="uid://drxkgxt5gh0ki"]
 
 [ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_gurt.gd" id="1_cxo5h"]
 [ext_resource type="Texture2D" uid="uid://dlwa1pk8aml5q" path="res://TEST JOSHUA/Placeholder Assets/Player/Gurt.png" id="2_7sdgw"]
@@ -8,9 +8,6 @@ radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hvqfr"]
 radius = 48.0104
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ppmrw"]
-radius = 35.0
 
 [node name="Player_Gurt" type="CharacterBody2D" groups=["Gurt"]]
 collision_layer = 3
@@ -31,14 +28,6 @@ shape = SubResource("CircleShape2D_lqisk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Infection_Radius"]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_hvqfr")
-
-[node name="InteractionComponets" type="Node2D" parent="."]
-
-[node name="InteractionArea" type="Area2D" parent="InteractionComponets"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponets/InteractionArea"]
-shape = SubResource("CircleShape2D_ppmrw")
-debug_color = Color(0.46855, 0.446755, 0.989787, 0.42)
 
 [connection signal="area_entered" from="Infection_Radius" to="." method="_on_infection_radius_area_entered"]
 [connection signal="area_exited" from="Infection_Radius" to="." method="_on_infection_radius_area_exited"]

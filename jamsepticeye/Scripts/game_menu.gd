@@ -42,14 +42,11 @@ func _on_visibility_changed() -> void:
 	if visible:
 		focus_button()
 
-
 func _on_return_to_game_pressed() -> void:
 	return_to_game.emit()
 
-
 func _on_main_menu_pressed() -> void:
 	main_menu.emit()
-
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
