@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2kd6yyyk5wiw"]
+[gd_scene load_steps=14 format=3 uid="uid://b2kd6yyyk5wiw"]
 
 [ext_resource type="Script" path="res://TESTASSETSNAV/npc.gd" id="1_qslqm"]
 [ext_resource type="Texture2D" uid="uid://ba33q7tycrsc7" path="res://TESTASSETSNAV/tumblr_inline_o03qftZuni1r4q36m_400.png" id="2_sbqmk"]
 [ext_resource type="Script" path="res://TESTASSETSNAV/state_machine.gd" id="3_earjd"]
 [ext_resource type="Script" path="res://TESTASSETSNAV/Move.gd" id="3_k0j6b"]
 [ext_resource type="Script" path="res://TESTASSETSNAV/Idle.gd" id="5_tbtgh"]
+[ext_resource type="Script" path="res://TESTASSETSNAV/Attack.gd" id="6_v1ruh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cmys4"]
 radius = 5.0
@@ -107,7 +108,7 @@ texture = ExtResource("2_sbqmk")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_earjd")
-initial_state = NodePath("EnemyIdle")
+initial_state = NodePath("EnemyAttack")
 
 [node name="EnemyWalk" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("3_k0j6b")
@@ -117,6 +118,11 @@ move_speed = 100.0
 [node name="EnemyIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("5_tbtgh")
 enemy = NodePath("../..")
+
+[node name="EnemyAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_v1ruh")
+enemy = NodePath("../..")
+move_speed = 100.0
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
