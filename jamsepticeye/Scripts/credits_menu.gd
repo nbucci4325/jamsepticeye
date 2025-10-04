@@ -1,7 +1,5 @@
 extends Control
 
-class_name credits
-
 @onready var main_menu: Control = %MainMenu
 
 func _on_link_button_pressed() -> void:
