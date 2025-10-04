@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://hf1y4cpwa047"]
+
+[ext_resource type="Texture2D" uid="uid://b0cwiv1q5ylf7" path="res://TEST JOSHUA/Placeholder Assets/Enemies/Rat.png" id="1_cei37"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5odej"]
+radius = 3.0
+height = 18.0
+
+[node name="Enemy_Rat" type="Area2D" groups=["Infectables", "Rats"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.5, 0)
+texture = ExtResource("1_cei37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5odej")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://71xtmckebpkh"]
+
+[ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="1_byode"]
+[ext_resource type="PackedScene" uid="uid://dancxw65tes5o" path="res://TEST JOSHUA/Scenes/Enemies/enemy_cow.tscn" id="2_lg518"]
+[ext_resource type="PackedScene" uid="uid://hf1y4cpwa047" path="res://TEST JOSHUA/Scenes/Enemies/enemy_rat.tscn" id="3_246o7"]
+[ext_resource type="PackedScene" uid="uid://qpqgpp14t00g" path="res://TEST JOSHUA/Scenes/Enemies/enemy_frog.tscn" id="4_eiqug"]
+
+[node name="Testing Level" type="Node2D"]
+
+[node name="Player" type="Node" parent="."]
+
+[node name="Player_Gurt" parent="Player" instance=ExtResource("1_byode")]
+position = Vector2(780, 383)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy_Cow" parent="Enemies" instance=ExtResource("2_lg518")]
+position = Vector2(960, 363)
+
+[node name="Enemy_Cow2" parent="Enemies" instance=ExtResource("2_lg518")]
+position = Vector2(920, 406)
+
+[node name="Enemy_Rat" parent="Enemies" instance=ExtResource("3_246o7")]
+position = Vector2(652, 446)
+
+[node name="Enemy_Rat2" parent="Enemies" instance=ExtResource("3_246o7")]
+position = Vector2(683, 456)
+
+[node name="Enemy_Frog" parent="Enemies" instance=ExtResource("4_eiqug")]
+position = Vector2(640, 350)
+
+[node name="Enemy_Frog2" parent="Enemies" instance=ExtResource("4_eiqug")]
+position = Vector2(659, 326)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(760, 352)
+zoom = Vector2(3, 3)

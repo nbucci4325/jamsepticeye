@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://drxkgxt5gh0ki"]
+
+[ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_gurt.gd" id="1_cxo5h"]
+[ext_resource type="Texture2D" uid="uid://dlwa1pk8aml5q" path="res://TEST JOSHUA/Placeholder Assets/Player/Gurt.png" id="2_7sdgw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lqisk"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hvqfr"]
+radius = 48.0104
+
+[node name="Player_Gurt" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_cxo5h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -3)
+texture = ExtResource("2_7sdgw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_lqisk")
+
+[node name="Infection_Radius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Infection_Radius"]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_hvqfr")
+
+[connection signal="area_entered" from="Infection_Radius" to="." method="_on_infection_radius_area_entered"]
+[connection signal="area_exited" from="Infection_Radius" to="." method="_on_infection_radius_area_exited"]
