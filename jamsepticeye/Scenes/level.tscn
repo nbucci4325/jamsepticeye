@@ -1,6 +1,7 @@
-[gd_scene load_steps=112 format=3 uid="uid://8uxxoqthskt1"]
+[gd_scene load_steps=122 format=3 uid="uid://8uxxoqthskt1"]
 
 [ext_resource type="Texture2D" uid="uid://d2rqx2dw5yxrd" path="res://Assets/Tiles/White_Tile.png" id="1_6phgx"]
+[ext_resource type="Script" uid="uid://clcvnfhiwkqdq" path="res://Scripts/level.gd" id="1_s14gf"]
 [ext_resource type="Texture2D" uid="uid://cm4b3rw6mmx4o" path="res://Assets/Tiles/Void_Tile.png" id="2_81xng"]
 [ext_resource type="Texture2D" uid="uid://cdhic0kduyyst" path="res://Assets/Tiles/Forest/Base/Forest_Path_VerL.png" id="3_gx30c"]
 [ext_resource type="Texture2D" uid="uid://bftyf72ycg1od" path="res://Assets/Tiles/Half_White_Tile.png" id="3_wqkje"]
@@ -48,6 +49,11 @@
 [ext_resource type="Texture2D" uid="uid://vlb1qc626wmc" path="res://Assets/Tiles/Forest/Mid/Forest_Fence_CorBR.png" id="46_e6a55"]
 [ext_resource type="Texture2D" uid="uid://cv4tko1lm7df7" path="res://Assets/Tiles/Forest/Mid/Forest_Fence_Main.png" id="47_nhhdd"]
 [ext_resource type="Texture2D" uid="uid://c1i7vg5ok3oey" path="res://Assets/Tiles/Forest/Back/Forest_Tree_Orange.png" id="48_043up"]
+[ext_resource type="AudioStream" uid="uid://dosw7digrunlj" path="res://Assets/Sounds/Cave_Score.wav" id="49_jmchl"]
+[ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="51_cpxpw"]
+[ext_resource type="AudioStream" uid="uid://e2cl0sqfeb3j" path="res://Assets/Sounds/Forest_Score.wav" id="52_wbq00"]
+[ext_resource type="AudioStream" uid="uid://da2nwqeun1q3u" path="res://Assets/Sounds/Farm_Score.wav" id="53_dx6so"]
+[ext_resource type="AudioStream" uid="uid://cvvkde2fbuoeo" path="res://Assets/Sounds/Town_Score.wav" id="54_54tli"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0f350"]
 texture = ExtResource("1_6phgx")
@@ -640,7 +646,20 @@ sources/1 = SubResource("TileSetAtlasSource_mhmax")
 sources/2 = SubResource("TileSetAtlasSource_qxetb")
 sources/3 = SubResource("TileSetAtlasSource_udwa7")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s14gf"]
+size = Vector2(1469.75, 1766.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dx6so"]
+size = Vector2(2017, 639)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54tli"]
+size = Vector2(4032, 1071)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8huh7"]
+size = Vector2(1611, 1652)
+
 [node name="Level" type="Node2D"]
+script = ExtResource("1_s14gf")
 
 [node name="TextEdit" type="ColorRect" parent="."]
 offset_right = 809.0
@@ -673,3 +692,62 @@ layer_0/tile_data = PackedInt32Array(-5570463, 327681, 268435461, -5504927, 3276
 tile_set = SubResource("TileSet_yyspv")
 format = 2
 layer_0/tile_data = PackedInt32Array(-5308317, 65538, 1, -5308316, 2, 1, -5308315, 65538, 1, -5373849, 2, 1, -5373848, 65538, 1, -5373847, 2, 1, -5373846, 2, 1, -5373845, 65538, 1, -5373844, 2, 1, -5373843, 2, 1, -5373842, 65538, 1, -5373841, 65538, 268435457, -5308303, 2, 1, -5308302, 2, 1, -5308301, 65538, 1, -5308318, 2, 1, -5373850, 65538, 1, -5308304, 2, 1, -4784034, 2, 1, -4784033, 65538, 1, -4652960, 2, 1, -4652959, 65538, 1, -4390814, 2, 1, -4390813, 65538, 1, -4390812, 2, 1, -4390811, 65538, 1, -4390810, 2, 1, -4390809, 65538, 1, -4390808, 2, 1, -4390807, 65538, 1, -4390806, 2, 1, -4390805, 65538, 1, -4390804, 2, 1, -4390803, 65538, 1, -4390802, 2, 1, -4390801, 65538, 1, -4390800, 2, 1, -4390799, 65538, 1, -4390798, 2, 1, -4390797, 65538, 1, -4390796, 2, 1, -4390795, 65538, 1, -4390794, 2, 1, -4390793, 65538, 1, -4390792, 2, 1, -4390791, 65538, 1, -4652934, 2, 1, -4652933, 65538, 1, -4652932, 2, 1, -4652931, 65538, 1, -4652930, 2, 1, -4652929, 65538, 1, -4652938, 2, 1, -4652937, 65538, 1, -4652936, 2, 1, -4652935, 65538, 1, -4259626, 0, 1, -4325161, 65536, 1, -4259625, 65536, 1, -4325160, 131072, 1, -4259624, 131072, 1, -4259623, 196608, 1, -4325162, 0, 1, -4390697, 65536, 0, -4390696, 131072, 0, -4325159, 196608, 1)
+
+[node name="Player_Gurt" parent="." instance=ExtResource("51_cpxpw")]
+position = Vector2(701, -517)
+
+[node name="Camera2D" type="Camera2D" parent="Player_Gurt"]
+
+[node name="CaveArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaveArea"]
+position = Vector2(768.875, -878.625)
+shape = SubResource("RectangleShape2D_s14gf")
+debug_color = Color(0.630801, 0.45048255, 0.7341753, 0.41960785)
+
+[node name="Cave" type="AudioStreamPlayer2D" parent="CaveArea"]
+stream = ExtResource("49_jmchl")
+bus = &"Music"
+
+[node name="ForestArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ForestArea"]
+position = Vector2(2511.5, -1244.5)
+shape = SubResource("RectangleShape2D_dx6so")
+debug_color = Color(0.2986068, 0.6236106, 0.23798868, 0.41960785)
+
+[node name="Forest" type="AudioStreamPlayer2D" parent="ForestArea"]
+position = Vector2(2511.5, -1230)
+stream = ExtResource("52_wbq00")
+bus = &"Music"
+
+[node name="FarmArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FarmArea"]
+position = Vector2(5536, -1229.5)
+shape = SubResource("RectangleShape2D_54tli")
+debug_color = Color(0.9631457, 0, 0.5032656, 0.41960785)
+
+[node name="Farm" type="AudioStreamPlayer2D" parent="FarmArea"]
+stream = ExtResource("53_dx6so")
+bus = &"Music"
+
+[node name="TownArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TownArea"]
+position = Vector2(8358.5, -1233)
+shape = SubResource("RectangleShape2D_8huh7")
+debug_color = Color(0.65457684, 0.5179122, 0, 0.41960785)
+
+[node name="Town" type="AudioStreamPlayer2D" parent="TownArea"]
+stream = ExtResource("54_54tli")
+bus = &"Music"
+
+[connection signal="body_entered" from="CaveArea" to="." method="_on_cave_area_body_entered"]
+[connection signal="body_exited" from="CaveArea" to="." method="_on_cave_area_body_exited"]
+[connection signal="body_entered" from="ForestArea" to="." method="_on_forest_area_body_entered"]
+[connection signal="body_exited" from="ForestArea" to="." method="_on_forest_area_body_exited"]
+[connection signal="body_entered" from="FarmArea" to="." method="_on_farm_area_body_entered"]
+[connection signal="body_exited" from="FarmArea" to="." method="_on_farm_area_body_exited"]
+[connection signal="body_entered" from="TownArea" to="." method="_on_town_area_body_entered"]
+[connection signal="body_exited" from="TownArea" to="." method="_on_town_area_body_exited"]

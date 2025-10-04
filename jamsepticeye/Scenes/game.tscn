@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7usohorljqvh"]
+[gd_scene load_steps=5 format=3 uid="uid://b7usohorljqvh"]
 
-[ext_resource type="Script" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="Script" uid="uid://n8ei0fbvjqs3" path="res://Scripts/game.gd" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://clmuqa0mj3vfy" path="res://Scenes/UI/ui.tscn" id="2_wrm1d"]
+[ext_resource type="AudioStream" uid="uid://bmfqk03ih6jw2" path="res://Assets/Sounds/BeepBox-Song.wav" id="3_wrm1d"]
+[ext_resource type="AudioStream" uid="uid://dwrp3n1lrknrp" path="res://Assets/Sounds/Menu_Button_Click.mp3" id="4_3dryh"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qxrlw")
 
 [node name="UI" parent="." instance=ExtResource("2_wrm1d")]
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wrm1d")
+bus = &"Music"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3dryh")
+bus = &"SFX"
 
 [connection signal="menu_closed" from="UI" to="." method="_on_ui_menu_closed"]
 [connection signal="menu_opened" from="UI" to="." method="_on_ui_menu_opened"]
