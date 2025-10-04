@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://xjdxdxagm5k8"]
+[gd_scene load_steps=7 format=3 uid="uid://xjdxdxagm5k8"]
 
 [ext_resource type="Texture2D" uid="uid://d036qxnobjh1w" path="res://TESTASSETSNAV/jungleTileset.png" id="1_78066"]
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="3_dx2x1"]
+[ext_resource type="PackedScene" uid="uid://div2vj2j6wwk3" path="res://TESTASSETSNAV/interaction_area.tscn" id="3_igr7e"]
+[ext_resource type="PackedScene" uid="uid://csdlcw0j0odpm" path="res://TESTASSETSNAV/lever_&_gate.tscn" id="4_cuv4p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itixk"]
 texture = ExtResource("1_78066")
@@ -117,3 +119,12 @@ position = Vector2(-961, -539)
 position = Vector2(-1187, -416)
 collision_layer = 19
 collision_mask = 23
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_igr7e")]
+position = Vector2(-636, -412)
+interact_label = "TEST"
+interact_type = "print_text"
+interact_value = "Yay! It Worked!"
+
+[node name="Lever & Gate" parent="." instance=ExtResource("4_cuv4p")]
+position = Vector2(-848, -292)

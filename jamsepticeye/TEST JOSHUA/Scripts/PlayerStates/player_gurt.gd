@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 @onready var infection_radius: Area2D = $Infection_Radius
 
+@onready var all_interactions = []
+@onready var interact_label: Label = $InteractionComponets/InteractLabel
+@onready var gate = get_tree().get_first_node_in_group("Gate")
+
+
 const Player_Rat = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_rat.tscn")
 const Player_Frog = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_frog.tscn")
 #const Player_Fox = preload()
@@ -15,7 +20,13 @@ var overlap
 var infecting_state = false
 var infested_player
 
+func _ready():
+	update_interactions()
+
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("Action"):
+		execute_interaciton()
 	
 	if !infecting_state:
 		var Xdirection := Input.get_axis("LEFT","RIGHT")
@@ -76,3 +87,27 @@ func _on_infection_radius_area_entered(area: Area2D) -> void:
 func _on_infection_radius_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Infectables"):
 		can_infect -= 1 
+
+# Navin Code - INTERACTION CODE
+#####################################################################
+
+func _on_interaction_area_area_entered(area: Area2D) -> void:
+	all_interactions.insert(0, area)
+	update_interactions()
+
+func _on_interaction_area_area_exited(area: Area2D) -> void:
+	all_interactions.erase(area)
+	update_interactions()
+
+func update_interactions():
+	if all_interactions:
+		interact_label.text = all_interactions[0].interact_label
+	else:
+		interact_label.text = ""
+
+func execute_interaciton():
+	if all_interactions:
+		var cur_interaction = all_interactions[0]
+		match cur_interaction.interact_type:
+			"print_text" : print(cur_interaction.interact_value)
+			"Lever" : gate.queue_free()
