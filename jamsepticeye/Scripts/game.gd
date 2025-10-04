@@ -4,6 +4,7 @@ class_name Game
 
 const LevelScene = preload("res://Scenes/level.tscn")
 @onready var GameMusic = $MenuMusic
+<<<<<<< HEAD
 
 var current_level: Node = null
 

@@ -56,7 +56,13 @@ func _on_go_to_credits() -> void:
 	menu.hide()
 	credits_menu.show()
 	credits_menu_opened.emit()
+<<<<<<< HEAD
 	ButtonClick.play()
+=======
+<<<<<<< HEAD
+	ButtonClick.play()
+=======
+>>>>>>> f5f024a75df67006a0a37184feb59b4114bdf292
 
 func _on_credits_menu_closed() -> void:
 	credits_menu.hide()
@@ -99,3 +105,4 @@ func _on_credits_menu_return_to_menu() -> void:
 	
 	credits_menu.hide()
 	main_menu.show()
+>>>>>>> 2dfc078f27641bd1c69c0edb705cded077318ea3
