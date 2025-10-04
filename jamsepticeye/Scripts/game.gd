@@ -3,13 +3,8 @@ extends Node2D
 class_name Game
 
 const LevelScene = preload("res://Scenes/level.tscn")
-@onready var GameMusic = $MenuMusic
-<<<<<<< HEAD
 
 var current_level: Node = null
-
-func _ready() -> void:
-	GameMusic.play()
 
 func start_game():
 	current_level = LevelScene.instantiate()
@@ -19,7 +14,6 @@ func start_game():
 	
 func _on_ui_start_game() -> void:
 	start_game()
-	GameMusic.stop()
 	
 	
 func _on_ui_quit_to_menu() -> void:

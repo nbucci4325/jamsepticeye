@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=6 format=3 uid="uid://bv8c32ujaw355"]
-=======
 [gd_scene load_steps=12 format=3 uid="uid://bv8c32ujaw355"]
->>>>>>> 2dfc078f27641bd1c69c0edb705cded077318ea3
 
 [ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_o53sk"]
 [ext_resource type="Script" uid="uid://cps6uh5a6ykpg" path="res://Scripts/main_menu.gd" id="2_tik7u"]
@@ -10,15 +6,11 @@
 [ext_resource type="Script" uid="uid://b47m7moovdv8j" path="res://Scripts/hover.gd" id="3_tik7u"]
 [ext_resource type="Texture2D" uid="uid://cxbyxd8q4mgxo" path="res://Assets/Backgrounds/MainMenu/Main_StartMenu_Screen03.png" id="4_8t05w"]
 [ext_resource type="Texture2D" uid="uid://bm3wa0hdcrwtt" path="res://Assets/Themes/Main_Menu_Button.png" id="4_bw8va"]
-<<<<<<< HEAD
-[ext_resource type="AudioStream" uid="uid://dwrp3n1lrknrp" path="res://Assets/Sounds/Menu_Button_Click.mp3" id="5_608ul"]
-=======
 [ext_resource type="Texture2D" uid="uid://csnspgekv4t6d" path="res://Assets/Backgrounds/MainMenu/Main_StartMenu_Screen02.png" id="5_k7ern"]
 [ext_resource type="Script" uid="uid://e0771nbdlpb8" path="res://Scripts/foreground.gd" id="5_qfxeg"]
 [ext_resource type="Texture2D" uid="uid://b22317jhx5rgi" path="res://Assets/Backgrounds/MainMenu/Main_StartMenu_Screen04.png" id="6_qfxeg"]
 [ext_resource type="Script" uid="uid://br11een7by0tm" path="res://Scripts/clouds.gd" id="7_qfxeg"]
 [ext_resource type="Script" uid="uid://uw4wrefbcyl7" path="res://Scripts/gurt.gd" id="9_kkdrl"]
->>>>>>> 2dfc078f27641bd1c69c0edb705cded077318ea3
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -142,10 +134,6 @@ text = "QUIT"
 icon = ExtResource("4_bw8va")
 flat = true
 icon_alignment = 1
-
-[node name="Click" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_608ul")
-bus = &"SFX"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons/Play" to="." method="_on_play_pressed"]

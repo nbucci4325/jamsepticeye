@@ -10,14 +10,6 @@ script = ExtResource("1_qxrlw")
 
 [node name="UI" parent="." instance=ExtResource("2_wrm1d")]
 
-[node name="MenuMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_wrm1d")
-bus = &"Music"
-
-[node name="Click" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_3dryh")
-bus = &"SFX"
-
 [connection signal="menu_closed" from="UI" to="." method="_on_ui_menu_closed"]
 [connection signal="menu_opened" from="UI" to="." method="_on_ui_menu_opened"]
 [connection signal="quit_to_menu" from="UI" to="." method="_on_ui_quit_to_menu"]

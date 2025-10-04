@@ -119,14 +119,6 @@ icon = ExtResource("3_nte6v")
 flat = true
 icon_alignment = 1
 
-[node name="Click" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_1voeu")
-bus = &"SFX"
-
-[node name="MenuMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_v8231")
-bus = &"Music"
-
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/ButtonsVBox/ReturnToGame" to="." method="_on_return_to_game_pressed"]
 [connection signal="value_changed" from="MarginContainer/ButtonsVBox/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]

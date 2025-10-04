@@ -13,9 +13,6 @@ signal main_menu()
 @onready var mmButton: Button = $MarginContainer/ButtonsVBox/MainMenu
 @onready var qButton: Button = $MarginContainer/ButtonsVBox/Quit
 
-@onready var ButtonClick = $Click
-@onready var MenuMusic = $MenuMusic
-
 func start_tween(object: Object, property: String, final_val: Variant, duration: float):
 	var tween = create_tween()
 	tween.tween_property(object, property, final_val, duration)
@@ -48,15 +45,11 @@ func _on_visibility_changed() -> void:
 
 func _on_return_to_game_pressed() -> void:
 	return_to_game.emit()
-	ButtonClick.play()
 
 
 func _on_main_menu_pressed() -> void:
 	main_menu.emit()
-	ButtonClick.play()
 
 
 func _on_quit_pressed() -> void:
-	ButtonClick.play()
-	await get_tree().create_timer(1).timeout
 	get_tree().quit()
