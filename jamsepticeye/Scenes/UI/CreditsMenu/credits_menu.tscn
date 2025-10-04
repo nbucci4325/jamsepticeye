@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_j34j3"]
 [ext_resource type="Script" uid="uid://dnskkoyj8f03c" path="res://Scripts/credits_menu.gd" id="2_vy407"]
-[ext_resource type="VideoStream" uid="uid://jd4n18fgnyw5" path="res://Assets/Videos/cat-smile.ogv" id="3_q61fy"]
+[ext_resource type="Texture2D" uid="uid://bm3wa0hdcrwtt" path="res://Assets/Themes/Main_Menu_Button.png" id="3_q61fy"]
 
 [node name="CreditsMenu" type="Control"]
 process_mode = 3
@@ -15,17 +15,21 @@ grow_vertical = 2
 theme = ExtResource("1_j34j3")
 script = ExtResource("2_vy407")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="Label" type="Label" parent="."]
+z_index = 60
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-offset_left = 121.0
-offset_top = 45.0
-offset_right = -121.0
-offset_bottom = 675.0
+anchor_bottom = 0.5
+offset_top = -540.0
+offset_bottom = 236.0
 grow_horizontal = 2
-stream = ExtResource("3_q61fy")
-autoplay = true
+grow_vertical = 2
+theme_override_font_sizes/font_size = 131
+text = "CREDITS GO HERE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LinkButton" type="LinkButton" parent="."]
 z_index = 130
@@ -35,19 +39,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -403.0
-offset_top = 244.0
-offset_right = 25.0
-offset_bottom = 285.0
+offset_left = -210.0
+offset_top = 303.0
+offset_right = 218.0
+offset_bottom = 344.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
 theme_override_font_sizes/font_size = 46
 text = "AUDIO ASSETS"
 underline = 1
 uri = "https://docs.godotengine.org/en/latest/tutorials/animation/playing_videos.html"
 
-[node name="Button" type="Button" parent="."]
+[node name="Return" type="Button" parent="."]
 z_index = 95
 layout_mode = 1
 anchors_preset = 7
@@ -55,14 +58,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -130.0
-offset_right = -68.0
-offset_bottom = -107.0
+offset_left = -149.0
+offset_top = -175.0
+offset_right = 490.0
+offset_bottom = 47.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(3.09, 3.09)
+scale = Vector2(0.45, 0.45)
 text = "RETURN"
+icon = ExtResource("3_q61fy")
+flat = true
+icon_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -74,4 +80,4 @@ grow_vertical = 2
 color = Color(0.25490198, 0.44705883, 0.654902, 1)
 
 [connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_button_pressed"]
