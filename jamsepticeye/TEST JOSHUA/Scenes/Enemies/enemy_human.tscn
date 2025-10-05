@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bns6i07mxnt3a"]
+[gd_scene load_steps=8 format=3 uid="uid://bns6i07mxnt3a"]
 
 [ext_resource type="Texture2D" uid="uid://cp118228rkd1n" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Human.png" id="1_gvy2c"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/human.gd" id="1_yacjl"]
+[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="3_e18eh"]
+[ext_resource type="Script" path="res://Scripts/Idle.gd" id="4_i0xti"]
+[ext_resource type="Script" path="res://Scripts/Move.gd" id="5_vhdya"]
+[ext_resource type="Script" path="res://Scripts/Attack.gd" id="6_0xaji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xicrv"]
 
 [node name="Enemy_Human" type="CharacterBody2D" groups=["Humans", "Infectables"]]
+script = ExtResource("1_yacjl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -12,3 +18,19 @@ texture = ExtResource("1_gvy2c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xicrv")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_e18eh")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_i0xti")
+enemy = NodePath("../..")
+
+[node name="EnemyWalk" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_vhdya")
+enemy = NodePath("../..")
+
+[node name="EnemyAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_0xaji")
+enemy = NodePath("../..")
