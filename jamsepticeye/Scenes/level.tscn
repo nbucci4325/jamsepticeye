@@ -1,6 +1,6 @@
 [gd_scene load_steps=148 format=3 uid="uid://8uxxoqthskt1"]
 
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_2lp24"]
+[ext_resource type="Script" uid="uid://clcvnfhiwkqdq" path="res://Scripts/level.gd" id="1_2lp24"]
 [ext_resource type="Texture2D" uid="uid://d2rqx2dw5yxrd" path="res://Assets/Tiles/White_Tile.png" id="1_6phgx"]
 [ext_resource type="Texture2D" uid="uid://cm4b3rw6mmx4o" path="res://Assets/Tiles/Void_Tile.png" id="2_81xng"]
 [ext_resource type="Texture2D" uid="uid://cdhic0kduyyst" path="res://Assets/Tiles/Forest/Base/Forest_Path_VerL.png" id="3_gx30c"]
@@ -1049,6 +1049,7 @@ position = Vector2(746.5, -876)
 shape = SubResource("RectangleShape2D_uoc0b")
 
 [node name="CaveMusic" type="AudioStreamPlayer2D" parent="CaveArea"]
+position = Vector2(615, -390)
 stream = ExtResource("56_uoc0b")
 bus = &"Music"
 
@@ -1068,6 +1069,7 @@ shape = SubResource("RectangleShape2D_2lp24")
 debug_color = Color(0, 0.642634, 0.348676, 0.419608)
 
 [node name="ForestMusic" type="AudioStreamPlayer2D" parent="ForestArea"]
+position = Vector2(2512, -1242)
 stream = ExtResource("57_2lp24")
 bus = &"Music"
 
