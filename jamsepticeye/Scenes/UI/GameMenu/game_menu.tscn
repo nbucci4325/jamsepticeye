@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://n8lnftxt3gyf"]
+[gd_scene load_steps=6 format=3 uid="uid://n8lnftxt3gyf"]
 
 [ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_f4y0c"]
 [ext_resource type="Script" uid="uid://dqiehh3u0dx2a" path="res://Scripts/game_menu.gd" id="2_f4y0c"]
 [ext_resource type="Texture2D" uid="uid://dqyp1t1bdoygf" path="res://Assets/Themes/Main_Menu_Button02.png" id="3_nte6v"]
+[ext_resource type="AudioStream" uid="uid://cvr4xitf2h0wx" path="res://Assets/Sounds/Menu_Score.wav" id="4_v8231"]
+[ext_resource type="AudioStream" uid="uid://dwrp3n1lrknrp" path="res://Assets/Sounds/Menu_Button_Click.mp3" id="5_actnc"]
 
 [node name="GameMenu" type="Control"]
 process_mode = 3
@@ -116,6 +118,14 @@ text = "Quit Game"
 icon = ExtResource("3_nte6v")
 flat = true
 icon_alignment = 1
+
+[node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_v8231")
+bus = &"Music"
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_actnc")
+bus = &"SFX"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/ButtonsVBox/ReturnToGame" to="." method="_on_return_to_game_pressed"]

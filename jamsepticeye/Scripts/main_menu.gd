@@ -11,6 +11,9 @@ signal go_to_credits()
 @onready var credits: Button = $MarginContainer/VBoxContainer/ButtonsVBox/Wrapper2/Credits
 @onready var quit: Button = $MarginContainer/VBoxContainer/ButtonsVBox/Control3/Quit
 
+@onready var MenuMusic = $MainMenuMusic
+@onready var Click = $ButtonClick
+
 func start_tween(object: Object, property: String, final_val: Variant, duration: float):
 	var tween = create_tween()
 	tween.tween_property(object, property, final_val, duration)
@@ -24,15 +27,21 @@ func btn_hovered(button: Button):
 
 func _ready() -> void:
 	focus_button()
+	MenuMusic.play()
 
 func _on_play_pressed() -> void:
+	Click.play()
 	start_game.emit()
 	hide()
+	MenuMusic.stop()
 	
 func _on_credits_pressed() -> void:
+	Click.play()
 	go_to_credits.emit()
 
 func _on_quit_pressed() -> void:
+	Click.play()
+	await get_tree().create_timer(1).timeout
 	get_tree().quit()
 
 func _on_visiblity_changed() -> void:
