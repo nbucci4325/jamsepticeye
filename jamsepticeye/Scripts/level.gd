@@ -17,53 +17,55 @@ extends Node2D
 
 
 
-
-func _on_cave_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Gurt"):
+func _on_cave_area_area_entered(area: Area2D) -> void:
+	if (area.name == "Playerpos"):
 		CaveBG.play()
 		CaveWD.play()
 		CaveFire.play()
 		print("Entered")
 
-func _on_cave_area_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Gurt"):
+
+func _on_cave_area_area_exited(area: Area2D) -> void:
+	if (area.name == "Playerpos"):
 		CaveBG.stop()
 		CaveWD.stop()
 		CaveFire.stop()
 		print("Exited")
 
-func _on_forest_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Gurt"):
+
+func _on_forest_area_area_entered(area: Area2D) -> void:
+	if (area.name == "Playerpos"):
 		ForestBG.play()
 		ForestBirds.play()
 		print("Entered")
 
-func _on_forest_area_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Gurt"):
+func _on_forest_area_area_exited(area: Area2D) -> void:
+	if (area.name == "Playerpos"):
 		ForestBG.stop()
 		ForestBirds.stop()
 		print("Exited")
 
-func _on_farm_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Gurt"):
+
+func _on_farm_area_area_entered(area: Area2D) -> void:
+	if (area.name == "Playerpos"):
 		FarmBG.play()
 		FarmMoos.play()
 		print("Entered")
 
-func _on_farm_area_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Gurt"):
+func _on_farm_area_area_exited(area: Area2D) -> void:
+	if (area.name == "Playerpos"):
 		FarmBG.stop()
 		FarmMoos.stop()
 		print("Exited")
 
-func _on_town_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Gurt"):
+func _on_town_area_area_entered(area: Area2D) -> void:
+	if (area.name == "Playerpos"):
 		TownBG.play()
 		TownTalking.play()
 		print("Entered")
 
-func _on_town_area_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Gurt"):
+func _on_town_area_area_exited(area: Area2D) -> void:
+	if (area.name == "Playerpos"):
 		TownBG.stop()
 		TownTalking.stop()
 		print("Exited")
