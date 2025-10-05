@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emd7j"]
 size = Vector2(10, 24)
 
-[node name="Player_Cow" type="CharacterBody2D"]
+[node name="Player_Cow" type="CharacterBody2D" groups=["Player_Controlled_Enemies"]]
 collision_layer = 66
 collision_mask = 57
 script = ExtResource("1_a3d7n")

@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://clmuqa0mj3vfy"]
+[gd_scene load_steps=10 format=3 uid="uid://clmuqa0mj3vfy"]
 
 [ext_resource type="Script" uid="uid://dproc6tcvsk0q" path="res://Scripts/ui.gd" id="1_ahcct"]
 [ext_resource type="PackedScene" uid="uid://n8lnftxt3gyf" path="res://Scenes/UI/GameMenu/game_menu.tscn" id="2_c7mb3"]
 [ext_resource type="PackedScene" uid="uid://bv8c32ujaw355" path="res://Scenes/UI/MainMenu/main_menu.tscn" id="2_de23q"]
 [ext_resource type="PackedScene" uid="uid://cl5i4nwhpvekn" path="res://Scenes/UI/CreditsMenu/credits_menu.tscn" id="4_fo61o"]
+[ext_resource type="PackedScene" uid="uid://b83181hm3anqg" path="res://Scenes/UI/hud.tscn" id="5_alcrr"]
+[ext_resource type="PackedScene" uid="uid://lvwm2nmjbrwu" path="res://Scenes/UI/win_screen.tscn" id="6_1c2ca"]
 
 [sub_resource type="Animation" id="Animation_fo61o"]
 length = 0.001
@@ -29,10 +31,10 @@ tracks/0/path = NodePath("Control/Transition:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(2, 1),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(2, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_alcrr"]
@@ -76,6 +78,12 @@ mouse_filter = 1
 [node name="CreditsMenu" parent="." instance=ExtResource("4_fo61o")]
 unique_name_in_owner = true
 visible = false
+
+[node name="HUD" parent="." instance=ExtResource("5_alcrr")]
+unique_name_in_owner = true
+
+[node name="WinScreen" parent="." instance=ExtResource("6_1c2ca")]
+unique_name_in_owner = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

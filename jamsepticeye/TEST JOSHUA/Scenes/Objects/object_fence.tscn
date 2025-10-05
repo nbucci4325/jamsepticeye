@@ -1,14 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpyev47ee8urj"]
 
-[ext_resource type="Texture2D" uid="uid://bhjlxdvyrdlcq" path="res://TEST JOSHUA/Placeholder Assets/Other/Fence.png" id="1_38m7u"]
+[ext_resource type="Texture2D" uid="uid://c7ml4baanwnok" path="res://Assets/Sprites/Farm_Fence_VerL_Broken.png" id="1_eruy1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_060bp"]
+size = Vector2(7, 32)
 
 [node name="Object_Fence" type="Area2D" groups=["DestructableFence"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_38m7u")
+texture = ExtResource("1_eruy1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12.5, 0)
 shape = SubResource("RectangleShape2D_060bp")

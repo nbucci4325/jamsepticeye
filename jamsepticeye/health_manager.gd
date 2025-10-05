@@ -7,7 +7,7 @@ func _ready():
 
 func reduce_health():
 	player_health -= 1
-	print(player_health)
+	return player_health
 
 func refresh_health():
 	player_health = 5
