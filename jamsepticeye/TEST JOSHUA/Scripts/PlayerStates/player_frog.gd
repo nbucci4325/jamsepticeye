@@ -13,6 +13,8 @@ var jump_dirY
 
 var health = 5
 
+@onready var jump = $Jump
+
 func _physics_process(delta: float) -> void:
 	
 	if health <= 0:
@@ -20,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if Input.is_action_just_pressed("Action"):
+		jump.play()
 		is_jumping = true
 		velocity.x = 0
 		velocity.y = 0
