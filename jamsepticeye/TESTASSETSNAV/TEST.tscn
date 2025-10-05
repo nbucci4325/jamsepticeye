@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://ci5h8mh817a2g" path="res://TESTASSETSNAV/Deathzone.tscn" id="5_sgwa1"]
 [ext_resource type="PackedScene" uid="uid://dsdkfshwsdmv1" path="res://TESTASSETSNAV/CheckpointManager.tscn" id="6_dto37"]
 [ext_resource type="PackedScene" uid="uid://dancxw65tes5o" path="res://TEST JOSHUA/Scenes/Enemies/enemy_cow.tscn" id="6_py5jp"]
-[ext_resource type="PackedScene" uid="uid://rqsm3m76nrfh" path="res://TESTASSETSNAV/Water.tscn" id="8_w7j23"]
+[ext_resource type="PackedScene" path="res://TESTASSETSNAV/Water.tscn" id="8_w7j23"]
 [ext_resource type="PackedScene" uid="uid://qpqgpp14t00g" path="res://TEST JOSHUA/Scenes/Enemies/enemy_frog.tscn" id="8_yc02v"]
-[ext_resource type="PackedScene" uid="uid://bns6i07mxnt3a" path="res://TEST JOSHUA/Scenes/Enemies/enemy_human_M.tscn" id="9_pbqf5"]
+[ext_resource type="PackedScene" path="res://TEST JOSHUA/Scenes/Enemies/enemy_human_M.tscn" id="9_pbqf5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itixk"]
 texture = ExtResource("1_78066")
