@@ -36,3 +36,7 @@ func abandon_host(position):
 	var corpse = Shroom.instantiate()
 	corpse.position = position
 	parent.add_child(corpse)                    
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

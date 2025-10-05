@@ -12,9 +12,9 @@ signal main_menu()
 @onready var rtgButton: Button = $MarginContainer/ButtonsVBox/ReturnToGame
 @onready var mmButton: Button = $MarginContainer/ButtonsVBox/MainMenu
 @onready var qButton: Button = $MarginContainer/ButtonsVBox/Quit
-
 @onready var MenuMusic = $MainMenuMusic
 @onready var Click = $ButtonClick
+@onready var check_button: CheckButton = $MarginContainer/ButtonsVBox/GridContainer/CheckButton
 
 func start_tween(object: Object, property: String, final_val: Variant, duration: float):
 	var tween = create_tween()
@@ -27,13 +27,11 @@ func btn_hovered(button: Button):
 	else:
 		start_tween(button, "scale", Vector2.ONE, tween_duration)
 
-func _on_music_slider_value_changed(value):
+func _on_music_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))
-	AudioServer.set_bus_mute(MUSIC_BUS_ID, value < .05)
 	
-func _on_sfx_slider_value_changed(value):
+func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(value))
-	AudioServer.set_bus_mute(SFX_BUS_ID, value < .05)
 
 func focus_button() -> void:
 	if buttons_v_box:
@@ -45,7 +43,6 @@ func _on_visibility_changed() -> void:
 	if visible:
 		focus_button()
 		MenuMusic.play()
-
 
 func _on_return_to_game_pressed() -> void:
 	Click.play()
@@ -60,3 +57,7 @@ func _on_quit_pressed() -> void:
 	Click.play()
 	await get_tree().create_timer(1).timeout
 	get_tree().quit()
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	pass # Replace with function body.
