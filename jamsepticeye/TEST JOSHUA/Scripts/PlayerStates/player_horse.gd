@@ -10,7 +10,8 @@ var speed = default_speed
 var is_running = false
 
 var health = 5
-
+@onready var Dash = $dash
+@onready var Walk = $walk
 
 func _physics_process(delta: float) -> void:
 	
@@ -19,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if Input.is_action_pressed("Action"):
+		Dash.play()
 		is_running = true
 	
 	if Input.is_action_just_released("Action"):
@@ -30,14 +32,18 @@ func _physics_process(delta: float) -> void:
 	
 	var Xdirection := Input.get_axis("LEFT","RIGHT")
 	if Xdirection:
+		Walk.play()
 		velocity.x = move_toward(velocity.x, (Xdirection * speed), 30)
 	else:
+		Walk.play()
 		velocity.x = move_toward(velocity.x, 0, 15)
 	
 	var Ydirection := Input.get_axis("UP","DOWN")
 	if Ydirection:
+		Walk.play()
 		velocity.y = move_toward(velocity.y, (Ydirection * speed), 30)
 	else:
+		Walk.play()
 		velocity.y = move_toward(velocity.y, 0, 15)
 	
 	move_and_slide()
