@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ye8gf"]
 radius = 54.0093
 
-[node name="Player_Fox" type="CharacterBody2D"]
+[node name="Player_Fox" type="CharacterBody2D" groups=["Player_Controlled_Enemies"]]
 collision_layer = 2
 collision_mask = 57
 script = ExtResource("1_n2wdl")
