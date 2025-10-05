@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://xjdxdxagm5k8"]
+[gd_scene load_steps=7 format=3 uid="uid://xjdxdxagm5k8"]
 
 [ext_resource type="Texture2D" uid="uid://d036qxnobjh1w" path="res://TESTASSETSNAV/jungleTileset.png" id="1_78066"]
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="3_dx2x1"]
-[ext_resource type="PackedScene" uid="uid://cvwe72w8ld815" path="res://Scenes/Objects/gate_&_lever.tscn" id="4_5fdm8"]
-[ext_resource type="PackedScene" uid="uid://bbg7qbol6bdgc" path="res://Scenes/Objects/box.tscn" id="4_t385d"]
+[ext_resource type="PackedScene" uid="uid://dancxw65tes5o" path="res://TEST JOSHUA/Scenes/Enemies/enemy_cow.tscn" id="6_py5jp"]
 [ext_resource type="PackedScene" uid="uid://bns6i07mxnt3a" path="res://TEST JOSHUA/Scenes/Enemies/enemy_human.tscn" id="9_pbqf5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itixk"]
@@ -121,11 +120,25 @@ position = Vector2(-1187, -416)
 collision_layer = 19
 collision_mask = 23
 
-[node name="Gate & Lever" parent="." instance=ExtResource("4_5fdm8")]
-position = Vector2(-856, -292)
-
-[node name="Box" parent="." instance=ExtResource("4_t385d")]
-position = Vector2(-622, -371)
-
 [node name="Enemy_Human" parent="." instance=ExtResource("9_pbqf5")]
-position = Vector2(-1247, -202)
+position = Vector2(-1296, -260)
+
+[node name="StateMachine" parent="Enemy_Human" index="2" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("EnemyInfected")
+
+[node name="Enemy_Human2" parent="." instance=ExtResource("9_pbqf5")]
+position = Vector2(-1037, -243)
+
+[node name="Enemy_Human3" parent="." instance=ExtResource("9_pbqf5")]
+position = Vector2(-1110, -195)
+
+[node name="Enemy_Human4" parent="." instance=ExtResource("9_pbqf5")]
+position = Vector2(-1256, -195)
+
+[node name="Enemy_Human5" parent="." instance=ExtResource("9_pbqf5")]
+position = Vector2(-1178, -145)
+
+[node name="Enemy_Cow" parent="." instance=ExtResource("6_py5jp")]
+position = Vector2(-940, -273)
+
+[editable path="Enemy_Human"]

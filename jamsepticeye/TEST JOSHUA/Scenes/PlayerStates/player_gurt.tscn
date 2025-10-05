@@ -13,8 +13,8 @@ radius = 48.0104
 radius = 35.0
 
 [node name="Player_Gurt" type="CharacterBody2D" groups=["Gurt"]]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
+collision_mask = 33
 script = ExtResource("1_cxo5h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -27,6 +27,8 @@ position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_lqisk")
 
 [node name="Infection_Radius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Infection_Radius"]
 position = Vector2(-1, 0)

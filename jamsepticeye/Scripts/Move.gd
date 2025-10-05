@@ -4,6 +4,7 @@ class_name EnemyWalk
 @export var enemy : CharacterBody2D
 @export var move_speed := 10.0
 
+var state_name = "Move"
 var player : CharacterBody2D
 var move_direction : Vector2
 var wander_time : float
@@ -11,6 +12,9 @@ var wander_time : float
 func randomize_wander():
 	move_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 	wander_time = randf_range(4, 7)
+
+func infect():
+	Transitioned.emit(self, 'enemyinfected')
 
 func Enter():
 	player = get_tree().get_first_node_in_group("Gurt")
