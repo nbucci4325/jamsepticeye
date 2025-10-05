@@ -19,11 +19,7 @@ func _ready():
 			child.modulate = normal_color
 			child.mouse_entered.connect(func(): _start_fungal_hover(child))
 			child.mouse_exited.connect(func(): _stop_fungal_hover(child))
-
-func update_radius(value: float, mat: ShaderMaterial):
-	if mat:
-		mat.set_shader_parameter("radius", value)
-		
+			
 func _stop_fungal_hover(button: Button):
 	if active_tweens.has(button):
 		active_tweens[button].kill()
@@ -32,21 +28,11 @@ func _stop_fungal_hover(button: Button):
 	button.rotation_degrees = 0
 	button.modulate = normal_color
 
-	# Stop particle emission
-	var particles = button.get_node_or_null("CPUParticles2D")
-	if particles:
-		particles.emitting = false
-
 # Start hover pulse and particle emission
 func _start_fungal_hover(button: Button):
 	if active_tweens.has(button):
 		return
 	_pulse_step(button)
-
-	# Start particle emission
-	var particles = button.get_node_or_null("CPUParticles2D")
-	if particles:
-		particles.emitting = true
 
 	# Trigger small neighbor spread
 	for neighbor in get_children():

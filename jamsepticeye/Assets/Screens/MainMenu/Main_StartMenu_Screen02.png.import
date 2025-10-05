@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp118228rkd1n"
-path="res://.godot/imported/Infected_Human.png-9c5ad44c14acef6c806bf2a2840cef80.ctex"
+uid="uid://csnspgekv4t6d"
+path="res://.godot/imported/Main_StartMenu_Screen02.png-5d12c9e4ec9f3d5125cdb3288ae69934.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Human.png"
-dest_files=["res://.godot/imported/Infected_Human.png-9c5ad44c14acef6c806bf2a2840cef80.ctex"]
+source_file="res://Assets/Screens/MainMenu/Main_StartMenu_Screen02.png"
+dest_files=["res://.godot/imported/Main_StartMenu_Screen02.png-5d12c9e4ec9f3d5125cdb3288ae69934.ctex"]
 
 [params]
 

@@ -1,11 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv8c32ujaw355"]
+[gd_scene load_steps=15 format=3 uid="uid://bv8c32ujaw355"]
 
 [ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_o53sk"]
 [ext_resource type="Script" uid="uid://cps6uh5a6ykpg" path="res://Scripts/main_menu.gd" id="2_tik7u"]
+[ext_resource type="Texture2D" uid="uid://d3fotiiji7q5h" path="res://Assets/Screens/MainMenu/Main_StartMenu_Screen01.png" id="3_q0nr5"]
 [ext_resource type="Script" uid="uid://b47m7moovdv8j" path="res://Scenes/UI/MainMenu/hover.gd" id="3_tik7u"]
+[ext_resource type="Texture2D" uid="uid://bstlf1yckqaas" path="res://Assets/Screens/MainMenu/Main_Menu_Logo.png" id="3_xwepa"]
 [ext_resource type="Texture2D" uid="uid://bm3wa0hdcrwtt" path="res://Assets/Themes/Main_Menu_Button.png" id="4_bw8va"]
+[ext_resource type="Texture2D" uid="uid://cxbyxd8q4mgxo" path="res://Assets/Screens/MainMenu/Main_StartMenu_Screen03.png" id="4_optwy"]
 [ext_resource type="AudioStream" uid="uid://cvr4xitf2h0wx" path="res://Assets/Sounds/Menu_Score.wav" id="5_608ul"]
+[ext_resource type="Script" uid="uid://brd1w68p0nsry" path="res://Scripts/foreground.gd" id="5_cdm4t"]
+[ext_resource type="Texture2D" uid="uid://csnspgekv4t6d" path="res://Assets/Screens/MainMenu/Main_StartMenu_Screen02.png" id="6_eu4hu"]
 [ext_resource type="AudioStream" uid="uid://dwrp3n1lrknrp" path="res://Assets/Sounds/Menu_Button_Click.mp3" id="6_u8afo"]
+[ext_resource type="Texture2D" uid="uid://b22317jhx5rgi" path="res://Assets/Screens/MainMenu/Main_StartMenu_Screen04.png" id="7_m5ruw"]
+[ext_resource type="Script" uid="uid://dqflcv3dqjpf" path="res://Scripts/clouds.gd" id="7_optwy"]
+[ext_resource type="Script" uid="uid://c63gsbv7usw1b" path="res://Scripts/gurt.gd" id="9_cdm4t"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -18,14 +26,29 @@ grow_vertical = 2
 theme = ExtResource("1_o53sk")
 script = ExtResource("2_tik7u")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.321569, 0.0980392, 0.709804, 1)
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-128, -108)
+
+[node name="Background" type="Sprite2D" parent="Node2D"]
+position = Vector2(1058, 622)
+texture = ExtResource("3_q0nr5")
+
+[node name="Foreground" type="Sprite2D" parent="Node2D"]
+position = Vector2(1058, 622)
+texture = ExtResource("4_optwy")
+script = ExtResource("5_cdm4t")
+move_force = 2
+
+[node name="Clouds" type="Sprite2D" parent="Node2D"]
+position = Vector2(1058, 622)
+texture = ExtResource("6_eu4hu")
+script = ExtResource("7_optwy")
+
+[node name="Gurt" type="Sprite2D" parent="Node2D"]
+position = Vector2(1058, 622)
+texture = ExtResource("7_m5ruw")
+script = ExtResource("9_cdm4t")
+move_force = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -43,13 +66,10 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 196
-text = "Placeholder"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("3_xwepa")
 
 [node name="Buttons" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl5i4nwhpvekn"]
+[gd_scene load_steps=5 format=3 uid="uid://cl5i4nwhpvekn"]
 
 [ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_j34j3"]
 [ext_resource type="Script" uid="uid://dnskkoyj8f03c" path="res://Scripts/credits_menu.gd" id="2_vy407"]
 [ext_resource type="Texture2D" uid="uid://bm3wa0hdcrwtt" path="res://Assets/Themes/Main_Menu_Button.png" id="3_q61fy"]
+[ext_resource type="Texture2D" uid="uid://bstlf1yckqaas" path="res://Assets/Screens/MainMenu/Main_Menu_Logo.png" id="3_r1tyh"]
 
 [node name="CreditsMenu" type="Control"]
 process_mode = 3
@@ -15,42 +16,75 @@ grow_vertical = 2
 theme = ExtResource("1_j34j3")
 script = ExtResource("2_vy407")
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 50
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -459.0
+offset_top = -1.9999999
+offset_right = 666.0
+offset_bottom = 343.0
+grow_horizontal = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_r1tyh")
+stretch_mode = 3
+
+[node name="Credits" type="Label" parent="."]
 z_index = 60
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -540.0
-offset_bottom = 236.0
+offset_left = 141.0
+offset_top = -456.0
+offset_right = -141.0
+offset_bottom = 441.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 131
-text = "CREDITS GO HERE"
+theme_override_font_sizes/font_size = 40
+text = "Story created by all
+
+SYSTEMS & LOGIC                                            Navin Gunaratnam (GunaratnamNavin)
+SOUND PROGRAMMING                                                                                               Sky
+UI/UX, SCREENS & SETTINGS                                                                        Nico Buccilli
+CHARACTER PROGRAMMING                                                 Joshua Rose (DrDutchenfoo)
+
+
+LEVEL DESIGN & IMPLEMENTATION                                          Matteo Buccilli (Mecimine)
+
+
+ENVIORNMENT & ENEMY DESIGN                                    Gamro, Cloey Olsen (the Gl!tch)
+CHARACTER & ENEMY DESIGN                                                                              BAILBECK
+UI/UX                                                                                                           knightantei
+SOUNDS                                                                                    Cloey Olsen (TheGl!tch)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LinkButton" type="LinkButton" parent="."]
+top_level = true
 z_index = 130
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = 303.0
-offset_right = 218.0
-offset_bottom = 344.0
+anchors_preset = -1
+anchor_left = 0.49
+anchor_top = 0.81200004
+anchor_right = 0.49
+anchor_bottom = 0.81200004
+offset_left = -114.80005
+offset_top = -14.960022
+offset_right = 119.69995
+offset_bottom = 22.039978
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 46
 text = "AUDIO ASSETS"
 underline = 1
-uri = "https://docs.godotengine.org/en/latest/tutorials/animation/playing_videos.html"
+uri = "https://docs.google.com/document/d/1qwmYf86MeH8N2UJxiwWKMHz2HTf4PR9U9CH6bRrYn98/edit?usp=sharing"
 
 [node name="Return" type="Button" parent="."]
+top_level = true
 z_index = 95
 layout_mode = 1
 anchors_preset = 7
@@ -58,13 +92,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -149.0
-offset_top = -175.0
-offset_right = 490.0
-offset_bottom = 47.0
+offset_left = -146.0
+offset_top = -173.0
+offset_right = 493.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.45, 0.45)
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 131
 text = "RETURN"
 icon = ExtResource("3_q61fy")
 flat = true
@@ -75,9 +110,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.25490198, 0.44705883, 0.654902, 1)
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]
-[connection signal="pressed" from="Return" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
