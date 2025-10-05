@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var all_interactions = []
 @onready var label: Label = $InteractionComponets/InteractionArea/Label
 @onready var gate = get_tree().get_first_node_in_group("Gate")
-
+@onready var death = get_tree().get_first_node_in_group("deathzone")
 
 const Player_Rat = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_rat.tscn")
 const Player_Frog = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_frog.tscn")
@@ -25,6 +25,10 @@ func _ready():
 	update_interactions()
 
 func _physics_process(delta: float) -> void:
+	
+	if HealthManager.player_health == 0:
+		death.killPlayer()
+		HealthManager.refresh_health()
 	
 	if Input.is_action_just_pressed("Action"):
 		execute_interaction()
@@ -120,3 +124,8 @@ func delete_gate():
 	if gate_exsists:
 		gate.queue_free()
 		gate_exsists = false
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Humans") or body.is_in_group("Cows"):
+		HealthManager.reduce_health()

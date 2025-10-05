@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnaya"]
 size = Vector2(135, 156)
 
-[node name="deathzone" type="Area2D"]
+[node name="deathzone" type="Area2D" groups=["deathzone"]]
 script = ExtResource("1_y6dw1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
