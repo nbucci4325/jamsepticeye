@@ -1,30 +1,56 @@
-extends CharacterBody2D 
+extends CharacterBody2D
 
 const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 
 const speed = 120.0
 
+const jump_speed = 300.0
+var is_jumping = false
+var can_jump = true
+
+var jump_dirX
+var jump_dirY
+
 func _physics_process(delta: float) -> void:
 	
-	var Xdirection := Input.get_axis("LEFT","RIGHT")
-	if Xdirection:
-		velocity.x = move_toward(velocity.x, (Xdirection * speed), 30)
-	else:
-		velocity.x = move_toward(velocity.x, 0, 15)
+	if Input.is_action_just_pressed("Action"):
+		is_jumping = true
+		velocity.x = 0
+		velocity.y = 0
+		Action()
 	
-	var Ydirection := Input.get_axis("UP","DOWN")
-	if Ydirection:
-		velocity.y = move_toward(velocity.y, (Ydirection * speed), 30)
-	else:
-		velocity.y = move_toward(velocity.y, 0, 15)
+	if !is_jumping:
+		var Xdirection := Input.get_axis("LEFT","RIGHT")
+		if Xdirection:
+			velocity.x = move_toward(velocity.x, (Xdirection * speed), 30)
+			jump_dirX = Xdirection
+		else:
+			velocity.x = move_toward(velocity.x, 0, 15)
+			if jump_dirY != 0:
+				jump_dirX = 0
+		
+		var Ydirection := Input.get_axis("UP","DOWN")
+		if Ydirection:
+			velocity.y = move_toward(velocity.y, (Ydirection * speed), 30)
+			jump_dirY = Ydirection
+		else:
+			velocity.y = move_toward(velocity.y, 0, 15)
+			if jump_dirX != 0:
+				jump_dirY = 0
 	
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("Infect"):
 		abandon_host(self.position)
 
-func Action(): #Hop
-	pass
+func Action(): #Jump
+	await get_tree().create_timer(0.7).timeout
+	set_collision_mask_value(4, false) 
+	velocity = Vector2(jump_speed * jump_dirX, jump_speed * jump_dirY)
+	await get_tree().create_timer(0.5).timeout
+	is_jumping = false
+	velocity = Vector2(0,0)
+	set_collision_mask_value(4, true) 
 
 func abandon_host(position):
 	var spore = get_parent().get_node("Player_Gurt")
