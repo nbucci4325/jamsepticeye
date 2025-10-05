@@ -8,7 +8,8 @@ size = Vector2(31, 384)
 
 [node name="Gate & Lever" type="Node2D"]
 
-[node name="Gate" type="Area2D" parent="." groups=["Gate"]]
+[node name="Gate" type="CharacterBody2D" parent="." groups=["Gate"]]
+collision_mask = 38
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate"]
 position = Vector2(-0.5, -1)
