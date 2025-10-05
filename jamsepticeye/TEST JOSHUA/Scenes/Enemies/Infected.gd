@@ -1,7 +1,7 @@
 extends State
 class_name EnemyInfected
 
-@onready var sprite_2d: Sprite2D = $"../../Sprite2D"
+@onready var sprite_2d: AnimatedSprite2D = $"../../Sprite2D"
 @export var enemy : CharacterBody2D
 @export var move_speed := 10.0
 @export var death_timer := 10.0

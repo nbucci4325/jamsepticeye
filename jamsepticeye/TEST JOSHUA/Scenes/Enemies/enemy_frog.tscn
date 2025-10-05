@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://qpqgpp14t00g"]
 
-[ext_resource type="Script" uid="uid://dau3bbakiax6" path="res://TEST JOSHUA/Scenes/Enemies/frog.gd" id="1_3keng"]
-[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="2_1nv0f"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/frog.gd" id="1_3keng"]
+[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_1nv0f"]
 [ext_resource type="Texture2D" uid="uid://cjhlq4iyhrpoh" path="res://Assets/Sprites/Regular/NPC_Frog_Sprite_Sheet.png" id="2_rxn80"]
-[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="3_tsdun"]
-[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="4_yv4or"]
+[ext_resource type="Script" path="res://Scripts/Idle.gd" id="3_tsdun"]
+[ext_resource type="Script" path="res://Scripts/Move.gd" id="4_yv4or"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mwsjx"]
 atlas = ExtResource("2_rxn80")
