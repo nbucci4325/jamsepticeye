@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_52a5u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Searching_Radius"]
 shape = SubResource("CircleShape2D_ye8gf")
 
-[node name="HealthTimer" type="Timer" parent="."]
+[node name="Health_Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
+[connection signal="timeout" from="Health_Timer" to="." method="_on_health_timer_timeout"]
