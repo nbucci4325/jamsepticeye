@@ -42,6 +42,7 @@ Humans=""
 Gurt=""
 Player_horse=""
 Gate=""
+DestructableFence=""
 
 [input]
 

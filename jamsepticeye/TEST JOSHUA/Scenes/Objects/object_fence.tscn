@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpyev47ee8urj"]
+
+[ext_resource type="Texture2D" uid="uid://bhjlxdvyrdlcq" path="res://TEST JOSHUA/Placeholder Assets/Other/Fence.png" id="1_38m7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_060bp"]
+
+[node name="Object_Fence" type="Area2D" groups=["DestructableFence"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_38m7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_060bp")
