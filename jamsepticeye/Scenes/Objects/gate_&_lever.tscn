@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvwe72w8ld815"]
 
 [ext_resource type="Texture2D" uid="uid://ba33q7tycrsc7" path="res://TESTASSETSNAV/tumblr_inline_o03qftZuni1r4q36m_400.png" id="1_vdmc4"]
-[ext_resource type="PackedScene" uid="uid://div2vj2j6wwk3" path="res://TESTASSETSNAV/interaction_area.tscn" id="2_p184w"]
+[ext_resource type="PackedScene" uid="uid://div2vj2j6wwk3" path="res://Scenes/Objects/interaction_area.tscn" id="2_p184w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_te3rg"]
 size = Vector2(31, 384)

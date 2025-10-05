@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://hf1y4cpwa047"]
+[gd_scene load_steps=6 format=3 uid="uid://hf1y4cpwa047"]
 
 [ext_resource type="Texture2D" uid="uid://b0cwiv1q5ylf7" path="res://TEST JOSHUA/Placeholder Assets/Enemies/Rat.png" id="1_cei37"]
+[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_8eddw"]
+[ext_resource type="Script" path="res://Scripts/Move.gd" id="3_iypsb"]
+[ext_resource type="Script" path="res://Scripts/Idle.gd" id="4_ib7gi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5odej"]
 radius = 3.0
 height = 18.0
 
-[node name="Enemy_Rat" type="Area2D" groups=["Infectables", "Rats"]]
+[node name="Enemy_Rat" type="CharacterBody2D" groups=["Infectables", "Rats"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -15,3 +18,15 @@ texture = ExtResource("1_cei37")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5odej")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_8eddw")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyWalk" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_iypsb")
+enemy = NodePath("../..")
+
+[node name="EnemyIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_ib7gi")
+enemy = NodePath("../..")

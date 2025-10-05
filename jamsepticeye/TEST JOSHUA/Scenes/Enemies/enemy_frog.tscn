@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://qpqgpp14t00g"]
+[gd_scene load_steps=7 format=3 uid="uid://qpqgpp14t00g"]
 
+[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/frog.gd" id="1_3keng"]
 [ext_resource type="Texture2D" uid="uid://78cfimq7wlds" path="res://TEST JOSHUA/Placeholder Assets/Enemies/Frog.png" id="1_ts15d"]
+[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_1nv0f"]
+[ext_resource type="Script" path="res://Scripts/Idle.gd" id="3_tsdun"]
+[ext_resource type="Script" path="res://Scripts/Move.gd" id="4_yv4or"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qm6pn"]
 radius = 9.0
 
-[node name="Enemy_Frog" type="Area2D" groups=["Frogs", "Infectables"]]
+[node name="Enemy_Frog" type="CharacterBody2D" groups=["Frogs", "Infectables"]]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("1_3keng")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -15,3 +20,15 @@ texture = ExtResource("1_ts15d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qm6pn")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_1nv0f")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_tsdun")
+enemy = NodePath("../..")
+
+[node name="EnemyWalk" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_yv4or")
+enemy = NodePath("../..")

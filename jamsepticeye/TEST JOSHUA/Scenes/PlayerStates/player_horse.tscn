@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c20ac2pj0ubqb"]
+[gd_scene load_steps=5 format=3 uid="uid://c20ac2pj0ubqb"]
 
 [ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_horse.gd" id="1_4esl0"]
 [ext_resource type="Texture2D" uid="uid://cyk6ae8jdk5f2" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Horse.png" id="1_vyskg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x1ps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wejp"]
+size = Vector2(22, 22)
 
 [node name="Player_Horse" type="CharacterBody2D"]
 collision_layer = 3
@@ -16,3 +19,8 @@ texture = ExtResource("1_vyskg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0x1ps")
+
+[node name="DestructionBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestructionBox"]
+shape = SubResource("RectangleShape2D_0wejp")
