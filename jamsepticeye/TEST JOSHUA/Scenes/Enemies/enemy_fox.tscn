@@ -9,6 +9,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ustfa"]
 
 [node name="Enemy_Fox" type="CharacterBody2D" groups=["Foxes", "Infectables"]]
+collision_layer = 32
+collision_mask = 35
 script = ExtResource("1_j3htd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

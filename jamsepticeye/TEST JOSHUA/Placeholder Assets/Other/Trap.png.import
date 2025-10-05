@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjej5wcqqhp4r"
-path="res://.godot/imported/Cave_Tunnel_DeadEnd.png-f79d9fd9660c8803852b3cb11bde0c9b.ctex"
+uid="uid://bandnwd4tx1xm"
+path="res://.godot/imported/Trap.png-f0463e92be4340f49374b8a1f15ecf4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/Cave/Base/Cave_Tunnel_DeadEnd.png"
-dest_files=["res://.godot/imported/Cave_Tunnel_DeadEnd.png-f79d9fd9660c8803852b3cb11bde0c9b.ctex"]
+source_file="res://TEST JOSHUA/Placeholder Assets/Other/Trap.png"
+dest_files=["res://.godot/imported/Trap.png-f0463e92be4340f49374b8a1f15ecf4e.ctex"]
 
 [params]
 

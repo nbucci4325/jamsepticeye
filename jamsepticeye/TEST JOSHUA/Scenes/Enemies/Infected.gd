@@ -6,6 +6,7 @@ class_name EnemyInfected
 @export var move_speed := 10.0
 @export var death_timer := 10.0
 
+var state_name = "Infected"
 var player : CharacterBody2D
 var move_direction : Vector2
 var wander_time : float

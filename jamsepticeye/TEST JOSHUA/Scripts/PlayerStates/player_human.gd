@@ -1,8 +1,12 @@
 extends CharacterBody2D 
 
 const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
+@onready var infection_radius: Area2D = $"Infection Radius"
 
 const speed = 120.0 #Tweak speed to desired speed
+
+func _ready() -> void:
+	infection_radius.set_process_mode(Node.PROCESS_MODE_DISABLED)
 
 func _physics_process(delta: float) -> void:
 	
@@ -20,11 +24,16 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	if Input.is_action_just_pressed("Action"):
+		Action()
+	
 	if Input.is_action_just_pressed("Infect"):
 		abandon_host(self.position)
 
-func Action(): #Human thingy?
-	pass
+func Action():
+	infection_radius.set_process_mode(Node.PROCESS_MODE_INHERIT)
+	await get_tree().create_timer(2).timeout
+	infection_radius.set_process_mode(Node.PROCESS_MODE_DISABLED)
 
 func abandon_host(position):
 	var spore = get_parent().get_node("Player_Gurt")
@@ -32,11 +41,13 @@ func abandon_host(position):
 	spore.infecting_state = false
 	var parent = get_parent()
 	queue_free()  
-	
+					 
+
 	var corpse = Shroom.instantiate()
 	corpse.position = position
-	parent.add_child(corpse)                    
+	parent.add_child(corpse)   
 
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_infection_radius_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Humans"):
+		if body.state.state_name != "Infected":
+			body.state.infect()

@@ -11,6 +11,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xicrv"]
 
 [node name="Enemy_Human" type="CharacterBody2D" groups=["Humans", "Infectables"]]
+collision_layer = 32
+collision_mask = 35
 script = ExtResource("1_yacjl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,7 +24,7 @@ shape = SubResource("RectangleShape2D_xicrv")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_e18eh")
-initial_state = NodePath("EnemyInfected")
+initial_state = NodePath("EnemyIdle")
 
 [node name="EnemyIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_i0xti")
