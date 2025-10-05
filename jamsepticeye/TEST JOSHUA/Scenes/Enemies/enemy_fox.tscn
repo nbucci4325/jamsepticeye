@@ -1,10 +1,112 @@
-[gd_scene load_steps=7 format=3 uid="uid://eek7qhledwbe"]
+[gd_scene load_steps=20 format=3 uid="uid://eek7qhledwbe"]
 
-[ext_resource type="Texture2D" uid="uid://dh8flovxv61wh" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Fox.png" id="1_ihlx6"]
-[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/fox.gd" id="1_j3htd"]
-[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="3_p3pev"]
-[ext_resource type="Script" path="res://Scripts/Idle.gd" id="4_saiis"]
-[ext_resource type="Script" path="res://Scripts/Move.gd" id="5_vrml4"]
+[ext_resource type="Script" uid="uid://br8kribua63j4" path="res://TEST JOSHUA/Scenes/Enemies/fox.gd" id="1_j3htd"]
+[ext_resource type="Texture2D" uid="uid://cxnpc3m2qaqpw" path="res://Assets/Sprites/Regular/NPC_Fox_Sprite_Sheet.png" id="2_cue0o"]
+[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="3_p3pev"]
+[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="4_saiis"]
+[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="5_vrml4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrsec"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(0, 0, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w5r8"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(27, 0, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md2au"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(54, 0, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gye17"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(81, 0, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d6tv"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(0, 44, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aniq"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(27, 44, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tlg6"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(54, 44, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1kfs"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(81, 44, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v2t8"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(0, 66, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vvf6"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(27, 66, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0040"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(54, 66, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46uni"]
+atlas = ExtResource("2_cue0o")
+region = Rect2(81, 66, 27, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ttmtn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrsec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w5r8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md2au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gye17")
+}],
+"loop": true,
+"name": &"Fox_Walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d6tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aniq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tlg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1kfs")
+}],
+"loop": true,
+"name": &"Fox_Walk_Down",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v2t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vvf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0040")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46uni")
+}],
+"loop": true,
+"name": &"Fox_Walk_Up",
+"speed": 7.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ustfa"]
 
@@ -13,9 +115,12 @@ collision_layer = 32
 collision_mask = 35
 script = ExtResource("1_j3htd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_ihlx6")
+sprite_frames = SubResource("SpriteFrames_ttmtn")
+animation = &"Fox_Walk_Up"
+frame = 1
+frame_progress = 0.9900548
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ustfa")

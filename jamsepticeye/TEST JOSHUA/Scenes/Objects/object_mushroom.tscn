@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dypaqlmd0mr3g"]
+[gd_scene load_steps=4 format=3 uid="uid://dypaqlmd0mr3g"]
 
-[ext_resource type="Texture2D" uid="uid://6xx1p4a8yw8i" path="res://TEST JOSHUA/Placeholder Assets/Other/Mushroom.png" id="1_sc5ou"]
+[ext_resource type="Texture2D" uid="uid://cmqfx5i1pytj3" path="res://Assets/Tiles/PC_SludgeZone.png" id="1_ax062"]
+[ext_resource type="Texture2D" uid="uid://8o0pfww73dmn" path="res://Assets/Sprites/Player_MushroomRemains_Sheet.png" id="2_j4q0q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wuuvg"]
 radius = 6.0
 
 [node name="Object_Mushroom" type="Area2D"]
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("1_ax062")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_sc5ou")
+texture = ExtResource("2_j4q0q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wuuvg")

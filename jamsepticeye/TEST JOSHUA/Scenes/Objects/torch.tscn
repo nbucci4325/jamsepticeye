@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://btncvfrp0qoq2"]
+
+[ext_resource type="Texture2D" uid="uid://crssc2c3318aj" path="res://Assets/Sprites/Torch_Base.png" id="1_aoamv"]
+[ext_resource type="Texture2D" uid="uid://dnfh5168736qx" path="res://Assets/Sprites/Torch_Flame_Sprite.png" id="2_gywth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p5v5"]
+atlas = ExtResource("2_gywth")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1haru"]
+atlas = ExtResource("2_gywth")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3yjp"]
+atlas = ExtResource("2_gywth")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15yiq"]
+atlas = ExtResource("2_gywth")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1fx1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p5v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1haru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3yjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15yiq")
+}],
+"loop": true,
+"name": &"Fire",
+"speed": 10.0
+}]
+
+[node name="Torch" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aoamv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_1fx1o")
+animation = &"Fire"
+frame = 2
+frame_progress = 0.5711675

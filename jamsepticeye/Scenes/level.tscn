@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=3 uid="uid://8uxxoqthskt1"]
+[gd_scene load_steps=172 format=3 uid="uid://8uxxoqthskt1"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2lp24"]
 [ext_resource type="Texture2D" uid="uid://d2rqx2dw5yxrd" path="res://Assets/Tiles/White_Tile.png" id="1_6phgx"]
@@ -50,7 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://diq0lg0dhgfgf" path="res://Assets/Tiles/Cave/Cave_Floor_Spikes_No_Lines.png" id="39_1wnhp"]
 [ext_resource type="Texture2D" uid="uid://d1cd6md3frnq7" path="res://Assets/Tiles/Forest/Back/Forest_Tree_Pine.png" id="39_ujtm6"]
 [ext_resource type="Texture2D" uid="uid://dur6drnywi3ig" path="res://Assets/Tiles/Forest/Mid/Forest_Fence_TL.png" id="40_r74g4"]
-[ext_resource type="Texture2D" uid="uid://cmqfx5i1pytj3" path="res://Assets/Tiles/Cave/PC_SludgeZone.png" id="40_y6tmo"]
+[ext_resource type="Texture2D" uid="uid://cmqfx5i1pytj3" path="res://Assets/Tiles/PC_SludgeZone.png" id="40_y6tmo"]
 [ext_resource type="Texture2D" uid="uid://dwbh3aydnyidi" path="res://Assets/Tiles/Town/Town_CobblePath_Trans.png" id="41_1wnhp"]
 [ext_resource type="Texture2D" uid="uid://b3u1tplyyo11u" path="res://Assets/Tiles/Forest/Mid/Forest_Fence_TR.png" id="41_6dbqg"]
 [ext_resource type="Texture2D" uid="uid://bb7jdwxstm4hr" path="res://Assets/Tiles/Forest/Mid/Forest_Fence_VerR.png" id="42_jcoft"]
@@ -1992,6 +1992,8 @@ sources/2 = SubResource("TileSetAtlasSource_qxetb")
 sources/3 = SubResource("TileSetAtlasSource_udwa7")
 sources/4 = SubResource("TileSetAtlasSource_fwhgd")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yv4qw"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoc0b"]
 size = Vector2(1513, 1772)
 
@@ -2052,28 +2054,34 @@ position = Vector2(179, -271)
 [node name="Camera2D" type="Camera2D" parent="Player/Player_Gurt"]
 zoom = Vector2(3, 3)
 
+[node name="Playerpos" type="Area2D" parent="Player/Player_Gurt/Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Player_Gurt/Camera2D/Playerpos"]
+shape = SubResource("CircleShape2D_yv4qw")
+
 [node name="CaveArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CaveArea"]
 position = Vector2(746.5, -876)
 shape = SubResource("RectangleShape2D_uoc0b")
 
 [node name="CaveMusic" type="AudioStreamPlayer2D" parent="CaveArea"]
-position = Vector2(615, -390)
+position = Vector2(724, -717)
 stream = ExtResource("56_uoc0b")
+volume_db = 2.273
 bus = &"Music"
 
 [node name="CaveWaterD" type="AudioStreamPlayer2D" parent="CaveArea"]
+position = Vector2(724, -668)
 stream = ExtResource("58_ubg6v")
 bus = &"SFX"
 
 [node name="CaveFire" type="AudioStreamPlayer2D" parent="CaveArea"]
+position = Vector2(724, -668)
 stream = ExtResource("59_ht0u2")
 bus = &"SFX"
 
 [node name="ForestArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ForestArea"]
 position = Vector2(2511.5, -1281.5)
@@ -2086,11 +2094,11 @@ stream = ExtResource("57_2lp24")
 bus = &"Music"
 
 [node name="ForestBirds" type="AudioStreamPlayer2D" parent="ForestArea"]
+position = Vector2(2512, -1191)
 stream = ExtResource("62_icsqr")
 bus = &"SFX"
 
 [node name="FarmArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FarmArea"]
 position = Vector2(5539, -1191)
@@ -2098,14 +2106,16 @@ shape = SubResource("RectangleShape2D_v15qs")
 debug_color = Color(0.95678, 1.63645e-06, 0.538696, 0.419608)
 
 [node name="FarmMusic" type="AudioStreamPlayer2D" parent="FarmArea"]
+position = Vector2(5873, -1281)
 stream = ExtResource("58_v15qs")
+volume_db = 0.852
 bus = &"Music"
 
 [node name="FarmCows" type="AudioStreamPlayer2D" parent="FarmArea"]
+position = Vector2(5539, -1281)
 stream = ExtResource("63_23rfw")
 
 [node name="TownArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TownArea"]
 position = Vector2(8417.5, -1242.5)
@@ -2113,17 +2123,19 @@ shape = SubResource("RectangleShape2D_ubg6v")
 debug_color = Color(0.677135, 0.50582, 3.85046e-07, 0.419608)
 
 [node name="TownMusic" type="AudioStreamPlayer2D" parent="TownArea"]
+position = Vector2(8418, -1281)
 stream = ExtResource("59_ubg6v")
 bus = &"Music"
 
 [node name="TownTalking" type="AudioStreamPlayer2D" parent="TownArea"]
+position = Vector2(8418, -1281)
 stream = ExtResource("65_icsqr")
 
-[connection signal="body_entered" from="CaveArea" to="." method="_on_cave_area_body_entered"]
-[connection signal="body_exited" from="CaveArea" to="." method="_on_cave_area_body_exited"]
-[connection signal="body_entered" from="ForestArea" to="." method="_on_forest_area_body_entered"]
-[connection signal="body_exited" from="ForestArea" to="." method="_on_forest_area_body_exited"]
-[connection signal="body_entered" from="FarmArea" to="." method="_on_farm_area_body_entered"]
-[connection signal="body_exited" from="FarmArea" to="." method="_on_farm_area_body_exited"]
-[connection signal="body_entered" from="TownArea" to="." method="_on_town_area_body_entered"]
-[connection signal="body_exited" from="TownArea" to="." method="_on_town_area_body_exited"]
+[connection signal="area_entered" from="CaveArea" to="." method="_on_cave_area_area_entered"]
+[connection signal="area_exited" from="CaveArea" to="." method="_on_cave_area_area_exited"]
+[connection signal="area_entered" from="ForestArea" to="." method="_on_forest_area_area_entered"]
+[connection signal="area_exited" from="ForestArea" to="." method="_on_forest_area_area_exited"]
+[connection signal="area_entered" from="FarmArea" to="." method="_on_farm_area_area_entered"]
+[connection signal="area_exited" from="FarmArea" to="." method="_on_farm_area_area_exited"]
+[connection signal="area_entered" from="TownArea" to="." method="_on_town_area_area_entered"]
+[connection signal="area_exited" from="TownArea" to="." method="_on_town_area_area_exited"]

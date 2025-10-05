@@ -1,9 +1,111 @@
-[gd_scene load_steps=6 format=3 uid="uid://hf1y4cpwa047"]
+[gd_scene load_steps=19 format=3 uid="uid://hf1y4cpwa047"]
 
-[ext_resource type="Texture2D" uid="uid://b0cwiv1q5ylf7" path="res://TEST JOSHUA/Placeholder Assets/Enemies/Rat.png" id="1_cei37"]
-[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_8eddw"]
-[ext_resource type="Script" path="res://Scripts/Move.gd" id="3_iypsb"]
-[ext_resource type="Script" path="res://Scripts/Idle.gd" id="4_ib7gi"]
+[ext_resource type="Texture2D" uid="uid://h726pso7wba3" path="res://Assets/Sprites/Regular/NPC_Rat_Sprite_Sheet.png" id="1_6nm6m"]
+[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="2_8eddw"]
+[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="3_iypsb"]
+[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="4_ib7gi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0i4r"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(0, 22, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwqvp"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(27, 22, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqwub"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(54, 22, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdfub"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(81, 22, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw1vc"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(0, 44, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ke3u"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(27, 44, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y4e6"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(54, 44, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egbtc"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(81, 44, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5dov"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(0, 66, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35lvu"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(27, 66, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so5c0"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(54, 66, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajlxc"]
+atlas = ExtResource("1_6nm6m")
+region = Rect2(81, 66, 27, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2pgj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0i4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwqvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqwub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdfub")
+}],
+"loop": true,
+"name": &"Rat_Walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw1vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ke3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5y4e6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egbtc")
+}],
+"loop": true,
+"name": &"Rat_Walk_Down",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5dov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35lvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so5c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajlxc")
+}],
+"loop": true,
+"name": &"Rat_Walk_Up",
+"speed": 7.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5odej"]
 radius = 3.0
@@ -11,10 +113,12 @@ height = 18.0
 
 [node name="Enemy_Rat" type="CharacterBody2D" groups=["Infectables", "Rats"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0.5, 0)
-texture = ExtResource("1_cei37")
+sprite_frames = SubResource("SpriteFrames_k2pgj")
+animation = &"Rat_Walk_Up"
+frame_progress = 0.2635572
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5odej")

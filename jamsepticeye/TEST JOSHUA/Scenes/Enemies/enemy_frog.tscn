@@ -1,10 +1,65 @@
-[gd_scene load_steps=7 format=3 uid="uid://qpqgpp14t00g"]
+[gd_scene load_steps=14 format=3 uid="uid://qpqgpp14t00g"]
 
-[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/frog.gd" id="1_3keng"]
-[ext_resource type="Texture2D" uid="uid://78cfimq7wlds" path="res://TEST JOSHUA/Placeholder Assets/Enemies/Frog.png" id="1_ts15d"]
-[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_1nv0f"]
-[ext_resource type="Script" path="res://Scripts/Idle.gd" id="3_tsdun"]
-[ext_resource type="Script" path="res://Scripts/Move.gd" id="4_yv4or"]
+[ext_resource type="Script" uid="uid://dau3bbakiax6" path="res://TEST JOSHUA/Scenes/Enemies/frog.gd" id="1_3keng"]
+[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="2_1nv0f"]
+[ext_resource type="Texture2D" uid="uid://cjhlq4iyhrpoh" path="res://Assets/Sprites/Regular/NPC_Frog_Sprite_Sheet.png" id="2_rxn80"]
+[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="3_tsdun"]
+[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="4_yv4or"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwsjx"]
+atlas = ExtResource("2_rxn80")
+region = Rect2(0, 0, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to2if"]
+atlas = ExtResource("2_rxn80")
+region = Rect2(27, 0, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7ynv"]
+atlas = ExtResource("2_rxn80")
+region = Rect2(54, 0, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8fr5"]
+atlas = ExtResource("2_rxn80")
+region = Rect2(81, 0, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raky5"]
+atlas = ExtResource("2_rxn80")
+region = Rect2(0, 22, 27, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evw0s"]
+atlas = ExtResource("2_rxn80")
+region = Rect2(27, 22, 27, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0b1mu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwsjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to2if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7ynv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8fr5")
+}],
+"loop": true,
+"name": &"Frog_Walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raky5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evw0s")
+}],
+"loop": true,
+"name": &"Frog_Walk_Virtical",
+"speed": 3.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qm6pn"]
 radius = 9.0
@@ -14,9 +69,11 @@ collision_layer = 32
 collision_mask = 35
 script = ExtResource("1_3keng")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_ts15d")
+sprite_frames = SubResource("SpriteFrames_0b1mu")
+animation = &"Frog_Walk"
+frame_progress = 0.621856
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qm6pn")
