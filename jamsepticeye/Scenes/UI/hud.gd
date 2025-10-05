@@ -9,5 +9,5 @@ var decrement = 5
 
 func update_UI():
 	if HealthManager.reduce_health():
-		health.texture = load("res://Assets/Screens/UI/HUD_Health_Bar" + str(decrement) + ".png")
+		health.texture = load("res://Assets/Screens/UI/HUD_Health_Bar0" + str(decrement) + ".png")
 		decrement -= 1
