@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb2duv0bvnbku"
-path="res://.godot/imported/Cave_Wall.png-49cafc760409c13d253a6b626892d376.ctex"
+uid="uid://diq0lg0dhgfgf"
+path="res://.godot/imported/Cave_Floor_Spikes_No_Lines.png-11e0049473fdeeb05529a937fe457e70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/Cave/Base/Cave_Wall.png"
-dest_files=["res://.godot/imported/Cave_Wall.png-49cafc760409c13d253a6b626892d376.ctex"]
+source_file="res://Assets/Tiles/Cave/Cave_Floor_Spikes_No_Lines.png"
+dest_files=["res://.godot/imported/Cave_Floor_Spikes_No_Lines.png-11e0049473fdeeb05529a937fe457e70.ctex"]
 
 [params]
 

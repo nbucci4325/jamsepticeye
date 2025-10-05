@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsdkfshwsdmv1"]
+
+[ext_resource type="Script" path="res://check_point_manager.gd" id="1_2q0wg"]
+
+[node name="CheckPointManager" type="Node" groups=["checkpointManager"]]
+script = ExtResource("1_2q0wg")

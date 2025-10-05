@@ -28,10 +28,12 @@ func btn_hovered(button: Button):
 		start_tween(button, "scale", Vector2.ONE, tween_duration)
 
 func _on_music_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(value))
+	var normalized := value / 100.0
+	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(normalized))
 	
 func _on_sfx_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(value))
+	var normalized := value / 100.0
+	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(normalized))
 
 func focus_button() -> void:
 	if buttons_v_box:
@@ -57,7 +59,3 @@ func _on_quit_pressed() -> void:
 	Click.play()
 	await get_tree().create_timer(1).timeout
 	get_tree().quit()
-
-
-func _on_check_button_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.

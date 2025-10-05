@@ -2,38 +2,12 @@
 
 [ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_f4y0c"]
 [ext_resource type="Script" uid="uid://dqiehh3u0dx2a" path="res://Scripts/game_menu.gd" id="2_f4y0c"]
+[ext_resource type="Script" uid="uid://quqc5fua3y1c" path="res://Scenes/UI/GameMenu/buttons_v_box.gd" id="3_actnc"]
 [ext_resource type="Texture2D" uid="uid://dqyp1t1bdoygf" path="res://Assets/Themes/Main_Menu_Button02.png" id="3_nte6v"]
 [ext_resource type="AudioStream" uid="uid://cvr4xitf2h0wx" path="res://Assets/Sounds/Menu_Score.wav" id="4_v8231"]
 [ext_resource type="AudioStream" uid="uid://dwrp3n1lrknrp" path="res://Assets/Sounds/Menu_Button_Click.mp3" id="5_actnc"]
 
-[sub_resource type="Shader" id="Shader_v8231"]
-code = "shader_type canvas_item;
-
-
-uniform float offset: hint_range(0.0, 10.0);
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
-
-
-void fragment() {
-	vec2 uv = UV;
-	vec2 halfpixel = SCREEN_PIXEL_SIZE / 2.0;
-	
-	vec4 sum = texture(SCREEN_TEXTURE, uv + vec2(-halfpixel.x * 2.0, 0.0) * offset);
-	sum += texture(SCREEN_TEXTURE, uv + vec2(-halfpixel.x, halfpixel.y) * offset) * 2.0;
-	sum += texture(SCREEN_TEXTURE, uv + vec2(0.0, halfpixel.y * 2.0) * offset);
-	sum += texture(SCREEN_TEXTURE, uv + vec2(halfpixel.x, halfpixel.y) * offset) * 2.0;
-	sum += texture(SCREEN_TEXTURE, uv + vec2(halfpixel.x * 2.0, 0.0) * offset);
-	sum += texture(SCREEN_TEXTURE, uv + vec2(halfpixel.x, -halfpixel.y) * offset) * 2.0;
-	sum += texture(SCREEN_TEXTURE, uv + vec2(0.0, -halfpixel.y * 2.0) * offset);
-	sum += texture(SCREEN_TEXTURE, uv + vec2(-halfpixel.x, -halfpixel.y) * offset) * 2.0;
-
-	COLOR = sum / 12.0;
-}
-"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n52ti"]
-shader = SubResource("Shader_v8231")
-shader_parameter/offset = 0.0
 
 [node name="GameMenu" type="Control"]
 process_mode = 3
@@ -56,20 +30,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 0.4862745, 0)
+color = Color(0.16282554, 0.16282554, 0.16282554, 0.74509805)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 500.0
-offset_top = 240.0
-offset_right = 500.0
-offset_bottom = 240.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -493.49997
+offset_top = 80.999985
+offset_right = 209.5
+offset_bottom = 749.0
 grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.45, 0.45)
+scale = Vector2(1.4, 1.4)
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
@@ -81,6 +54,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
+script = ExtResource("3_actnc")
 
 [node name="ReturnToGame" type="Button" parent="MarginContainer/ButtonsVBox"]
 layout_mode = 2
@@ -88,6 +62,7 @@ focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../GridContainer/MusicSlider")
 focus_next = NodePath("../GridContainer/MusicSlider")
 focus_previous = NodePath("../Quit")
+theme_override_font_sizes/font_size = 48
 text = "Resume"
 icon = ExtResource("3_nte6v")
 flat = true
@@ -135,6 +110,7 @@ focus_neighbor_top = NodePath("../GridContainer/SFXSlider")
 focus_neighbor_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../GridContainer/SFXSlider")
+theme_override_font_sizes/font_size = 48
 text = "Return to Menu"
 icon = ExtResource("3_nte6v")
 flat = true
@@ -146,6 +122,7 @@ focus_neighbor_top = NodePath("../MainMenu")
 focus_neighbor_bottom = NodePath("../ReturnToGame")
 focus_next = NodePath("../ReturnToGame")
 focus_previous = NodePath("../MainMenu")
+theme_override_font_sizes/font_size = 48
 text = "Quit Game"
 icon = ExtResource("3_nte6v")
 flat = true

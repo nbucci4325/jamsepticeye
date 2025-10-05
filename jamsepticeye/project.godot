@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+HealthManager="*res://Globals/health_manager.tscn"
+
 [display]
 
 window/size/viewport_width=1920
@@ -26,6 +30,7 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://Assets/": "pink",
+"res://Globals/": "purple",
 "res://Scenes/": "teal",
 "res://Scripts/": "red"
 }
@@ -43,6 +48,8 @@ Gurt=""
 Player_horse=""
 Gate=""
 DestructableFence=""
+checkpointManager=""
+deathzone=""
 
 [input]
 

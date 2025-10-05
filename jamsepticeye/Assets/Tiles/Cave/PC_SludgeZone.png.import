@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0fo2iv7g24sk"
-path="res://.godot/imported/Cave_Tunnel_Straight.png-1a53b544c35a5031a39693737caf75eb.ctex"
+uid="uid://cmqfx5i1pytj3"
+path="res://.godot/imported/PC_SludgeZone.png-d6f4cee6bba7ac1332df40a7d5a5da96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/Cave/Base/Cave_Tunnel_Straight.png"
-dest_files=["res://.godot/imported/Cave_Tunnel_Straight.png-1a53b544c35a5031a39693737caf75eb.ctex"]
+source_file="res://Assets/Tiles/Cave/PC_SludgeZone.png"
+dest_files=["res://.godot/imported/PC_SludgeZone.png-d6f4cee6bba7ac1332df40a7d5a5da96.ctex"]
 
 [params]
 

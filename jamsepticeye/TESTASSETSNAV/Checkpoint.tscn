@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhtevl2sae37l"]
+
+[ext_resource type="Script" path="res://TESTASSETSNAV/checkpoint.gd" id="1_fvqit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qeqv"]
+size = Vector2(16, 140)
+
+[node name="Checkpoint" type="Area2D"]
+script = ExtResource("1_fvqit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1qeqv")
+
+[node name="RespawnPoint" type="Marker2D" parent="."]
+position = Vector2(29, -26)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

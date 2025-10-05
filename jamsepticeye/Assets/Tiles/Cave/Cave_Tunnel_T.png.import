@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1e33j8cq74dp"
-path="res://.godot/imported/Cave_Tunnel_T.png-70ce7fc8e2c9e29c9519c7f813a50488.ctex"
+path="res://.godot/imported/Cave_Tunnel_T.png-921fadd1b214e3a16bc5289dafa34819.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/Cave/Base/Cave_Tunnel_T.png"
-dest_files=["res://.godot/imported/Cave_Tunnel_T.png-70ce7fc8e2c9e29c9519c7f813a50488.ctex"]
+source_file="res://Assets/Tiles/Cave/Cave_Tunnel_T.png"
+dest_files=["res://.godot/imported/Cave_Tunnel_T.png-921fadd1b214e3a16bc5289dafa34819.ctex"]
 
 [params]
 

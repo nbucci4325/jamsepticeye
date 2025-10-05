@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d27xdpkgwloo8"
-path="res://.godot/imported/Cave_Tunnel_Turn.png-bb38aecb817fe253467d926d19c9558f.ctex"
+uid="uid://oilt015pwwgq"
+path="res://.godot/imported/Cave_Floor.png-3c9566b636da554587303c8a79f16586.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/Cave/Base/Cave_Tunnel_Turn.png"
-dest_files=["res://.godot/imported/Cave_Tunnel_Turn.png-bb38aecb817fe253467d926d19c9558f.ctex"]
+source_file="res://Assets/Tiles/Cave/Cave_Floor.png"
+dest_files=["res://.godot/imported/Cave_Floor.png-3c9566b636da554587303c8a79f16586.ctex"]
 
 [params]
 
