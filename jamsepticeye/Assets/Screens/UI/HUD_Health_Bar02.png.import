@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bandnwd4tx1xm"
-path="res://.godot/imported/Trap.png-f0463e92be4340f49374b8a1f15ecf4e.ctex"
+uid="uid://bydatd08r3u5q"
+path="res://.godot/imported/HUD_Health_Bar02.png-67bc241e65c080857b8853127adff297.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TEST JOSHUA/Placeholder Assets/Other/Trap.png"
-dest_files=["res://.godot/imported/Trap.png-f0463e92be4340f49374b8a1f15ecf4e.ctex"]
+source_file="res://Assets/Screens/UI/HUD_Health_Bar02.png"
+dest_files=["res://.godot/imported/HUD_Health_Bar02.png-67bc241e65c080857b8853127adff297.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bandnwd4tx1xm"
-path="res://.godot/imported/Trap.png-f0463e92be4340f49374b8a1f15ecf4e.ctex"
+uid="uid://byudnnwodlh6j"
+path="res://.godot/imported/Menu_Credits_Nico.png-22ae11832a1e2976fad289f4f1431aa1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TEST JOSHUA/Placeholder Assets/Other/Trap.png"
-dest_files=["res://.godot/imported/Trap.png-f0463e92be4340f49374b8a1f15ecf4e.ctex"]
+source_file="res://Assets/Screens/CreditsMenu/Menu_Credits_Nico.png"
+dest_files=["res://.godot/imported/Menu_Credits_Nico.png-22ae11832a1e2976fad289f4f1431aa1.ctex"]
 
 [params]
 

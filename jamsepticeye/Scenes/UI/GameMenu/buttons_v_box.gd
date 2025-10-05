@@ -1,6 +1,4 @@
-extends Control
-
-signal return_to_menu()
+extends VBoxContainer
 
 @export var base_intensity: Vector2 = Vector2(1.2, 1.1)
 @export var tween_duration_min: float = 0.3
@@ -9,9 +7,6 @@ signal return_to_menu()
 @export var normal_color: Color = Color(1, 1, 1)
 
 var active_tweens := {}
-
-func _on_return_pressed() -> void:
-	return_to_menu.emit()
 
 func _ready():
 	await get_tree().process_frame

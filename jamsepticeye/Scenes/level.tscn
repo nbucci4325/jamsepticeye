@@ -2060,6 +2060,7 @@ position = Vector2(746.5, -876)
 shape = SubResource("RectangleShape2D_uoc0b")
 
 [node name="CaveMusic" type="AudioStreamPlayer2D" parent="CaveArea"]
+position = Vector2(615, -390)
 stream = ExtResource("56_uoc0b")
 bus = &"Music"
 
@@ -2080,6 +2081,7 @@ shape = SubResource("RectangleShape2D_2lp24")
 debug_color = Color(0, 0.642634, 0.348676, 0.419608)
 
 [node name="ForestMusic" type="AudioStreamPlayer2D" parent="ForestArea"]
+position = Vector2(2512, -1242)
 stream = ExtResource("57_2lp24")
 bus = &"Music"
 
