@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cb5mvjrok4tuk"]
+[gd_scene load_steps=0 format=3 uid="uid://cb5mvjrok4tuk"]
 
 [node name="Trap_Crossbow" type="Area2D"]
 
