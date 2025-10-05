@@ -50,6 +50,7 @@ Gate=""
 DestructableFence=""
 checkpointManager=""
 deathzone=""
+Player_Controlled_Enemies=""
 
 [input]
 
