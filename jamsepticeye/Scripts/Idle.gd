@@ -4,11 +4,15 @@ class_name EnemyIdle
 @export var enemy : CharacterBody2D
 @export var wait_time : float = 2.0
 
+var state_name = "Idle"
 var time : float
 var player : CharacterBody2D
 
 func idling():
 	enemy.rotate(PI/90)
+
+func infect():
+	Transitioned.emit(self, 'enemyinfected')
 
 func Enter():
 	time = wait_time
