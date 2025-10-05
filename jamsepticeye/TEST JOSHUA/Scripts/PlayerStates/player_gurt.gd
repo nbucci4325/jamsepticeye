@@ -9,10 +9,10 @@ extends CharacterBody2D
 
 const Player_Rat = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_rat.tscn")
 const Player_Frog = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_frog.tscn")
-#const Player_Fox = preload()
+const Player_Fox = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_fox.tscn")
 const Player_Cow = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_cow.tscn")
-#const Player_Horse = preload()
-#const Player_Human = preload()
+const Player_Horse = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_horse.tscn")
+const Player_Human = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_human.tscn")
 
 const speed = 120.0
 var can_infect = 0
@@ -50,12 +50,12 @@ func _physics_process(delta: float) -> void:
 	
 	if can_infect > 0 and Input.is_action_just_pressed("Infect"):
 		var nearest_infectable
-		var shortest_distance = 1000
-		for area in infection_radius.get_overlapping_areas():
-			if area.is_in_group("Infectables"):
-				if self.position.distance_to(area.position) < shortest_distance:
-					shortest_distance = self.position.distance_to(area.position)
-					nearest_infectable = area
+		var shortest_distance = 10000
+		for body in infection_radius.get_overlapping_bodies():
+			if body.is_in_group("Infectables"):
+				if self.position.distance_to(body.position) < shortest_distance:
+					shortest_distance = self.position.distance_to(body.position)
+					nearest_infectable = body
 		switch_character(choose_infectable(nearest_infectable), nearest_infectable.position)
 		nearest_infectable.queue_free()
 
@@ -72,23 +72,25 @@ func choose_infectable(infectable):
 		return Player_Rat
 	if infectable.is_in_group("Frogs"):
 		return Player_Frog
-	#if infectable.is_in_group("Foxes"):
-		#return Player_Fox
+	if infectable.is_in_group("Foxes"):
+		return Player_Fox
 	if infectable.is_in_group("Cows"):
 		return Player_Cow
-	#if infectable.is_in_group("Horses"):
-		#return Player_Horse
-	#if infectable.is_in_group("Humans"):
-		#return Player_Human
+	if infectable.is_in_group("Horses"):
+		return Player_Horse
+	if infectable.is_in_group("Humans"):
+		return Player_Human
 
-func _on_infection_radius_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Infectables"):
+func _on_infection_radius_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Infectables"):
+		print("testing")
+		print(body)
 		can_infect += 1
 
-func _on_infection_radius_area_exited(area: Area2D) -> void:
-	if area.is_in_group("Infectables"):
-		can_infect -= 1 
-
+func _on_infection_radius_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Infectables"):
+		can_infect -= 1
+	
 # Nav code - interaction
 #################################################
 

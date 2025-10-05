@@ -54,5 +54,7 @@ vertical_alignment = 1
 
 [connection signal="area_entered" from="Infection_Radius" to="." method="_on_infection_radius_area_entered"]
 [connection signal="area_exited" from="Infection_Radius" to="." method="_on_infection_radius_area_exited"]
+[connection signal="body_entered" from="Infection_Radius" to="." method="_on_infection_radius_body_entered"]
+[connection signal="body_exited" from="Infection_Radius" to="." method="_on_infection_radius_body_exited"]
 [connection signal="area_entered" from="InteractionComponets/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionComponets/InteractionArea" to="." method="_on_interaction_area_area_exited"]
