@@ -1,10 +1,26 @@
 extends CharacterBody2D 
 
+@onready var destruction_box: Area2D = $DestructionBox
+
 const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 
-const speed = 120.0 #Tweak speed to desired speed
+const default_speed = 120.0 #Tweak speed to desired speed
+const max_speed = 160.0
+var speed = default_speed
+var is_running = false
+
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_pressed("Action"):
+		is_running = true
+	
+	if Input.is_action_just_released("Action"):
+		is_running = false
+		speed = default_speed
+	
+	if is_running && speed < max_speed:
+		speed += 1
 	
 	var Xdirection := Input.get_axis("LEFT","RIGHT")
 	if Xdirection:
@@ -20,11 +36,13 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	if is_running && speed == max_speed:
+		for area in destruction_box.get_overlapping_areas():
+				if area.is_in_group("DestructableFence"):
+					area.queue_free()
+	
 	if Input.is_action_just_pressed("Infect"):
 		abandon_host(self.position)
-
-func Action(): #dash
-	pass
 
 func abandon_host(position):
 	var spore = get_parent().get_node("Player_Gurt")
