@@ -1,20 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://710omy7euuyn"]
+[gd_scene load_steps=5 format=3 uid="uid://710omy7euuyn"]
 
 [ext_resource type="Texture2D" uid="uid://bandnwd4tx1xm" path="res://TEST JOSHUA/Placeholder Assets/Other/Trap.png" id="1_1dvlr"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Objects/trap_hunter.gd" id="1_3eae7"]
 [ext_resource type="Texture2D" uid="uid://ulndarja43af" path="res://TEST JOSHUA/Placeholder Assets/Other/Trap_Bush.png" id="2_chhqb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8m6ci"]
 radius = 8.0
 
 [node name="Trap_Hunter" type="Area2D" groups=["Traps"]]
+collision_layer = 256
+collision_mask = 2
+script = ExtResource("1_3eae7")
 
 [node name="Trap" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_1dvlr")
 
 [node name="Camo" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 texture = ExtResource("2_chhqb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8m6ci")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

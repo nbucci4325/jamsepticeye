@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmqfx5i1pytj3"
-path="res://.godot/imported/PC_SludgeZone.png-d6f4cee6bba7ac1332df40a7d5a5da96.ctex"
+uid="uid://cxnpc3m2qaqpw"
+path="res://.godot/imported/NPC_Fox_Sprite_Sheet.png-71e3c293ef36b2fe659827887e3da6ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/Cave/PC_SludgeZone.png"
-dest_files=["res://.godot/imported/PC_SludgeZone.png-d6f4cee6bba7ac1332df40a7d5a5da96.ctex"]
+source_file="res://Assets/Sprites/Regular/NPC_Fox_Sprite_Sheet.png"
+dest_files=["res://.godot/imported/NPC_Fox_Sprite_Sheet.png-71e3c293ef36b2fe659827887e3da6ab.ctex"]
 
 [params]
 

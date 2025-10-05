@@ -5,10 +5,15 @@ const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 
 const speed = 120.0 #Tweak speed to desired speed
 
+var health = 5
+
 func _ready() -> void:
 	infection_radius.set_process_mode(Node.PROCESS_MODE_DISABLED)
 
 func _physics_process(delta: float) -> void:
+	
+	if health <= 0:
+		abandon_host(position)
 	
 	var Xdirection := Input.get_axis("LEFT","RIGHT")
 	if Xdirection:
@@ -51,3 +56,10 @@ func _on_infection_radius_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Humans"):
 		if body.state.state_name != "Infected":
 			body.state.infect()
+
+
+func _on_health_timer_timeout() -> void:
+	Deal_damage(1) 
+
+func Deal_damage(damage):
+	health -= damage
