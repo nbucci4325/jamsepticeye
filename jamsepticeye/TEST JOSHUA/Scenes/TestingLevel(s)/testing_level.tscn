@@ -1,14 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://71xtmckebpkh"]
+[gd_scene load_steps=8 format=3 uid="uid://71xtmckebpkh"]
 
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="1_byode"]
-[ext_resource type="PackedScene" uid="uid://dqdb6db37n5w4" path="res://TEST JOSHUA/Scenes/PlayerStates/player_rat.tscn" id="2_83b7d"]
 [ext_resource type="PackedScene" uid="uid://eek7qhledwbe" path="res://TEST JOSHUA/Scenes/Enemies/enemy_fox.tscn" id="2_or7fp"]
 [ext_resource type="PackedScene" uid="uid://cx5hk6kisgt8g" path="res://TEST JOSHUA/Scenes/Objects/void_testing.tscn" id="3_7r2in"]
-[ext_resource type="PackedScene" uid="uid://of4ectdeyysd" path="res://TEST JOSHUA/Scenes/PlayerStates/player_frog.tscn" id="3_xgh8s"]
 [ext_resource type="PackedScene" uid="uid://710omy7euuyn" path="res://TEST JOSHUA/Scenes/Objects/trap_hunter.tscn" id="4_dqst2"]
-[ext_resource type="PackedScene" uid="uid://cmq2n6akikgb8" path="res://TEST JOSHUA/Scenes/PlayerStates/player_fox.tscn" id="4_msbfy"]
-[ext_resource type="PackedScene" uid="uid://dlm6n5q34u2rt" path="res://TEST JOSHUA/Scenes/PlayerStates/player_cow.tscn" id="5_g6t36"]
-[ext_resource type="PackedScene" uid="uid://b2cqo7bfunm0p" path="res://TEST JOSHUA/Scenes/PlayerStates/player_human.tscn" id="6_2aqqn"]
+[ext_resource type="PackedScene" uid="uid://dsdkfshwsdmv1" path="res://TESTASSETSNAV/CheckpointManager.tscn" id="5_6sn27"]
+[ext_resource type="PackedScene" uid="uid://cb5mvjrok4tuk" path="res://TEST JOSHUA/Scenes/Objects/trap_crossbow.tscn" id="5_qqiks"]
+[ext_resource type="PackedScene" uid="uid://ci5h8mh817a2g" path="res://TESTASSETSNAV/Deathzone.tscn" id="6_ev3ro"]
 
 [node name="Testing Level" type="Node2D"]
 
@@ -16,24 +14,6 @@
 
 [node name="Player_Gurt" parent="Player" instance=ExtResource("1_byode")]
 position = Vector2(532, 396)
-
-[node name="Player_Rat" parent="Player" instance=ExtResource("2_83b7d")]
-position = Vector2(597, 396)
-
-[node name="Player_Frog" parent="Player" instance=ExtResource("3_xgh8s")]
-position = Vector2(626, 395)
-
-[node name="Player_Fox" parent="Player" instance=ExtResource("4_msbfy")]
-position = Vector2(702, 396)
-
-[node name="Player_Cow" parent="Player" instance=ExtResource("5_g6t36")]
-position = Vector2(771, 396)
-
-[node name="Player_Human" parent="Player" instance=ExtResource("6_2aqqn")]
-position = Vector2(817, 397)
-
-[node name="Trap_Hunter" parent="Player" instance=ExtResource("4_dqst2")]
-position = Vector2(568, 317)
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -54,3 +34,14 @@ position = Vector2(669, 238)
 
 [node name="Trap_Hunter" parent="Objects" instance=ExtResource("4_dqst2")]
 position = Vector2(911, 351)
+
+[node name="Trap_Hunter2" parent="Objects" instance=ExtResource("4_dqst2")]
+position = Vector2(568, 317)
+
+[node name="Trap_Crossbow" parent="Objects" instance=ExtResource("5_qqiks")]
+position = Vector2(784, 388)
+
+[node name="CheckPointManager" parent="." instance=ExtResource("5_6sn27")]
+
+[node name="deathzone" parent="." instance=ExtResource("6_ev3ro")]
+position = Vector2(2036, 588)

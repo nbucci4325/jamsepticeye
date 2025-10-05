@@ -52,6 +52,7 @@ checkpointManager=""
 deathzone=""
 sploosh=""
 Player_Controlled_Enemies=""
+Traps=""
 
 [input]
 

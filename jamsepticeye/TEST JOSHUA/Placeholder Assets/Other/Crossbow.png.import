@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0taxx5ye3imf"
-path="res://.godot/imported/Farm_Box.png-bc823db97c7fb005718318378d5d2837.ctex"
+uid="uid://dm1lixx7qf4c0"
+path="res://.godot/imported/Crossbow.png-081b166b9780b7a14dcd26d1f83c9a18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Farm_Box.png"
-dest_files=["res://.godot/imported/Farm_Box.png-bc823db97c7fb005718318378d5d2837.ctex"]
+source_file="res://TEST JOSHUA/Placeholder Assets/Other/Crossbow.png"
+dest_files=["res://.godot/imported/Crossbow.png-081b166b9780b7a14dcd26d1f83c9a18.ctex"]
 
 [params]
 
