@@ -1,27 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb5mvjrok4tuk"]
+[gd_scene load_steps=0 format=3 uid="uid://cb5mvjrok4tuk"]
 
-[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Objects/trap_crossbow.gd" id="1_8cup7"]
-[ext_resource type="Texture2D" uid="uid://dm1lixx7qf4c0" path="res://TEST JOSHUA/Placeholder Assets/Other/Crossbow.png" id="1_dwxgd"]
-[ext_resource type="Texture2D" uid="uid://ulndarja43af" path="res://TEST JOSHUA/Placeholder Assets/Other/Trap_Bush.png" id="2_v3qsu"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ahnt5"]
-radius = 8.0
-
-[node name="Trap_Crossbow" type="Area2D" groups=["Traps"]]
-collision_layer = 256
-collision_mask = 2
-script = ExtResource("1_8cup7")
+[node name="Trap_Crossbow" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("1_dwxgd")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("2_v3qsu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-24, 0)
-shape = SubResource("CircleShape2D_ahnt5")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
