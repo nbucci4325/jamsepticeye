@@ -43,6 +43,7 @@ Gurt=""
 Player_horse=""
 Gate=""
 DestructableFence=""
+checkpointManager=""
 
 [input]
 
