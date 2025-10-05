@@ -1,8 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://xjdxdxagm5k8"]
+[gd_scene load_steps=13 format=3 uid="uid://xjdxdxagm5k8"]
 
 [ext_resource type="Texture2D" uid="uid://d036qxnobjh1w" path="res://TESTASSETSNAV/jungleTileset.png" id="1_78066"]
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="3_dx2x1"]
-[ext_resource type="PackedScene" uid="uid://cvwe72w8ld815" path="res://TESTASSETSNAV/gate_&_lever.tscn" id="4_5fdm8"]
+[ext_resource type="PackedScene" uid="uid://cvwe72w8ld815" path="res://Scenes/Objects/gate_&_lever.tscn" id="4_5fdm8"]
+[ext_resource type="PackedScene" uid="uid://bbg7qbol6bdgc" path="res://Scenes/Objects/box.tscn" id="4_t385d"]
+[ext_resource type="PackedScene" uid="uid://dancxw65tes5o" path="res://TEST JOSHUA/Scenes/Enemies/enemy_cow.tscn" id="5_0mnyd"]
+[ext_resource type="PackedScene" uid="uid://eek7qhledwbe" path="res://TEST JOSHUA/Scenes/Enemies/enemy_fox.tscn" id="6_tqns5"]
+[ext_resource type="PackedScene" uid="uid://qpqgpp14t00g" path="res://TEST JOSHUA/Scenes/Enemies/enemy_frog.tscn" id="7_b5ngw"]
+[ext_resource type="PackedScene" uid="uid://tmm50jia6cvf" path="res://TEST JOSHUA/Scenes/Enemies/enemy_horse.tscn" id="8_rth4y"]
+[ext_resource type="PackedScene" uid="uid://bns6i07mxnt3a" path="res://TEST JOSHUA/Scenes/Enemies/enemy_human.tscn" id="9_pbqf5"]
+[ext_resource type="PackedScene" uid="uid://hf1y4cpwa047" path="res://TEST JOSHUA/Scenes/Enemies/enemy_rat.tscn" id="10_4fdam"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itixk"]
 texture = ExtResource("1_78066")
@@ -121,3 +128,24 @@ collision_mask = 23
 
 [node name="Gate & Lever" parent="." instance=ExtResource("4_5fdm8")]
 position = Vector2(-856, -292)
+
+[node name="Box" parent="." instance=ExtResource("4_t385d")]
+position = Vector2(-622, -371)
+
+[node name="Enemy_Cow" parent="." instance=ExtResource("5_0mnyd")]
+position = Vector2(-1282, -321)
+
+[node name="Enemy_Fox" parent="." instance=ExtResource("6_tqns5")]
+position = Vector2(-1220, -284)
+
+[node name="Enemy_Frog" parent="." instance=ExtResource("7_b5ngw")]
+position = Vector2(-1172, -246)
+
+[node name="Enemy_Horse" parent="." instance=ExtResource("8_rth4y")]
+position = Vector2(-1303, -232)
+
+[node name="Enemy_Human" parent="." instance=ExtResource("9_pbqf5")]
+position = Vector2(-1247, -202)
+
+[node name="Enemy_Rat" parent="." instance=ExtResource("10_4fdam")]
+position = Vector2(-1192, -155)
