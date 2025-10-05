@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://tmm50jia6cvf"]
+
+[ext_resource type="Texture2D" uid="uid://cyk6ae8jdk5f2" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Horse.png" id="1_jvc02"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wdmb"]
+
+[node name="Enemy_Horse" type="CharacterBody2D" groups=["Horses", "Infectables"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jvc02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6wdmb")

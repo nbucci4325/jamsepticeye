@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2cqo7bfunm0p"]
+
+[ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_human.gd" id="1_0ee03"]
+[ext_resource type="Texture2D" uid="uid://cp118228rkd1n" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Human.png" id="1_lg2j3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8qi4"]
+
+[node name="Player_Human" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_0ee03")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_lg2j3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n8qi4")

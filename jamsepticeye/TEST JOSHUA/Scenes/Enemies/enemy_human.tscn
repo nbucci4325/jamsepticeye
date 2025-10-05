@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bns6i07mxnt3a"]
+
+[ext_resource type="Texture2D" uid="uid://cp118228rkd1n" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Human.png" id="1_gvy2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xicrv"]
+
+[node name="Enemy_Human" type="CharacterBody2D" groups=["Humans", "Infectables"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_gvy2c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xicrv")
