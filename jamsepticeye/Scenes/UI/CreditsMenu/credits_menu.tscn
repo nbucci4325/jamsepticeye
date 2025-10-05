@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cl5i4nwhpvekn"]
+[gd_scene load_steps=14 format=3 uid="uid://cl5i4nwhpvekn"]
 
 [ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_j34j3"]
 [ext_resource type="Script" uid="uid://dnskkoyj8f03c" path="res://Scripts/credits_menu.gd" id="2_vy407"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://biyjoqfxrbf64" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Matteo.png" id="9_ge2sx"]
 [ext_resource type="Texture2D" uid="uid://o6hbchjhq1w1" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Nav.png" id="10_cdem7"]
 [ext_resource type="Texture2D" uid="uid://dgtygy7sgar17" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Sam.png" id="11_1qmdt"]
+[ext_resource type="Texture2D" uid="uid://byudnnwodlh6j" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Nico.png" id="12_xlfg5"]
+[ext_resource type="Texture2D" uid="uid://d0lgc8q6bahpo" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Tasha.png" id="13_7ry1i"]
 
 [node name="CreditsMenu" type="Control"]
 process_mode = 3
@@ -52,11 +54,13 @@ offset_bottom = 441.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
-text = "Story created by all
+text = "
+
+Story created by all
 
 SYSTEMS & LOGIC                                            Navin Gunaratnam (GunaratnamNavin)
 SOUND PROGRAMMING                                                                                               Sky
-UI/UX, SCREENS & SETTINGS                                                                        Nico Buccilli
+UI/UX, SCREENS & SETTINGS                                                Nico Buccilli (Nico Buccilli)
 CHARACTER PROGRAMMING                                                 Joshua Rose (DrDutchenfoo)
 
 
@@ -80,9 +84,9 @@ anchor_top = 0.81200004
 anchor_right = 0.49
 anchor_bottom = 0.81200004
 offset_left = -114.80005
-offset_top = -14.960022
+offset_top = -5.960022
 offset_right = 119.69995
-offset_bottom = 22.039978
+offset_bottom = 31.039978
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 46
@@ -92,7 +96,7 @@ uri = "https://docs.google.com/document/d/1qwmYf86MeH8N2UJxiwWKMHz2HTf4PR9U9CH6b
 
 [node name="Return" type="Button" parent="."]
 top_level = true
-z_index = 95
+z_index = 665
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -100,9 +104,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -146.0
-offset_top = -173.0
+offset_top = -152.0
 offset_right = 493.0
-offset_bottom = 49.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.4, 0.4)
@@ -123,34 +127,50 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MenuCreditsCloey" type="Sprite2D" parent="."]
-position = Vector2(1201, 785)
+[node name="Cloey" type="Sprite2D" parent="."]
+position = Vector2(1155, 257)
 scale = Vector2(1.09375, 1.015625)
 texture = ExtResource("5_lkwla")
 
-[node name="MenuCreditsHarleen" type="Sprite2D" parent="."]
-position = Vector2(1059, 670)
+[node name="Harleen" type="Sprite2D" parent="."]
+position = Vector2(1054, 257)
+scale = Vector2(1.09375, 1.015625)
 texture = ExtResource("6_0ekeg")
 
-[node name="MenuCreditsJosh" type="Sprite2D" parent="."]
-position = Vector2(1129, 451)
+[node name="Josh" type="Sprite2D" parent="."]
+position = Vector2(852, 257)
+scale = Vector2(1.09375, 1.015625)
 texture = ExtResource("7_xlfg5")
 
-[node name="MenuCreditsMalak" type="Sprite2D" parent="."]
-position = Vector2(1404, 740)
+[node name="Malak" type="Sprite2D" parent="."]
+position = Vector2(1357, 257)
+scale = Vector2(1.09375, 1.015625)
 texture = ExtResource("8_7ry1i")
 
-[node name="MenuCreditsMatteo" type="Sprite2D" parent="."]
-position = Vector2(1662, 564)
+[node name="Matteo" type="Sprite2D" parent="."]
+position = Vector2(953, 257)
+scale = Vector2(1.09375, 1.015625)
 texture = ExtResource("9_ge2sx")
 
-[node name="MenuCreditsNav" type="Sprite2D" parent="."]
-position = Vector2(952, 348)
+[node name="Nav" type="Sprite2D" parent="."]
+position = Vector2(549, 257)
+scale = Vector2(1.09375, 1.015625)
 texture = ExtResource("10_cdem7")
 
-[node name="MenuCreditsSam" type="Sprite2D" parent="."]
-position = Vector2(1670, 707)
+[node name="Sam" type="Sprite2D" parent="."]
+position = Vector2(1256, 257)
+scale = Vector2(1.09375, 1.015625)
 texture = ExtResource("11_1qmdt")
+
+[node name="Nico" type="Sprite2D" parent="."]
+position = Vector2(751, 257)
+scale = Vector2(1.09375, 1.015625)
+texture = ExtResource("12_xlfg5")
+
+[node name="Tasha" type="Sprite2D" parent="."]
+position = Vector2(650, 257)
+scale = Vector2(1.09375, 1.015625)
+texture = ExtResource("13_7ry1i")
 
 [connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

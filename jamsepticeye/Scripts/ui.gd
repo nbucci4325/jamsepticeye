@@ -80,9 +80,9 @@ func _on_main_menu_go_to_credits() -> void:
 func _on_credits_menu_return_to_menu() -> void:
 	if animation_player.is_playing():
 		await animation_player.animation_finished
-		transition.show()
-		animation_player.play_backwards("screen_transition")
-		await animation_player.animation_finished
-		transition.hide()
-		credits_menu.hide()
-		main_menu.show()
+	transition.show()
+	animation_player.play_backwards("screen_transition")
+	await animation_player.animation_finished
+	transition.hide()
+	credits_menu.hide()
+	main_menu.show()

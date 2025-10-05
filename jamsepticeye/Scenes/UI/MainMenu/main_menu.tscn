@@ -27,26 +27,34 @@ theme = ExtResource("1_o53sk")
 script = ExtResource("2_tik7u")
 
 [node name="Node2D" type="Node2D" parent="."]
+texture_filter = 1
 position = Vector2(-128, -108)
 
 [node name="Background" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
 position = Vector2(1058, 622)
 texture = ExtResource("3_q0nr5")
 
 [node name="Foreground" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
 position = Vector2(1058, 622)
 texture = ExtResource("4_optwy")
+centered = false
 script = ExtResource("5_cdm4t")
 move_force = 2
 
 [node name="Clouds" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
 position = Vector2(1058, 622)
 texture = ExtResource("6_eu4hu")
+centered = false
 script = ExtResource("7_optwy")
 
 [node name="Gurt" type="Sprite2D" parent="Node2D"]
-position = Vector2(1058, 622)
+texture_filter = 1
+position = Vector2(2085, 1992)
 texture = ExtResource("7_m5ruw")
+centered = false
 script = ExtResource("9_cdm4t")
 move_force = 4
 
@@ -55,6 +63,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -43.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -82,17 +91,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -144.0
-offset_top = -491.0
-offset_right = 495.0
-offset_bottom = -269.0
+offset_left = -820.0
+offset_top = -605.0
+offset_right = -181.0
+offset_bottom = -383.0
 grow_horizontal = 2
-scale = Vector2(0.45, 0.45)
+scale = Vector2(0.9080293, 0.9080293)
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Credits")
 focus_next = NodePath("../Credits")
 focus_previous = NodePath("../Quit")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 90
 text = "PLAY"
 icon = ExtResource("4_bw8va")
 flat = true
@@ -100,16 +109,16 @@ icon_alignment = 1
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/Buttons"]
 layout_mode = 0
-offset_left = -144.0
-offset_top = -359.0
-offset_right = 495.0
-offset_bottom = -137.0
-scale = Vector2(0.45, 0.45)
+offset_left = -820.0
+offset_top = -404.0
+offset_right = -181.0
+offset_bottom = -182.0
+scale = Vector2(0.9080293, 0.9080293)
 focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Play")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 90
 text = "CREDITS"
 icon = ExtResource("4_bw8va")
 flat = true
@@ -117,16 +126,16 @@ icon_alignment = 1
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/Buttons"]
 layout_mode = 0
-offset_left = -144.0
-offset_top = -237.0
-offset_right = 495.0
-offset_bottom = -15.0
-scale = Vector2(0.45, 0.45)
+offset_left = -820.0
+offset_top = -210.0
+offset_right = -181.0
+offset_bottom = 12.0
+scale = Vector2(0.9080293, 0.9080293)
 focus_neighbor_top = NodePath("../Credits")
 focus_neighbor_bottom = NodePath("../Play")
 focus_next = NodePath("../Play")
 focus_previous = NodePath("../Credits")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 90
 text = "QUIT"
 icon = ExtResource("4_bw8va")
 flat = true

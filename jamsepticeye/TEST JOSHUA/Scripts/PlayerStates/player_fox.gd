@@ -7,6 +7,7 @@ const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 const speed = 120.0 #Tweak speed to desired speed
 var is_searching = false
 
+var health = 5 # CHANGE THIS
 
 func _physics_process(delta: float) -> void:
 	
@@ -18,6 +19,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("Action"):
 		is_searching = false
 		Revert_action()
+	
+	if health <= 0:
+		abandon_host(position)
 	
 	if !is_searching:
 		var Xdirection := Input.get_axis("LEFT","RIGHT")
@@ -37,20 +41,16 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Infect"):
 		abandon_host(self.position)
 
-func Action(): #search
+func Action(): #search for traps
 	for area in searching_radius.get_overlapping_areas():
 			if area.is_in_group("Traps"):
-				print(area)
 				var camo = area.get_child(1)
-				print(camo)
 				camo.set_modulate(Color(1, 1, 1, 0.4))
 
-func Revert_action(): #search
+func Revert_action(): #hide shown traps
 	for area in searching_radius.get_overlapping_areas():
 			if area.is_in_group("Traps"):
-				print(area)
 				var camo = area.get_child(1)
-				print(camo)
 				camo.set_modulate(Color(1, 1, 1, 1))
 
 
@@ -59,8 +59,16 @@ func abandon_host(position):
 	spore.position = self.position
 	spore.infecting_state = false
 	var parent = get_parent()
+	Revert_action()
 	queue_free()  
 	
 	var corpse = Shroom.instantiate()
 	corpse.position = position
 	parent.add_child(corpse)                    
+
+
+func _on_health_timer_timeout() -> void:
+	Deal_damage(1)
+
+func Deal_damage(damage):
+	health -= damage
