@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbg7qbol6bdgc"]
 
-[ext_resource type="Texture2D" uid="uid://ba33q7tycrsc7" path="res://TESTASSETSNAV/tumblr_inline_o03qftZuni1r4q36m_400.png" id="2_m4v5p"]
+[ext_resource type="Texture2D" uid="uid://0taxx5ye3imf" path="res://Assets/Sprites/Farm_Box.png" id="1_l3gw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmfng"]
-size = Vector2(28, 37)
+size = Vector2(4, 4)
 
 [node name="Box" type="RigidBody2D"]
 collision_layer = 4
@@ -13,9 +13,8 @@ lock_rotation = true
 linear_damp = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_bmfng")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_m4v5p")
+texture = ExtResource("1_l3gw4")
