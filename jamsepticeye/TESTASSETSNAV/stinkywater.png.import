@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv1namdfslvyt"
-path="res://.godot/imported/Forest_River_CorTR.png-fbbfdc9afc30a9a5e9abb3a2ac839e65.ctex"
+uid="uid://c2vqptf4kd02d"
+path="res://.godot/imported/stinkywater.png-e4e38c51654179bf032cface82cd484e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/Forest/Base/Forest_River_CorTR.png"
-dest_files=["res://.godot/imported/Forest_River_CorTR.png-fbbfdc9afc30a9a5e9abb3a2ac839e65.ctex"]
+source_file="res://TESTASSETSNAV/stinkywater.png"
+dest_files=["res://.godot/imported/stinkywater.png-e4e38c51654179bf032cface82cd484e.ctex"]
 
 [params]
 
