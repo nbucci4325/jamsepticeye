@@ -17,7 +17,6 @@ texture_filter = 1
 texture = ExtResource("1_1dvlr")
 
 [node name="Camo" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 texture = ExtResource("2_chhqb")
 

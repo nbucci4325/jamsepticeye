@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv1namdfslvyt"
-path="res://.godot/imported/Forest_River_CorTR.png-fbbfdc9afc30a9a5e9abb3a2ac839e65.ctex"
+uid="uid://dm1lixx7qf4c0"
+path="res://.godot/imported/Crossbow.png-081b166b9780b7a14dcd26d1f83c9a18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/Forest/Base/Forest_River_CorTR.png"
-dest_files=["res://.godot/imported/Forest_River_CorTR.png-fbbfdc9afc30a9a5e9abb3a2ac839e65.ctex"]
+source_file="res://TEST JOSHUA/Placeholder Assets/Other/Crossbow.png"
+dest_files=["res://.godot/imported/Crossbow.png-081b166b9780b7a14dcd26d1f83c9a18.ctex"]
 
 [params]
 
