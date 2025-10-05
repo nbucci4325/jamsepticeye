@@ -1,0 +1,149 @@
+[gd_scene load_steps=22 format=3 uid="uid://csmmq080k7xbr"]
+
+[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/human.gd" id="1_xunra"]
+[ext_resource type="Texture2D" uid="uid://c26dad4ntivql" path="res://Assets/Sprites/Regular/NPC_HumanF_Sprite_Sheet.png" id="2_xunra"]
+[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="3_i703y"]
+[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="4_b8sxt"]
+[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="5_sicl3"]
+[ext_resource type="Script" uid="uid://b1p6n0jwwkot4" path="res://Scripts/Attack.gd" id="6_orxsa"]
+[ext_resource type="Script" uid="uid://c2ag7kcotqkrt" path="res://TEST JOSHUA/Scenes/Enemies/Infected.gd" id="7_1qpm2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs4xw"]
+atlas = ExtResource("2_xunra")
+region = Rect2(0, 0, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i703y"]
+atlas = ExtResource("2_xunra")
+region = Rect2(27, 0, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8sxt"]
+atlas = ExtResource("2_xunra")
+region = Rect2(54, 0, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sicl3"]
+atlas = ExtResource("2_xunra")
+region = Rect2(81, 0, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orxsa"]
+atlas = ExtResource("2_xunra")
+region = Rect2(0, 44, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qpm2"]
+atlas = ExtResource("2_xunra")
+region = Rect2(27, 44, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48n6c"]
+atlas = ExtResource("2_xunra")
+region = Rect2(54, 44, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bc1q"]
+atlas = ExtResource("2_xunra")
+region = Rect2(81, 44, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd40b"]
+atlas = ExtResource("2_xunra")
+region = Rect2(0, 88, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry1kk"]
+atlas = ExtResource("2_xunra")
+region = Rect2(27, 88, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcdqu"]
+atlas = ExtResource("2_xunra")
+region = Rect2(54, 88, 27, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdy3s"]
+atlas = ExtResource("2_xunra")
+region = Rect2(81, 88, 27, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fm1um"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs4xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i703y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8sxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sicl3")
+}],
+"loop": true,
+"name": &"Human_F_Walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orxsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qpm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48n6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bc1q")
+}],
+"loop": true,
+"name": &"Human_F_Walk_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd40b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry1kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcdqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdy3s")
+}],
+"loop": true,
+"name": &"Human_F_Walk_Up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xicrv"]
+
+[node name="Enemy_Human" type="CharacterBody2D" groups=["Humans", "Infectables"]]
+collision_layer = 32
+collision_mask = 35
+script = ExtResource("1_xunra")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_fm1um")
+animation = &"Human_F_Walk"
+frame = 3
+frame_progress = 0.30235928
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xicrv")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_i703y")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_b8sxt")
+enemy = NodePath("../..")
+
+[node name="EnemyWalk" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_sicl3")
+enemy = NodePath("../..")
+
+[node name="EnemyAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_orxsa")
+enemy = NodePath("../..")
+
+[node name="EnemyInfected" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_1qpm2")
+enemy = NodePath("../..")
+move_speed = 100.0
