@@ -32,6 +32,9 @@ position = Vector2(771, 396)
 [node name="Player_Human" parent="Player" instance=ExtResource("6_2aqqn")]
 position = Vector2(817, 397)
 
+[node name="Trap_Hunter" parent="Player" instance=ExtResource("4_dqst2")]
+position = Vector2(568, 317)
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy_Fox" parent="Enemies" instance=ExtResource("2_or7fp")]
