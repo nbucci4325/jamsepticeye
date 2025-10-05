@@ -43,7 +43,11 @@ Gurt=""
 Player_horse=""
 Gate=""
 DestructableFence=""
+<<<<<<< HEAD
 checkpointManager=""
+=======
+Traps=""
+>>>>>>> 9d4eefd8b69008601863269821d6ef6827ead878
 
 [input]
 
