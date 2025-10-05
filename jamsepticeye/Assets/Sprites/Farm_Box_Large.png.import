@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5vveaupbdqne"
-path="res://.godot/imported/Main_EndMenu_Screen03.png-6fc2c6193155adde563d810b3155fa10.ctex"
+uid="uid://3ti2x0dmuah"
+path="res://.godot/imported/Farm_Box_Large.png-c742a066306ef70c6e3fa2002bf090d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Screens/Win/Main_EndMenu_Screen03.png"
-dest_files=["res://.godot/imported/Main_EndMenu_Screen03.png-6fc2c6193155adde563d810b3155fa10.ctex"]
+source_file="res://Assets/Sprites/Farm_Box_Large.png"
+dest_files=["res://.godot/imported/Farm_Box_Large.png-c742a066306ef70c6e3fa2002bf090d1.ctex"]
 
 [params]
 

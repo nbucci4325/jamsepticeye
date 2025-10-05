@@ -1,12 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://bns6i07mxnt3a"]
 
-[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/human.gd" id="1_1rkb8"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/human2.gd" id="1_65knt"]
 [ext_resource type="Texture2D" uid="uid://c26dad4ntivql" path="res://Assets/Sprites/Regular/NPC_HumanF_Sprite_Sheet.png" id="2_c42pb"]
-[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="3_1quti"]
-[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="4_rd4dh"]
-[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="5_6qtl1"]
-[ext_resource type="Script" uid="uid://b1p6n0jwwkot4" path="res://Scripts/Attack.gd" id="6_fhqgq"]
-[ext_resource type="Script" uid="uid://c2ag7kcotqkrt" path="res://TEST JOSHUA/Scenes/Enemies/Infected.gd" id="7_kb2jc"]
+[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="3_1quti"]
+[ext_resource type="Script" path="res://Scripts/Idle.gd" id="4_rd4dh"]
+[ext_resource type="Script" path="res://Scripts/Move.gd" id="5_6qtl1"]
+[ext_resource type="Script" path="res://Scripts/Attack.gd" id="6_fhqgq"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/Infected.gd" id="7_kb2jc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6gyx"]
 atlas = ExtResource("2_c42pb")
@@ -87,12 +87,13 @@ animations = [{
 [node name="Enemy_Human" type="CharacterBody2D" groups=["Humans", "Infectables"]]
 collision_layer = 32
 collision_mask = 35
-script = ExtResource("1_1rkb8")
+script = ExtResource("1_65knt")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_o8fim")
-animation = &"Human_F_Walk-Down"
+animation = &"Human_F_Walk_Up"
+autoplay = "Human_F_Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xicrv")
