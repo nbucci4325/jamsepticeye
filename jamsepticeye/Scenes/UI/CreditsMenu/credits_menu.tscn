@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl5i4nwhpvekn"]
+[gd_scene load_steps=12 format=3 uid="uid://cl5i4nwhpvekn"]
 
 [ext_resource type="Theme" uid="uid://byhrlwtow3f1m" path="res://Assets/Themes/main_menu.tres" id="1_j34j3"]
 [ext_resource type="Script" uid="uid://dnskkoyj8f03c" path="res://Scripts/credits_menu.gd" id="2_vy407"]
 [ext_resource type="Texture2D" uid="uid://bm3wa0hdcrwtt" path="res://Assets/Themes/Main_Menu_Button.png" id="3_q61fy"]
 [ext_resource type="Texture2D" uid="uid://bstlf1yckqaas" path="res://Assets/Screens/MainMenu/Main_Menu_Logo.png" id="3_r1tyh"]
+[ext_resource type="Texture2D" uid="uid://dlh6kiyantyiq" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Cloey.png" id="5_lkwla"]
+[ext_resource type="Texture2D" uid="uid://d4k260e6kpr6j" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Harleen.png" id="6_0ekeg"]
+[ext_resource type="Texture2D" uid="uid://31gy4bvvwp1r" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Josh.png" id="7_xlfg5"]
+[ext_resource type="Texture2D" uid="uid://dfovfg24pjylg" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Malak.png" id="8_7ry1i"]
+[ext_resource type="Texture2D" uid="uid://biyjoqfxrbf64" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Matteo.png" id="9_ge2sx"]
+[ext_resource type="Texture2D" uid="uid://o6hbchjhq1w1" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Nav.png" id="10_cdem7"]
+[ext_resource type="Texture2D" uid="uid://dgtygy7sgar17" path="res://Assets/Screens/CreditsMenu/Menu_Credits_Sam.png" id="11_1qmdt"]
 
 [node name="CreditsMenu" type="Control"]
 process_mode = 3
@@ -115,6 +122,35 @@ offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="MenuCreditsCloey" type="Sprite2D" parent="."]
+position = Vector2(1201, 785)
+scale = Vector2(1.09375, 1.015625)
+texture = ExtResource("5_lkwla")
+
+[node name="MenuCreditsHarleen" type="Sprite2D" parent="."]
+position = Vector2(1059, 670)
+texture = ExtResource("6_0ekeg")
+
+[node name="MenuCreditsJosh" type="Sprite2D" parent="."]
+position = Vector2(1129, 451)
+texture = ExtResource("7_xlfg5")
+
+[node name="MenuCreditsMalak" type="Sprite2D" parent="."]
+position = Vector2(1404, 740)
+texture = ExtResource("8_7ry1i")
+
+[node name="MenuCreditsMatteo" type="Sprite2D" parent="."]
+position = Vector2(1662, 564)
+texture = ExtResource("9_ge2sx")
+
+[node name="MenuCreditsNav" type="Sprite2D" parent="."]
+position = Vector2(952, 348)
+texture = ExtResource("10_cdem7")
+
+[node name="MenuCreditsSam" type="Sprite2D" parent="."]
+position = Vector2(1670, 707)
+texture = ExtResource("11_1qmdt")
 
 [connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
