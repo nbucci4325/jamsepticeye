@@ -1042,9 +1042,6 @@ position = Vector2(562, -199)
 
 [node name="Camera2D" type="Camera2D" parent="Player_Gurt"]
 
-[node name="AudioListener2D" type="AudioListener2D" parent="Player_Gurt/Camera2D"]
-current = true
-
 [node name="CaveArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CaveArea"]
