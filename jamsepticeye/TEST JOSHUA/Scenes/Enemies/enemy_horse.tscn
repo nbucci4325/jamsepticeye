@@ -1,19 +1,117 @@
-[gd_scene load_steps=7 format=3 uid="uid://tmm50jia6cvf"]
+[gd_scene load_steps=19 format=3 uid="uid://tmm50jia6cvf"]
 
-[ext_resource type="Texture2D" uid="uid://cyk6ae8jdk5f2" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Horse.png" id="1_jvc02"]
-[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/horse.gd" id="1_qdes6"]
-[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_886bs"]
-[ext_resource type="Script" path="res://Scripts/Idle.gd" id="3_pfpjg"]
-[ext_resource type="Script" path="res://Scripts/Move.gd" id="4_4kj7b"]
+[ext_resource type="Script" uid="uid://bks3tr80mcis3" path="res://TEST JOSHUA/Scenes/Enemies/horse.gd" id="1_qdes6"]
+[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="2_886bs"]
+[ext_resource type="Texture2D" uid="uid://mbnugu4nkcp8" path="res://Assets/Sprites/Regular/NPC_Horse_Sprite_Sheet.png" id="2_btwwx"]
+[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="3_pfpjg"]
+[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="4_4kj7b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgkkp"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(0, 0, 53, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd4el"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(53, 0, 53, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3loq"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(106, 0, 53, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb64t"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(0, 44, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oovvb"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(26, 44, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pq8y"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(52, 44, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f54mt"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(78, 44, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot4xr"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(0, 88, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vtyp"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(26, 88, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tjwt"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(52, 88, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17qst"]
+atlas = ExtResource("2_btwwx")
+region = Rect2(78, 88, 26, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yxbi0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgkkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd4el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3loq")
+}],
+"loop": true,
+"name": &"Horse_Walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wb64t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oovvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pq8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f54mt")
+}],
+"loop": true,
+"name": &"Horse_Walk_Down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot4xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vtyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tjwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17qst")
+}],
+"loop": true,
+"name": &"Horse_Walk_Up",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wdmb"]
 
 [node name="Enemy_Horse" type="CharacterBody2D" groups=["Horses", "Infectables"]]
 script = ExtResource("1_qdes6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_jvc02")
+sprite_frames = SubResource("SpriteFrames_yxbi0")
+animation = &"Horse_Walk"
+frame = 2
+frame_progress = 0.22868879
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6wdmb")

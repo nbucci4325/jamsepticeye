@@ -50,7 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://diq0lg0dhgfgf" path="res://Assets/Tiles/Cave/Cave_Floor_Spikes_No_Lines.png" id="39_1wnhp"]
 [ext_resource type="Texture2D" uid="uid://d1cd6md3frnq7" path="res://Assets/Tiles/Forest/Back/Forest_Tree_Pine.png" id="39_ujtm6"]
 [ext_resource type="Texture2D" uid="uid://dur6drnywi3ig" path="res://Assets/Tiles/Forest/Mid/Forest_Fence_TL.png" id="40_r74g4"]
-[ext_resource type="Texture2D" uid="uid://cmqfx5i1pytj3" path="res://Assets/Tiles/Cave/PC_SludgeZone.png" id="40_y6tmo"]
+[ext_resource type="Texture2D" uid="uid://cmqfx5i1pytj3" path="res://Assets/Tiles/PC_SludgeZone.png" id="40_y6tmo"]
 [ext_resource type="Texture2D" uid="uid://dwbh3aydnyidi" path="res://Assets/Tiles/Town/Town_CobblePath_Trans.png" id="41_1wnhp"]
 [ext_resource type="Texture2D" uid="uid://b3u1tplyyo11u" path="res://Assets/Tiles/Forest/Mid/Forest_Fence_TR.png" id="41_6dbqg"]
 [ext_resource type="Texture2D" uid="uid://bb7jdwxstm4hr" path="res://Assets/Tiles/Forest/Mid/Forest_Fence_VerR.png" id="42_jcoft"]
