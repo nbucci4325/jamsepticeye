@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 @onready var infection_radius: Area2D = $"Infection Radius"
+@onready var Walk = $HumanWalk
+@onready var Infect = $HumanInfect
 
 const speed = 120.0 #Tweak speed to desired speed
 
@@ -17,14 +19,18 @@ func _physics_process(delta: float) -> void:
 	
 	var Xdirection := Input.get_axis("LEFT","RIGHT")
 	if Xdirection:
+		Walk.play()
 		velocity.x = move_toward(velocity.x, (Xdirection * speed), 30)
 	else:
+		Walk.play()
 		velocity.x = move_toward(velocity.x, 0, 15)
 	
 	var Ydirection := Input.get_axis("UP","DOWN")
 	if Ydirection:
+		Walk.play()
 		velocity.y = move_toward(velocity.y, (Ydirection * speed), 30)
 	else:
+		Walk.play()
 		velocity.y = move_toward(velocity.y, 0, 15)
 	
 	move_and_slide()
@@ -55,6 +61,7 @@ func abandon_host(position):
 func _on_infection_radius_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Humans"):
 		if body.state.state_name != "Infected":
+			Infect.play()
 			body.state.infect()
 
 
