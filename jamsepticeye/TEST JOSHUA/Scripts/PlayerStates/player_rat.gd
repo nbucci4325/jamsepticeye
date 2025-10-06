@@ -13,6 +13,10 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	
+	var cam = get_tree().get_first_node_in_group("Cam")
+	cam.position = self.position
+	
+	
 	if health <= 0:
 		abandon_host(position)
 	

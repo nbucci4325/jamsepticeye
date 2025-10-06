@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var destruction_box: Area2D = $DestructionBox
 
 const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
+@onready var anim: AnimatedSprite2D = $Sprite2D
 
 const default_speed = 120.0 #Tweak speed to desired speed
 const max_speed = 160.0
@@ -19,6 +20,10 @@ func _ready():
 	Infected.play()
 	
 func _physics_process(delta: float) -> void:
+	
+	var cam = get_tree().get_first_node_in_group("Cam")
+	cam.position = self.position
+	
 	
 	if health <= 0:
 		abandon_host(position)
@@ -39,6 +44,11 @@ func _physics_process(delta: float) -> void:
 	if Xdirection:
 		Walk.play()
 		velocity.x = move_toward(velocity.x, (Xdirection * speed), 30)
+		if Xdirection == 1:
+			anim.play("WALK_RIGHT")
+		if Xdirection == -1:
+			anim.play("WALK_LEFT")
+			
 	else:
 		Walk.play()
 		velocity.x = move_toward(velocity.x, 0, 15)
@@ -47,9 +57,16 @@ func _physics_process(delta: float) -> void:
 	if Ydirection:
 		Walk.play()
 		velocity.y = move_toward(velocity.y, (Ydirection * speed), 30)
+		if !Xdirection:
+			if Ydirection == 1:
+				anim.play("UP")
+			if Ydirection == -1:
+				anim.play("DOWN")
 	else:
 		Walk.play()
 		velocity.y = move_toward(velocity.y, 0, 15)
+		if !Xdirection && !Ydirection:
+				anim.play("UP")
 	
 	move_and_slide()
 	

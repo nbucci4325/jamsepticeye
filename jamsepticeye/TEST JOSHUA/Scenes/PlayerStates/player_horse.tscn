@@ -1,11 +1,132 @@
-[gd_scene load_steps=9 format=3 uid="uid://c20ac2pj0ubqb"]
+[gd_scene load_steps=24 format=3 uid="uid://c20ac2pj0ubqb"]
 
 [ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_horse.gd" id="1_4esl0"]
-[ext_resource type="Texture2D" uid="uid://cyk6ae8jdk5f2" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Horse.png" id="1_vyskg"]
+[ext_resource type="Texture2D" uid="uid://djc45m7juai2q" path="res://Assets/Sprites/GURT/ENEMY_GURT/NPC_Horse_Sprite_Sheet_Infected.png" id="2_p5fp4"]
 [ext_resource type="AudioStream" uid="uid://btn51wwtvinph" path="res://Assets/Sounds/Farm_Creature_Dash.mp3" id="3_gitrh"]
 [ext_resource type="AudioStream" uid="uid://uufpc2cisjau" path="res://Assets/Sounds/Town_Human_Walk.mp3" id="4_u50cn"]
 [ext_resource type="AudioStream" uid="uid://bvmnpsmweqiy6" path="res://Assets/Sounds/Farm_Wood_Break.mp3" id="5_g8ryf"]
 [ext_resource type="AudioStream" uid="uid://drrbuyba82kgs" path="res://Assets/Sounds/Player_Move_Grow.mp3" id="6_eqdhi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v8au"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(0, 44, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sivmd"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(26, 44, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y2eh"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(52, 44, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wciwk"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(78, 44, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh2tc"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(0, 88, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueaxh"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(26, 88, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xwrd"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(52, 88, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k26h"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(78, 88, 26, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm73m"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(0, 0, 53, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmj4j"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(53, 0, 53, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gv83"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(106, 0, 53, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xqre"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(0, 0, 53, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po8ye"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(53, 0, 53, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wigyo"]
+atlas = ExtResource("2_p5fp4")
+region = Rect2(106, 0, 53, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stb6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v8au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sivmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y2eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wciwk")
+}],
+"loop": true,
+"name": &"DOWN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh2tc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueaxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xwrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k26h")
+}],
+"loop": true,
+"name": &"UP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm73m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmj4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gv83")
+}],
+"loop": true,
+"name": &"WALK_LEFT",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xqre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_po8ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wigyo")
+}],
+"loop": true,
+"name": &"WALK_RIGHT",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x1ps"]
 
@@ -17,9 +138,10 @@ collision_layer = 2
 collision_mask = 61
 script = ExtResource("1_4esl0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_vyskg")
+sprite_frames = SubResource("SpriteFrames_stb6q")
+animation = &"WALK_RIGHT"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0x1ps")

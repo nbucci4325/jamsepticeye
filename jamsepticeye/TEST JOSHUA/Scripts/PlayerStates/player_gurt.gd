@@ -32,6 +32,8 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	
+	
+	
 	if HealthManager.player_health == 0:
 		death.killPlayer()
 		HealthManager.refresh_health()
@@ -40,6 +42,10 @@ func _physics_process(delta: float) -> void:
 		execute_interaction()
 	
 	if !infecting_state:
+		
+		var cam = get_tree().get_first_node_in_group("Cam")
+		cam.position = self.position
+		
 		var Xdirection := Input.get_axis("LEFT","RIGHT")
 		if Xdirection:
 			Walk.play()

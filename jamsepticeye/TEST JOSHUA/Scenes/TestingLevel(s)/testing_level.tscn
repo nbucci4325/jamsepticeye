@@ -25,10 +25,6 @@ position = Vector2(727, 239)
 [node name="Enemy_Fox2" parent="Enemies" instance=ExtResource("2_or7fp")]
 position = Vector2(769, 235)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(760, 352)
-zoom = Vector2(3, 3)
-
 [node name="Objects" type="Node" parent="."]
 
 [node name="Void_testing" parent="Objects" instance=ExtResource("3_7r2in")]
@@ -53,3 +49,7 @@ position = Vector2(1013, 343)
 
 [node name="Enemy_Cow" parent="." instance=ExtResource("9_2jcct")]
 position = Vector2(679, 460)
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["Cam"]]
+position = Vector2(760, 352)
+zoom = Vector2(3, 3)

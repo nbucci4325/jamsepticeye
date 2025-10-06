@@ -2352,14 +2352,15 @@ layer_0/tile_data = PackedInt32Array(-4390892, 0, 0, -4390891, 0, 0, -4390890, 0
 [node name="Player" type="Node" parent="."]
 
 [node name="Player_Gurt" parent="Player" instance=ExtResource("66_5oihu")]
-position = Vector2(7359, -1241)
+position = Vector2(177, -278)
 
-[node name="Camera2D" type="Camera2D" parent="Player/Player_Gurt"]
+[node name="Camera2D" type="Camera2D" parent="Player" groups=["Cam"]]
+position = Vector2(177, -278)
 zoom = Vector2(3, 3)
 
-[node name="Playerpos" type="Area2D" parent="Player/Player_Gurt/Camera2D"]
+[node name="Playerpos" type="Area2D" parent="Player/Camera2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Player_Gurt/Camera2D/Playerpos"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Camera2D/Playerpos"]
 shape = SubResource("CircleShape2D_yv4qw")
 
 [node name="CaveArea" type="Area2D" parent="."]

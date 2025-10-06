@@ -59,6 +59,7 @@ enemyFox=""
 enemyCow=""
 enemyHorse=""
 enemyRats=""
+Cam=""
 
 [input]
 

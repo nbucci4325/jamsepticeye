@@ -5,6 +5,7 @@ const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 @onready var searching_radius: Area2D = $Searching_Radius
 @onready var Sniff = $Sniffing
 @onready var Infected = $Infected
+@onready var anim: AnimatedSprite2D = $Sprite2D
 
 func _ready():
 	Infected.play()
@@ -15,6 +16,10 @@ var is_searching = false
 var health = 5 # CHANGE THIS
 
 func _physics_process(delta: float) -> void:
+	
+	var cam = get_tree().get_first_node_in_group("Cam")
+	cam.position = self.position
+	
 	
 	if Input.is_action_pressed("Action"):
 		is_searching = true
@@ -32,15 +37,26 @@ func _physics_process(delta: float) -> void:
 		var Xdirection := Input.get_axis("LEFT","RIGHT")
 		if Xdirection:
 			velocity.x = move_toward(velocity.x, (Xdirection * speed), 30)
+			if Xdirection == 1:
+				anim.play("WALK_RIGHT")
+			if Xdirection == -1:
+				anim.play("WALK_LEFT")
 		else:
 			velocity.x = move_toward(velocity.x, 0, 15)
+			
 		
 		var Ydirection := Input.get_axis("UP","DOWN")
 		if Ydirection:
 			velocity.y = move_toward(velocity.y, (Ydirection * speed), 30)
+			if !Xdirection:
+				if Ydirection == 1:
+					anim.play("UP")
+				if Ydirection == -1:
+					anim.play("DOWN")
 		else:
 			velocity.y = move_toward(velocity.y, 0, 15)
-		
+			if !Xdirection && !Ydirection:
+				anim.play("UP")
 		
 	
 	
