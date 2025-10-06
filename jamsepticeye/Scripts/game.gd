@@ -3,6 +3,7 @@ extends Node2D
 class_name Game
 
 const LevelScene = preload("res://Scenes/level.tscn")
+@onready var ui: UI = $UI
 
 var current_level: Node = null
 
