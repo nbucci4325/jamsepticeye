@@ -34,9 +34,11 @@ autostart = true
 
 [node name="HumanWalk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_l5356")
+bus = &"SFX"
 
 [node name="HumanInfect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_yff80")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Infection Radius" to="." method="_on_infection_radius_body_entered"]
 [connection signal="timeout" from="Health_Timer" to="." method="_on_health_timer_timeout"]

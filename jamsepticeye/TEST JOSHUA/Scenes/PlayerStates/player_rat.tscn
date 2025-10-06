@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqdb6db37n5w4"]
 
 [ext_resource type="Texture2D" uid="uid://c4yoaov1nawww" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected Rat.png" id="1_fjv1m"]
-[ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_rat.gd" id="1_oklwx"]
+[ext_resource type="Script" uid="uid://cryi0ncov2suk" path="res://TEST JOSHUA/Scripts/PlayerStates/player_rat.gd" id="1_oklwx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_slovs"]
 radius = 3.0

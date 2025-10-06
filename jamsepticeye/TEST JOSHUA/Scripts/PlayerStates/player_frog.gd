@@ -22,7 +22,6 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if Input.is_action_just_pressed("Action"):
-		jump.play()
 		is_jumping = true
 		velocity.x = 0
 		velocity.y = 0
@@ -53,6 +52,7 @@ func _physics_process(delta: float) -> void:
 		abandon_host(self.position)
 
 func Action(): #Jump
+	jump.play()
 	await get_tree().create_timer(0.7).timeout
 	set_collision_mask_value(4, false) 
 	velocity = Vector2(jump_speed * jump_dirX, jump_speed * jump_dirY)
