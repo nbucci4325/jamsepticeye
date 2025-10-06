@@ -5,6 +5,7 @@ const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 const speed = 120.0
 
 var health = 5
+@onready var Walk = $Walk
 
 func _physics_process(delta: float) -> void:
 	
@@ -14,14 +15,18 @@ func _physics_process(delta: float) -> void:
 	
 	var Xdirection := Input.get_axis("LEFT","RIGHT")
 	if Xdirection:
+		Walk.play()
 		velocity.x = move_toward(velocity.x, (Xdirection * speed), 50)
 	else:
+		Walk.play()
 		velocity.x = move_toward(velocity.x, 0, 5)
 	
 	var Ydirection := Input.get_axis("UP","DOWN")
 	if Ydirection:
+		Walk.play()
 		velocity.y = move_toward(velocity.y, (Ydirection * speed), 50)
 	else:
+		Walk.play()
 		velocity.y = move_toward(velocity.y, 0, 5)
 	
 	move_and_slide()
