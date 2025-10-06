@@ -79,7 +79,7 @@ func switch_character(new_scene: PackedScene, position):
 	var parent = get_parent()
 	parent.add_child(infested_player)
 	infecting_state = true
-	self.position = Vector2(0,0)
+	self.position = Vector2(-10000,-10000)
 
 func choose_infectable(infectable):
 	if infectable.is_in_group("Rats"):
