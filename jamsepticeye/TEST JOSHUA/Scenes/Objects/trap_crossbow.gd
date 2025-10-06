@@ -14,4 +14,5 @@ func _on_body_entered(body: Node2D) -> void:
 		elif body.is_in_group("Gurt"):
 			Crossbow.play()
 			HealthManager.reduce_health()
+			body.hurt_flash()
 			is_set = false

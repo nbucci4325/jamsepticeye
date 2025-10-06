@@ -10,6 +10,8 @@ extends CharacterBody2D
 @onready var Walk = $Walk
 @onready var Infect = $Infect
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 const Player_Rat = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_rat.tscn")
 const Player_Frog = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_frog.tscn")
 const Player_Fox = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_fox.tscn")
@@ -137,3 +139,9 @@ func delete_gate():
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Humans") or body.is_in_group("Cows"):
 		HealthManager.reduce_health()
+		hurt_flash()
+
+func hurt_flash():
+	sprite_2d.set_modulate(Color(255, 255, 255, 1))
+	await get_tree().create_timer(0.1).timeout
+	sprite_2d.set_modulate(Color(1, 1, 1, 1))

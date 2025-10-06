@@ -22,4 +22,5 @@ func _on_body_entered(body: Node2D) -> void:
 			trap.play("Closed")
 			camo.hide()
 			HealthManager.reduce_health()
+			body.hurt_flash()
 			is_set = false
