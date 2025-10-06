@@ -12,6 +12,7 @@ var is_running = false
 var health = 5
 @onready var Dash = $dash
 @onready var Walk = $walk
+@onready var WoodBreak = $FenceDestroy
 
 func _physics_process(delta: float) -> void:
 	
@@ -51,6 +52,7 @@ func _physics_process(delta: float) -> void:
 	if is_running && speed == max_speed:
 		for area in destruction_box.get_overlapping_areas():
 				if area.is_in_group("DestructableFence"):
+					WoodBreak.play()
 					area.queue_free()
 	
 	if Input.is_action_just_pressed("Infect"):
