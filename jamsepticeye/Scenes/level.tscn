@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=173 format=3 uid="uid://8uxxoqthskt1"]
-=======
 [gd_scene load_steps=182 format=3 uid="uid://8uxxoqthskt1"]
->>>>>>> ecc3d01256e1b6dc4121ed213b26c4fdcbf2661f
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_2lp24"]
 [ext_resource type="Texture2D" uid="uid://d2rqx2dw5yxrd" path="res://Assets/Tiles/White_Tile.png" id="1_6phgx"]
@@ -83,16 +79,12 @@
 [ext_resource type="Texture2D" uid="uid://0taxx5ye3imf" path="res://Assets/Sprites/Farm_Box.png" id="63_jcoft"]
 [ext_resource type="AudioStream" uid="uid://cutkfmd7vuw4s" path="res://Assets/Sounds/Town_Atmosphere_HumansSpeaking.mp3" id="65_icsqr"]
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="66_5oihu"]
-<<<<<<< HEAD
-[ext_resource type="AudioStream" uid="uid://ba7r0r20wxwkd" path="res://Assets/Sounds/Forest_Cricket_Loop.mp3" id="74_vl2iv"]
-=======
 [ext_resource type="PackedScene" uid="uid://btncvfrp0qoq2" path="res://TEST JOSHUA/Scenes/Objects/torch.tscn" id="78_bavf1"]
 [ext_resource type="PackedScene" uid="uid://bbg7qbol6bdgc" path="res://Scenes/Objects/box.tscn" id="79_ujtm6"]
 [ext_resource type="PackedScene" uid="uid://cvwe72w8ld815" path="res://Scenes/Objects/gate_&_lever.tscn" id="80_r74g4"]
 [ext_resource type="PackedScene" uid="uid://710omy7euuyn" path="res://TEST JOSHUA/Scenes/Objects/trap_hunter.tscn" id="81_6dbqg"]
 [ext_resource type="PackedScene" uid="uid://cb5mvjrok4tuk" path="res://TEST JOSHUA/Scenes/Objects/trap_crossbow.tscn" id="82_jcoft"]
 [ext_resource type="PackedScene" uid="uid://cpyev47ee8urj" path="res://TEST JOSHUA/Scenes/Objects/object_fence.tscn" id="85_o2uvi"]
->>>>>>> ecc3d01256e1b6dc4121ed213b26c4fdcbf2661f
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ubg6v"]
 texture = ExtResource("2_81xng")
@@ -2290,10 +2282,6 @@ position = Vector2(2512, -1191)
 stream = ExtResource("62_icsqr")
 bus = &"SFX"
 
-[node name="ForestCrickets" type="AudioStreamPlayer2D" parent="ForestArea"]
-stream = ExtResource("74_vl2iv")
-bus = &"SFX"
-
 [node name="FarmArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FarmArea"]
@@ -2310,7 +2298,6 @@ bus = &"Music"
 [node name="FarmCows" type="AudioStreamPlayer2D" parent="FarmArea"]
 position = Vector2(5539, -1281)
 stream = ExtResource("63_23rfw")
-bus = &"SFX"
 
 [node name="TownArea" type="Area2D" parent="."]
 
@@ -2327,7 +2314,6 @@ bus = &"Music"
 [node name="TownTalking" type="AudioStreamPlayer2D" parent="TownArea"]
 position = Vector2(8418, -1281)
 stream = ExtResource("65_icsqr")
-bus = &"SFX"
 
 [node name="Torch" type="Node" parent="."]
 
@@ -3670,6 +3656,8 @@ position = Vector2(6969, -1027)
 [node name="Object_Fence30" parent="Broken Gate" instance=ExtResource("85_o2uvi")]
 modulate = Color(0.617913, 0.617913, 0.617913, 1)
 position = Vector2(6969, -1054)
+
+[node name="Node" type="Node" parent="."]
 
 [connection signal="area_entered" from="CaveArea" to="." method="_on_cave_area_area_entered"]
 [connection signal="area_exited" from="CaveArea" to="." method="_on_cave_area_area_exited"]
