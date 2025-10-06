@@ -14,6 +14,9 @@ var jump_dirY
 var health = 5
 
 @onready var jump = $Jump
+@onready var Infected = $Infected
+func _ready():
+	Infected.play()
 
 func _physics_process(delta: float) -> void:
 	

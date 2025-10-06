@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlm6n5q34u2rt"]
+[gd_scene load_steps=6 format=3 uid="uid://dlm6n5q34u2rt"]
 
 [ext_resource type="Texture2D" uid="uid://bmkabgf5mneov" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected Cow.png" id="1_0n0vp"]
 [ext_resource type="Script" uid="uid://d2rlpauxpms6g" path="res://TEST JOSHUA/Scripts/PlayerStates/player_cow.gd" id="1_a3d7n"]
 [ext_resource type="AudioStream" uid="uid://uufpc2cisjau" path="res://Assets/Sounds/Town_Human_Walk.mp3" id="3_ftiix"]
+[ext_resource type="AudioStream" uid="uid://drrbuyba82kgs" path="res://Assets/Sounds/Player_Move_Grow.mp3" id="4_tnsah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emd7j"]
 size = Vector2(10, 24)
@@ -24,5 +25,9 @@ autostart = true
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ftiix")
+
+[node name="Infected" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_tnsah")
+bus = &"SFX"
 
 [connection signal="timeout" from="Health_Timer" to="." method="_on_health_timer_timeout"]

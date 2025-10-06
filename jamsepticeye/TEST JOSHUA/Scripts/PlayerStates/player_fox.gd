@@ -4,7 +4,11 @@ const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 
 @onready var searching_radius: Area2D = $Searching_Radius
 @onready var Sniff = $Sniffing
+@onready var Infected = $Infected
 
+func _ready():
+	Infected.play()
+	
 const speed = 120.0 #Tweak speed to desired speed
 var is_searching = false
 
