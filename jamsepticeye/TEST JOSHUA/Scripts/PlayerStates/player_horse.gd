@@ -85,7 +85,7 @@ func abandon_host(position):
 	spore.infecting_state = false
 	var parent = get_parent()
 	var enemy_spawner = get_tree().get_first_node_in_group("enemyHorse")
-	enemy_spawner.max += 1
+	#enemy_spawner.max += 1
 	queue_free()  
 	
 	var corpse = Shroom.instantiate()
