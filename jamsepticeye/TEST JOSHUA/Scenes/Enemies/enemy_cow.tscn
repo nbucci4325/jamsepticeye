@@ -100,7 +100,7 @@ size = Vector2(10, 24)
 
 [node name="Enemy_Cow" type="CharacterBody2D" groups=["Cows", "Infectables"]]
 collision_layer = 32
-collision_mask = 35
+collision_mask = 547
 safe_margin = 5.0
 script = ExtResource("1_wxwt2")
 

@@ -104,6 +104,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wdmb"]
 
 [node name="Enemy_Horse" type="CharacterBody2D" groups=["Horses", "Infectables"]]
+collision_layer = 32
+collision_mask = 547
 script = ExtResource("1_qdes6")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
