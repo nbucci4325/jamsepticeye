@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://xjdxdxagm5k8"]
+[gd_scene load_steps=8 format=3 uid="uid://xjdxdxagm5k8"]
 
 [ext_resource type="Texture2D" uid="uid://d036qxnobjh1w" path="res://TESTASSETSNAV/jungleTileset.png" id="1_78066"]
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="3_dx2x1"]
 [ext_resource type="PackedScene" uid="uid://csmmq080k7xbr" path="res://TEST JOSHUA/Scenes/Enemies/enemy_human_F.tscn" id="3_qpsn0"]
 [ext_resource type="PackedScene" uid="uid://bns6i07mxnt3a" path="res://TEST JOSHUA/Scenes/Enemies/enemy_human_M.tscn" id="4_wi7lv"]
+[ext_resource type="PackedScene" uid="uid://btncvfrp0qoq2" path="res://TEST JOSHUA/Scenes/Objects/torch.tscn" id="5_y14a3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itixk"]
 texture = ExtResource("1_78066")
@@ -135,3 +136,6 @@ position = Vector2(-960, -367)
 
 [node name="Enemy_Human5" parent="." instance=ExtResource("3_qpsn0")]
 position = Vector2(-649, -217)
+
+[node name="Torch" parent="." instance=ExtResource("5_y14a3")]
+position = Vector2(-1232, -258)
