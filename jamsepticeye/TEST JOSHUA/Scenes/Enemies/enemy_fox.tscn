@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=3 uid="uid://eek7qhledwbe"]
 
-[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/fox.gd" id="1_j3htd"]
+[ext_resource type="Script" uid="uid://br8kribua63j4" path="res://TEST JOSHUA/Scenes/Enemies/fox.gd" id="1_j3htd"]
 [ext_resource type="Texture2D" uid="uid://cxnpc3m2qaqpw" path="res://Assets/Sprites/Regular/NPC_Fox_Sprite_Sheet.png" id="2_cue0o"]
-[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="3_p3pev"]
-[ext_resource type="Script" path="res://Scripts/Idle.gd" id="4_saiis"]
-[ext_resource type="Script" path="res://Scripts/Move.gd" id="5_vrml4"]
+[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="3_p3pev"]
+[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="4_saiis"]
+[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="5_vrml4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rrsec"]
 atlas = ExtResource("2_cue0o")
@@ -120,7 +120,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ttmtn")
 animation = &"Fox_Walk_Up"
 frame = 1
-frame_progress = 0.990055
+frame_progress = 0.9900548
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ustfa")

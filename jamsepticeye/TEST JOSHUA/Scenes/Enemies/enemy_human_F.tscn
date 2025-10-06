@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/human.gd" id="1_xunra"]
 [ext_resource type="Texture2D" uid="uid://c26dad4ntivql" path="res://Assets/Sprites/Regular/NPC_HumanF_Sprite_Sheet.png" id="2_xunra"]
-[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="3_i703y"]
-[ext_resource type="Script" path="res://Scripts/Idle.gd" id="4_b8sxt"]
-[ext_resource type="Script" path="res://Scripts/Move.gd" id="5_sicl3"]
-[ext_resource type="Script" path="res://Scripts/Attack.gd" id="6_orxsa"]
-[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/Infected.gd" id="7_1qpm2"]
+[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="3_i703y"]
+[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="4_b8sxt"]
+[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="5_sicl3"]
+[ext_resource type="Script" uid="uid://b1p6n0jwwkot4" path="res://Scripts/Attack.gd" id="6_orxsa"]
+[ext_resource type="Script" uid="uid://c2ag7kcotqkrt" path="res://TEST JOSHUA/Scenes/Enemies/Infected.gd" id="7_1qpm2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qs4xw"]
 atlas = ExtResource("2_xunra")
@@ -121,6 +121,8 @@ script = ExtResource("1_xunra")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_fm1um")
 animation = &"Human_F_Walk"
+frame = 3
+frame_progress = 0.30235928
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xicrv")

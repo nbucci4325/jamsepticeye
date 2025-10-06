@@ -9,6 +9,8 @@ var is_searching = false
 
 var health = 5 # CHANGE THIS
 
+@onready var Sniffing = $Sniff
+
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("Action"):
@@ -44,6 +46,7 @@ func _physics_process(delta: float) -> void:
 func Action(): #search for traps
 	for area in searching_radius.get_overlapping_areas():
 			if area.is_in_group("Traps"):
+				Sniffing.play()
 				var camo = area.get_child(1)
 				camo.set_modulate(Color(1, 1, 1, 0.4))
 
@@ -59,8 +62,6 @@ func abandon_host(position):
 	spore.position = self.position
 	spore.infecting_state = false
 	var parent = get_parent()
-	var enemy_spawner = get_tree().get_first_node_in_group("enemyFox")
-	enemy_spawner.max += 1
 	Revert_action()
 	queue_free()  
 	

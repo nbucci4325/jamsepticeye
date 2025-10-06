@@ -1,11 +1,11 @@
 [gd_scene load_steps=19 format=3 uid="uid://dancxw65tes5o"]
 
-[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/cow.gd" id="1_wxwt2"]
+[ext_resource type="Script" uid="uid://b4o1iaj502pf3" path="res://TEST JOSHUA/Scenes/Enemies/cow.gd" id="1_wxwt2"]
 [ext_resource type="Texture2D" uid="uid://bdp22hgxd441l" path="res://Assets/Sprites/Regular/NPC_Cow_Sprite_Sheet.png" id="2_mkxpu"]
-[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_ydk13"]
-[ext_resource type="Script" path="res://Scripts/Idle.gd" id="3_mht1t"]
-[ext_resource type="Script" path="res://Scripts/Move.gd" id="4_6jvg4"]
-[ext_resource type="Script" path="res://Scripts/Attack.gd" id="5_3xikl"]
+[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="2_ydk13"]
+[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="3_mht1t"]
+[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="4_6jvg4"]
+[ext_resource type="Script" uid="uid://b1p6n0jwwkot4" path="res://Scripts/Attack.gd" id="5_3xikl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g0qi4"]
 atlas = ExtResource("2_mkxpu")
@@ -107,7 +107,9 @@ script = ExtResource("1_wxwt2")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_sfwoj")
-animation = &"Cow_Walk_Down"
+animation = &"Cow_Walk_Up"
+frame = 2
+frame_progress = 0.4066322
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gnlcq")
