@@ -53,6 +53,11 @@ deathzone=""
 sploosh=""
 Player_Controlled_Enemies=""
 Traps=""
+enemyFrog=""
+enemyFox=""
+enemyCow=""
+enemyHorse=""
+enemyRats=""
 
 [input]
 

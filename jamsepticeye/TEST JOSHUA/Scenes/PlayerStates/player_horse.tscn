@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c20ac2pj0ubqb"]
 
-[ext_resource type="Script" uid="uid://bqcndpbkimrug" path="res://TEST JOSHUA/Scripts/PlayerStates/player_horse.gd" id="1_4esl0"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_horse.gd" id="1_4esl0"]
 [ext_resource type="Texture2D" uid="uid://cyk6ae8jdk5f2" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Horse.png" id="1_vyskg"]
 [ext_resource type="AudioStream" uid="uid://btn51wwtvinph" path="res://Assets/Sounds/Farm_Creature_Dash.mp3" id="3_gitrh"]
 [ext_resource type="AudioStream" uid="uid://uufpc2cisjau" path="res://Assets/Sounds/Town_Human_Walk.mp3" id="4_u50cn"]

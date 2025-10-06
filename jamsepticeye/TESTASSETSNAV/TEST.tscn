@@ -1,13 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://xjdxdxagm5k8"]
+[gd_scene load_steps=7 format=3 uid="uid://xjdxdxagm5k8"]
 
 [ext_resource type="Texture2D" uid="uid://d036qxnobjh1w" path="res://TESTASSETSNAV/jungleTileset.png" id="1_78066"]
+[ext_resource type="PackedScene" uid="uid://c7qdg4k0q8ta1" path="res://TESTASSETSNAV/enemy_spawner.tscn" id="3_d5th1"]
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="3_dx2x1"]
-[ext_resource type="PackedScene" uid="uid://ci5h8mh817a2g" path="res://TESTASSETSNAV/Deathzone.tscn" id="5_sgwa1"]
-[ext_resource type="PackedScene" uid="uid://dsdkfshwsdmv1" path="res://TESTASSETSNAV/CheckpointManager.tscn" id="6_dto37"]
-[ext_resource type="PackedScene" uid="uid://dancxw65tes5o" path="res://TEST JOSHUA/Scenes/Enemies/enemy_cow.tscn" id="6_py5jp"]
-[ext_resource type="PackedScene" path="res://TESTASSETSNAV/Water.tscn" id="8_w7j23"]
-[ext_resource type="PackedScene" uid="uid://qpqgpp14t00g" path="res://TEST JOSHUA/Scenes/Enemies/enemy_frog.tscn" id="8_yc02v"]
-[ext_resource type="PackedScene" path="res://TEST JOSHUA/Scenes/Enemies/enemy_human_M.tscn" id="9_pbqf5"]
+[ext_resource type="PackedScene" uid="uid://eek7qhledwbe" path="res://TEST JOSHUA/Scenes/Enemies/enemy_fox.tscn" id="4_4egff"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itixk"]
 texture = ExtResource("1_78066")
@@ -125,36 +121,7 @@ position = Vector2(-1187, -416)
 collision_layer = 19
 collision_mask = 31
 
-[node name="Enemy_Human" parent="." instance=ExtResource("9_pbqf5")]
-position = Vector2(-1296, -260)
-
-[node name="StateMachine" parent="Enemy_Human" index="2" node_paths=PackedStringArray("initial_state")]
-initial_state = NodePath("EnemyInfected")
-
-[node name="Enemy_Human2" parent="." instance=ExtResource("9_pbqf5")]
-position = Vector2(-1037, -243)
-
-[node name="Enemy_Human3" parent="." instance=ExtResource("9_pbqf5")]
-position = Vector2(-1110, -195)
-
-[node name="Enemy_Human4" parent="." instance=ExtResource("9_pbqf5")]
-position = Vector2(-1256, -195)
-
-[node name="Enemy_Human5" parent="." instance=ExtResource("9_pbqf5")]
-position = Vector2(-1178, -145)
-
-[node name="Enemy_Cow" parent="." instance=ExtResource("6_py5jp")]
-position = Vector2(-992, -288)
-
-[node name="deathzone" parent="." instance=ExtResource("5_sgwa1")]
-position = Vector2(1630, -65)
-
-[node name="CheckPointManager" parent="." instance=ExtResource("6_dto37")]
-
-[node name="Enemy_Frog" parent="." instance=ExtResource("8_yc02v")]
-position = Vector2(-1009, -155)
-
-[node name="deathzone2" parent="." instance=ExtResource("8_w7j23")]
-position = Vector2(-733, -336)
-
-[editable path="Enemy_Human"]
+[node name="EnemySpawner" parent="." instance=ExtResource("3_d5th1")]
+position = Vector2(-853, -271)
+enemy_prefab = ExtResource("4_4egff")
+group = "enemyFox"
