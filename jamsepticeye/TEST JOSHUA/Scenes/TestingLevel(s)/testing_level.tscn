@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://71xtmckebpkh"]
+[gd_scene load_steps=9 format=3 uid="uid://71xtmckebpkh"]
 
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="1_byode"]
 [ext_resource type="PackedScene" uid="uid://eek7qhledwbe" path="res://TEST JOSHUA/Scenes/Enemies/enemy_fox.tscn" id="2_or7fp"]
 [ext_resource type="PackedScene" uid="uid://cx5hk6kisgt8g" path="res://TEST JOSHUA/Scenes/Objects/void_testing.tscn" id="3_7r2in"]
+[ext_resource type="PackedScene" uid="uid://dancxw65tes5o" path="res://TEST JOSHUA/Scenes/Enemies/enemy_cow.tscn" id="3_pel4y"]
 [ext_resource type="PackedScene" uid="uid://710omy7euuyn" path="res://TEST JOSHUA/Scenes/Objects/trap_hunter.tscn" id="4_dqst2"]
 [ext_resource type="PackedScene" uid="uid://dsdkfshwsdmv1" path="res://TESTASSETSNAV/CheckpointManager.tscn" id="5_6sn27"]
 [ext_resource type="PackedScene" uid="uid://cb5mvjrok4tuk" path="res://TEST JOSHUA/Scenes/Objects/trap_crossbow.tscn" id="5_qqiks"]
@@ -22,6 +23,9 @@ position = Vector2(727, 239)
 
 [node name="Enemy_Fox2" parent="Enemies" instance=ExtResource("2_or7fp")]
 position = Vector2(769, 235)
+
+[node name="Enemy_Cow" parent="Enemies" instance=ExtResource("3_pel4y")]
+position = Vector2(648, 443)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(760, 352)
