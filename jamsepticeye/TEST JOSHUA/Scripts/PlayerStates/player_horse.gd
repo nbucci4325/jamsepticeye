@@ -10,7 +10,7 @@ const max_speed = 160.0
 var speed = default_speed
 var is_running = false
 
-var health = 5
+var health = 60
 @onready var Dash = $dash
 @onready var Walk = $walk
 @onready var WoodBreak = $FenceDestroy

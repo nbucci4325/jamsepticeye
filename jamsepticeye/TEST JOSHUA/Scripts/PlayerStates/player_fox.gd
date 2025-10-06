@@ -13,7 +13,7 @@ func _ready():
 const speed = 120.0 #Tweak speed to desired speed
 var is_searching = false
 
-var health = 5 # CHANGE THIS
+var health = 20 # CHANGE THIS
 
 func _physics_process(delta: float) -> void:
 	
