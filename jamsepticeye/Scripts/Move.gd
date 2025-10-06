@@ -2,7 +2,7 @@ extends State
 class_name EnemyWalk
 
 @export var enemy : CharacterBody2D
-@export var move_speed := 10.0
+@export var move_speed := 100.0
 
 var state_name = "Move"
 var player : CharacterBody2D

@@ -3,8 +3,8 @@ class_name EnemyInfected
 
 @onready var sprite_2d: AnimatedSprite2D = $"../../Sprite2D"
 @export var enemy : CharacterBody2D
-@export var move_speed := 10.0
-@export var death_timer := 10.0
+@export var move_speed := 100.0
+@export var death_timer := 5.0
 
 var state_name = "Infected"
 var player : CharacterBody2D

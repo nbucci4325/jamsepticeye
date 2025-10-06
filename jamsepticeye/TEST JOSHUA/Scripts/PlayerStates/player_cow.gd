@@ -5,7 +5,7 @@ const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 
 const speed = 120.0
 
-var health = 5
+var health = 8
 @onready var Walk = $Walk
 @onready var Infected = $Infected
 

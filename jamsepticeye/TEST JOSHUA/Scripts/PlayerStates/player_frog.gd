@@ -12,7 +12,7 @@ var can_jump = true
 var jump_dirX
 var jump_dirY
 
-var health = 5
+var health = 10
 
 @onready var jump = $Jump
 @onready var Infected = $Infected
