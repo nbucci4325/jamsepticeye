@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmq2n6akikgb8"]
+[gd_scene load_steps=7 format=3 uid="uid://cmq2n6akikgb8"]
 
 [ext_resource type="Script" uid="uid://xtro4nxbdbqe" path="res://TEST JOSHUA/Scripts/PlayerStates/player_fox.gd" id="1_n2wdl"]
 [ext_resource type="Texture2D" uid="uid://dh8flovxv61wh" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Fox.png" id="1_r542k"]
 [ext_resource type="AudioStream" uid="uid://3p8oyt66prrh" path="res://Assets/Sounds/Forest_Fox_Sniff.mp3" id="3_olfu1"]
+[ext_resource type="AudioStream" uid="uid://drrbuyba82kgs" path="res://Assets/Sounds/Player_Move_Grow.mp3" id="4_4on4q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52a5u"]
 
@@ -31,6 +32,10 @@ autostart = true
 
 [node name="Sniffing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_olfu1")
+bus = &"SFX"
+
+[node name="Infected" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_4on4q")
 bus = &"SFX"
 
 [connection signal="timeout" from="Health_Timer" to="." method="_on_health_timer_timeout"]
