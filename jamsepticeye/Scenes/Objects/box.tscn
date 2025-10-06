@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbg7qbol6bdgc"]
 
-[ext_resource type="Texture2D" uid="uid://0taxx5ye3imf" path="res://Assets/Sprites/Farm_Box.png" id="1_l3gw4"]
+[ext_resource type="Texture2D" uid="uid://3ti2x0dmuah" path="res://Assets/Sprites/Farm_Box_Large.png" id="1_l3gw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmfng"]
-size = Vector2(32, 32)
+size = Vector2(91, 187.5)
 
 [node name="Box" type="RigidBody2D"]
 collision_layer = 4
@@ -16,4 +16,5 @@ linear_damp = 100.0
 texture = ExtResource("1_l3gw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_bmfng")
