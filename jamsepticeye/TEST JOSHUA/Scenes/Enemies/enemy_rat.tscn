@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://hf1y4cpwa047"]
 
 [ext_resource type="Texture2D" uid="uid://h726pso7wba3" path="res://Assets/Sprites/Regular/NPC_Rat_Sprite_Sheet.png" id="1_6nm6m"]
-[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_8eddw"]
-[ext_resource type="Script" path="res://Scripts/Move.gd" id="3_iypsb"]
-[ext_resource type="Script" path="res://Scripts/Idle.gd" id="4_ib7gi"]
+[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="2_8eddw"]
+[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="3_iypsb"]
+[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="4_ib7gi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0i4r"]
 atlas = ExtResource("1_6nm6m")
