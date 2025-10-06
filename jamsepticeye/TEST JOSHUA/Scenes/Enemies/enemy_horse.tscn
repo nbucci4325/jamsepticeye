@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://tmm50jia6cvf"]
 
-[ext_resource type="Script" uid="uid://bks3tr80mcis3" path="res://TEST JOSHUA/Scenes/Enemies/horse.gd" id="1_qdes6"]
-[ext_resource type="Script" uid="uid://dpnu8kbrkyeja" path="res://Scripts/state_machine.gd" id="2_886bs"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Enemies/horse.gd" id="1_qdes6"]
+[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="2_886bs"]
 [ext_resource type="Texture2D" uid="uid://mbnugu4nkcp8" path="res://Assets/Sprites/Regular/NPC_Horse_Sprite_Sheet.png" id="2_btwwx"]
-[ext_resource type="Script" uid="uid://biblyu3ebtv5k" path="res://Scripts/Idle.gd" id="3_pfpjg"]
-[ext_resource type="Script" uid="uid://d0uesm75emfbh" path="res://Scripts/Move.gd" id="4_4kj7b"]
+[ext_resource type="Script" path="res://Scripts/Idle.gd" id="3_pfpjg"]
+[ext_resource type="Script" path="res://Scripts/Move.gd" id="4_4kj7b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wgkkp"]
 atlas = ExtResource("2_btwwx")
@@ -111,7 +111,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yxbi0")
 animation = &"Horse_Walk"
 frame = 2
-frame_progress = 0.22868879
+frame_progress = 0.228689
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6wdmb")
