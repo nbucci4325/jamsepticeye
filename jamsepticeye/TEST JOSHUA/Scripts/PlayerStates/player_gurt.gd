@@ -10,7 +10,8 @@ extends CharacterBody2D
 @onready var Walk = $Walk
 @onready var Infect = $Infect
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var anim: AnimatedSprite2D = $Sprite2D
+
 
 const Player_Rat = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_rat.tscn")
 const Player_Frog = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_frog.tscn")
@@ -43,6 +44,11 @@ func _physics_process(delta: float) -> void:
 		if Xdirection:
 			Walk.play()
 			velocity.x = move_toward(velocity.x, (Xdirection * speed), 20)
+			if Xdirection == 1:
+				anim.play("WALK_RIGHT")
+			if Xdirection == -1:
+				anim.play("WALK_LEFT")
+			
 		else:
 			Walk.play()
 			velocity.x = move_toward(velocity.x, 0, 5)
@@ -51,9 +57,16 @@ func _physics_process(delta: float) -> void:
 		if Ydirection:
 			Walk.play()
 			velocity.y = move_toward(velocity.y, (Ydirection * speed), 20)
+			if !Xdirection:
+				if Ydirection == 1:
+					anim.play("UP")
+				if Ydirection == -1:
+					anim.play("DOWN")
 		else:
 			Walk.play()
 			velocity.y = move_toward(velocity.y, 0, 5)
+			if !Xdirection && !Ydirection:
+				anim.play("UP")
 	
 	if infecting_state:
 		velocity.y = 0
@@ -142,6 +155,6 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 		hurt_flash()
 
 func hurt_flash():
-	sprite_2d.set_modulate(Color(255, 255, 255, 1))
+	anim.set_modulate(Color(255, 255, 255, 1))
 	await get_tree().create_timer(0.1).timeout
-	sprite_2d.set_modulate(Color(1, 1, 1, 1))
+	anim.set_modulate(Color(1, 1, 1, 1))

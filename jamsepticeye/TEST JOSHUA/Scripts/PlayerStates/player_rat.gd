@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
+@onready var anim: AnimatedSprite2D = $Sprite2D
 
 const speed = 170.0
 
@@ -20,6 +21,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, (Xdirection * speed), 30)
 	else:
 		velocity.x = move_toward(velocity.x, 0, 15)
+		if Xdirection == 1:
+			anim.play("WALK_RIGHT")
+		if Xdirection == -1:
+			anim.play("WALK_LEFT")
 	
 	var Ydirection := Input.get_axis("UP","DOWN")
 	if Ydirection:

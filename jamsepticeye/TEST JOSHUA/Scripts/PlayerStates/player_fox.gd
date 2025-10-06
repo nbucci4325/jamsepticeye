@@ -40,6 +40,9 @@ func _physics_process(delta: float) -> void:
 			velocity.y = move_toward(velocity.y, (Ydirection * speed), 30)
 		else:
 			velocity.y = move_toward(velocity.y, 0, 15)
+		
+		
+	
 	
 	move_and_slide()
 	
