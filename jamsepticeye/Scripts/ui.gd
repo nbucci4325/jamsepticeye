@@ -8,6 +8,7 @@ class_name UI
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var credits_menu: Control = %CreditsMenu
 @onready var hud: Control = %HUD
+@onready var win_screen: Control = %WinScreen
 
 signal start_game()
 signal menu_opened()

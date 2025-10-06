@@ -51,6 +51,7 @@ func abandon_host(position):
 	spore.position = self.position
 	spore.infecting_state = false
 	var parent = get_parent()
+	HumanCounter.kill_human()
 	queue_free()  
 					 
 

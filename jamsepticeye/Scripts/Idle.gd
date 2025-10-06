@@ -9,7 +9,7 @@ var time : float
 var player : CharacterBody2D
 
 func idling():
-	enemy.rotate(PI/90)
+	enemy.velocity = Vector2.ZERO
 
 func infect():
 	Transitioned.emit(self, 'enemyinfected')

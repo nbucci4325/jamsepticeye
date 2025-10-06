@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
 @onready var infection_radius: Area2D = $Infection_Radius
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 @onready var all_interactions = []
 @onready var label: Label = $InteractionComponets/InteractionArea/Label
 @onready var gate = get_tree().get_first_node_in_group("Gate")
 @onready var death = get_tree().get_first_node_in_group("deathzone")
+
 
 const Player_Rat = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_rat.tscn")
 const Player_Frog = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_frog.tscn")
@@ -13,6 +15,7 @@ const Player_Fox = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_fox.tsc
 const Player_Cow = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_cow.tscn")
 const Player_Horse = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_horse.tscn")
 const Player_Human = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_human.tscn")
+const effect1 = preload("res://TEST JOSHUA/Scenes/Particles/explosion.tscn")
 
 const speed = 120.0
 var can_infect = 0
@@ -52,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	if can_infect > 0 and Input.is_action_just_pressed("Infect"):
+	if can_infect > 0:
 		var nearest_infectable
 		var shortest_distance = 10000
 		for body in infection_radius.get_overlapping_bodies():
@@ -60,16 +63,22 @@ func _physics_process(delta: float) -> void:
 				if self.position.distance_to(body.position) < shortest_distance:
 					shortest_distance = self.position.distance_to(body.position)
 					nearest_infectable = body
-		switch_character(choose_infectable(nearest_infectable), nearest_infectable.position)
-		nearest_infectable.queue_free()
+		if Input.is_action_just_pressed("Infect"):
+			switch_character(choose_infectable(nearest_infectable), nearest_infectable.position, nearest_infectable)
+			nearest_infectable.queue_free()
 
-func switch_character(new_scene: PackedScene, position):
+func switch_character(new_scene: PackedScene, position, enemy):
+	infecting_state = true
+	await get_tree().create_timer(0.4).timeout
+	var effect = effect1.instantiate()
+	add_child(effect)
+	effect.position = Vector2(0, 0)
 	var infested_player = new_scene.instantiate()
 	infested_player.position = position
 	var parent = get_parent()
 	parent.add_child(infested_player)
-	infecting_state = true
-	self.position = Vector2(0,0)
+	self.position = Vector2(-10000,-10000)
+
 
 func choose_infectable(infectable):
 	if infectable.is_in_group("Rats"):
@@ -125,7 +134,12 @@ func delete_gate():
 		gate.queue_free()
 		gate_exsists = false
 
-
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Humans") or body.is_in_group("Cows"):
 		HealthManager.reduce_health()
+		hurt_effect()
+
+func hurt_effect():
+	sprite_2d.set_modulate(Color(255, 255, 255, 1))
+	await get_tree().create_timer(0.1).timeout
+	sprite_2d.set_modulate(Color(1, 1, 1, 1))

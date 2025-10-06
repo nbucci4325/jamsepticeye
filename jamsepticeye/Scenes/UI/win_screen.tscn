@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://lvwm2nmjbrwu"]
+
+[ext_resource type="Script" uid="uid://ue8edowsvy42" path="res://Scripts/win_screen.gd" id="1_hf3wf"]
+[ext_resource type="Texture2D" uid="uid://bfhml6uh4equl" path="res://Assets/Screens/Win/Main_EndMenu_Screen01.png" id="1_x8fnd"]
+
+[node name="WinScreen" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hf3wf")
+
+[node name="Win" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x8fnd")
