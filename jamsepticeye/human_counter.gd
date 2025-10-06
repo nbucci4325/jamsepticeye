@@ -3,7 +3,7 @@ extends Node
 signal humans_changed(new_value)
 signal win_condition_reached
 
-var humans: int = 5
+var humans: int = 50
 var win: bool = false
 
 func _ready():

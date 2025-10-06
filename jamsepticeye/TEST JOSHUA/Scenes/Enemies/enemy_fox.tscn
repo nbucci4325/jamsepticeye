@@ -112,7 +112,7 @@ animations = [{
 
 [node name="Enemy_Fox" type="CharacterBody2D" groups=["Foxes", "Infectables"]]
 collision_layer = 32
-collision_mask = 35
+collision_mask = 547
 script = ExtResource("1_j3htd")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
