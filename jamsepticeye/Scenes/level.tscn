@@ -1,6 +1,6 @@
-[gd_scene load_steps=172 format=3 uid="uid://8uxxoqthskt1"]
+[gd_scene load_steps=173 format=3 uid="uid://8uxxoqthskt1"]
 
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_2lp24"]
+[ext_resource type="Script" uid="uid://clcvnfhiwkqdq" path="res://Scripts/level.gd" id="1_2lp24"]
 [ext_resource type="Texture2D" uid="uid://d2rqx2dw5yxrd" path="res://Assets/Tiles/White_Tile.png" id="1_6phgx"]
 [ext_resource type="Texture2D" uid="uid://cm4b3rw6mmx4o" path="res://Assets/Tiles/Void_Tile.png" id="2_81xng"]
 [ext_resource type="Texture2D" uid="uid://cdhic0kduyyst" path="res://Assets/Tiles/Forest/Base/Forest_Path_VerL.png" id="3_gx30c"]
@@ -77,6 +77,7 @@
 [ext_resource type="AudioStream" uid="uid://cp2jc63xikx5o" path="res://Assets/Sounds/Farm_Cow_Moo.mp3" id="63_23rfw"]
 [ext_resource type="AudioStream" uid="uid://cutkfmd7vuw4s" path="res://Assets/Sounds/Town_Atmosphere_HumansSpeaking.mp3" id="65_icsqr"]
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="66_5oihu"]
+[ext_resource type="AudioStream" uid="uid://ba7r0r20wxwkd" path="res://Assets/Sounds/Forest_Cricket_Loop.mp3" id="74_vl2iv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ubg6v"]
 texture = ExtResource("2_81xng")
@@ -2098,6 +2099,10 @@ position = Vector2(2512, -1191)
 stream = ExtResource("62_icsqr")
 bus = &"SFX"
 
+[node name="ForestCrickets" type="AudioStreamPlayer2D" parent="ForestArea"]
+stream = ExtResource("74_vl2iv")
+bus = &"SFX"
+
 [node name="FarmArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FarmArea"]
@@ -2114,6 +2119,7 @@ bus = &"Music"
 [node name="FarmCows" type="AudioStreamPlayer2D" parent="FarmArea"]
 position = Vector2(5539, -1281)
 stream = ExtResource("63_23rfw")
+bus = &"SFX"
 
 [node name="TownArea" type="Area2D" parent="."]
 
@@ -2130,6 +2136,7 @@ bus = &"Music"
 [node name="TownTalking" type="AudioStreamPlayer2D" parent="TownArea"]
 position = Vector2(8418, -1281)
 stream = ExtResource("65_icsqr")
+bus = &"SFX"
 
 [connection signal="area_entered" from="CaveArea" to="." method="_on_cave_area_area_entered"]
 [connection signal="area_exited" from="CaveArea" to="." method="_on_cave_area_area_exited"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c20ac2pj0ubqb"]
+[gd_scene load_steps=8 format=3 uid="uid://c20ac2pj0ubqb"]
 
 [ext_resource type="Script" uid="uid://bqcndpbkimrug" path="res://TEST JOSHUA/Scripts/PlayerStates/player_horse.gd" id="1_4esl0"]
 [ext_resource type="Texture2D" uid="uid://cyk6ae8jdk5f2" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Horse.png" id="1_vyskg"]
 [ext_resource type="AudioStream" uid="uid://btn51wwtvinph" path="res://Assets/Sounds/Farm_Creature_Dash.mp3" id="3_gitrh"]
 [ext_resource type="AudioStream" uid="uid://uufpc2cisjau" path="res://Assets/Sounds/Town_Human_Walk.mp3" id="4_u50cn"]
+[ext_resource type="AudioStream" uid="uid://bvmnpsmweqiy6" path="res://Assets/Sounds/Farm_Wood_Break.mp3" id="5_g8ryf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x1ps"]
 
@@ -32,8 +33,14 @@ autostart = true
 
 [node name="dash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_gitrh")
+bus = &"SFX"
 
 [node name="walk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_u50cn")
+bus = &"SFX"
+
+[node name="FenceBreak" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g8ryf")
+bus = &"SFX"
 
 [connection signal="timeout" from="Health_Timers" to="." method="_on_health_timers_timeout"]

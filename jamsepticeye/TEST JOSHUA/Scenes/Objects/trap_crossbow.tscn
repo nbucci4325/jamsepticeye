@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb5mvjrok4tuk"]
+[gd_scene load_steps=6 format=3 uid="uid://cb5mvjrok4tuk"]
 
-[ext_resource type="Script" path="res://TEST JOSHUA/Scenes/Objects/trap_crossbow.gd" id="1_evlac"]
+[ext_resource type="Script" uid="uid://dipweca06ctun" path="res://TEST JOSHUA/Scenes/Objects/trap_crossbow.gd" id="1_evlac"]
 [ext_resource type="Texture2D" uid="uid://dm1lixx7qf4c0" path="res://TEST JOSHUA/Placeholder Assets/Other/Crossbow.png" id="1_f1443"]
 [ext_resource type="Texture2D" uid="uid://ulndarja43af" path="res://TEST JOSHUA/Placeholder Assets/Other/Trap_Bush.png" id="2_olhdw"]
+[ext_resource type="AudioStream" uid="uid://disxmtw1q8iso" path="res://Assets/Sounds/Cave_Trap_Crossbow.mp3" id="4_vgsb8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_06hcs"]
 radius = 8.0
@@ -23,5 +24,8 @@ texture = ExtResource("2_olhdw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-15, 0)
 shape = SubResource("CircleShape2D_06hcs")
+
+[node name="Crossbow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vgsb8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

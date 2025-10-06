@@ -7,6 +7,7 @@ extends Node2D
 
 @onready var ForestBG = $ForestArea/ForestMusic
 @onready var ForestBirds = $ForestArea/ForestBirds
+@onready var ForestCrickets = $ForestArea/ForestCrickets
 
 
 @onready var FarmBG = $FarmArea/FarmMusic
@@ -37,12 +38,14 @@ func _on_forest_area_area_entered(area: Area2D) -> void:
 	if (area.name == "Playerpos"):
 		ForestBG.play()
 		ForestBirds.play()
+		ForestCrickets.play()
 		print("Entered")
 
 func _on_forest_area_area_exited(area: Area2D) -> void:
 	if (area.name == "Playerpos"):
 		ForestBG.stop()
 		ForestBirds.stop()
+		ForestCrickets.stop()
 		print("Exited")
 
 
