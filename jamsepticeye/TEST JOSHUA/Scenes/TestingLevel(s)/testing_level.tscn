@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://71xtmckebpkh"]
+[gd_scene load_steps=10 format=3 uid="uid://71xtmckebpkh"]
 
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="1_byode"]
 [ext_resource type="PackedScene" uid="uid://eek7qhledwbe" path="res://TEST JOSHUA/Scenes/Enemies/enemy_fox.tscn" id="2_or7fp"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dsdkfshwsdmv1" path="res://TESTASSETSNAV/CheckpointManager.tscn" id="5_6sn27"]
 [ext_resource type="PackedScene" uid="uid://cb5mvjrok4tuk" path="res://TEST JOSHUA/Scenes/Objects/trap_crossbow.tscn" id="5_qqiks"]
 [ext_resource type="PackedScene" uid="uid://ci5h8mh817a2g" path="res://TESTASSETSNAV/Deathzone.tscn" id="6_ev3ro"]
-[ext_resource type="PackedScene" uid="uid://dancxw65tes5o" path="res://TEST JOSHUA/Scenes/Enemies/enemy_cow.tscn" id="8_mwkix"]
+[ext_resource type="PackedScene" uid="uid://bbg7qbol6bdgc" path="res://Scenes/Objects/box.tscn" id="8_ay4q2"]
+[ext_resource type="PackedScene" uid="uid://dancxw65tes5o" path="res://TEST JOSHUA/Scenes/Enemies/enemy_cow.tscn" id="9_2jcct"]
 
 [node name="Testing Level" type="Node2D"]
 
@@ -47,5 +48,8 @@ position = Vector2(784, 388)
 [node name="deathzone" parent="." instance=ExtResource("6_ev3ro")]
 position = Vector2(2036, 588)
 
-[node name="Enemy_Cow" parent="." instance=ExtResource("8_mwkix")]
-position = Vector2(699, 438)
+[node name="Box" parent="." instance=ExtResource("8_ay4q2")]
+position = Vector2(1013, 343)
+
+[node name="Enemy_Cow" parent="." instance=ExtResource("9_2jcct")]
+position = Vector2(679, 460)

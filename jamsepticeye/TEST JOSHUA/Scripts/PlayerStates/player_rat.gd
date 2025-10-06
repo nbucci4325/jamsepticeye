@@ -5,6 +5,10 @@ const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 const speed = 170.0
 
 var health = 5 #CHANGE
+@onready var Infected = $Infected
+
+func _ready():
+	Infected.play()
 
 func _physics_process(delta: float) -> void:
 	

@@ -13,7 +13,11 @@ var health = 5
 @onready var Dash = $dash
 @onready var Walk = $walk
 @onready var WoodBreak = $FenceDestroy
+@onready var Infected = $Infected
 
+func _ready():
+	Infected.play()
+	
 func _physics_process(delta: float) -> void:
 	
 	if health <= 0:

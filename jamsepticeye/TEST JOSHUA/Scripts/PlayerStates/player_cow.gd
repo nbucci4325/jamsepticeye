@@ -6,6 +6,10 @@ const speed = 120.0
 
 var health = 5
 @onready var Walk = $Walk
+@onready var Infected = $Infected
+
+func _ready():
+	Infected.play()
 
 func _physics_process(delta: float) -> void:
 	
