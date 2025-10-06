@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Rat
+class_name Rate
 
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
