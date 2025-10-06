@@ -139,9 +139,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_slovs"]
-radius = 3.0
-height = 18.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_ky4m7"]
+radius = 3.16228
 
 [node name="Player_Rat" type="CharacterBody2D" groups=["Player_Controlled_Enemies"]]
 collision_layer = 3
@@ -156,12 +155,14 @@ animation = &"WALK_RIGHT"
 autoplay = "DOWN"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_slovs")
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_ky4m7")
 
 [node name="Health_Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="Infected" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 3)
 stream = ExtResource("3_x2u1t")
 bus = &"SFX"
 
