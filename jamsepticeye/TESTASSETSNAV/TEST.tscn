@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://xjdxdxagm5k8"]
 
 [ext_resource type="Texture2D" uid="uid://d036qxnobjh1w" path="res://TESTASSETSNAV/jungleTileset.png" id="1_78066"]
-[ext_resource type="PackedScene" uid="uid://c7qdg4k0q8ta1" path="res://TESTASSETSNAV/enemy_spawner.tscn" id="3_d5th1"]
 [ext_resource type="PackedScene" uid="uid://drxkgxt5gh0ki" path="res://TEST JOSHUA/Scenes/PlayerStates/player_gurt.tscn" id="3_dx2x1"]
-[ext_resource type="PackedScene" uid="uid://eek7qhledwbe" path="res://TEST JOSHUA/Scenes/Enemies/enemy_fox.tscn" id="4_4egff"]
+[ext_resource type="PackedScene" uid="uid://csmmq080k7xbr" path="res://TEST JOSHUA/Scenes/Enemies/enemy_human_F.tscn" id="3_qpsn0"]
+[ext_resource type="PackedScene" uid="uid://bns6i07mxnt3a" path="res://TEST JOSHUA/Scenes/Enemies/enemy_human_M.tscn" id="4_wi7lv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itixk"]
 texture = ExtResource("1_78066")
@@ -121,7 +121,17 @@ position = Vector2(-1187, -416)
 collision_layer = 19
 collision_mask = 31
 
-[node name="EnemySpawner" parent="." instance=ExtResource("3_d5th1")]
-position = Vector2(-853, -271)
-enemy_prefab = ExtResource("4_4egff")
-group = "enemyFox"
+[node name="Enemy_Human" parent="." instance=ExtResource("3_qpsn0")]
+position = Vector2(-786, -433)
+
+[node name="Enemy_Human2" parent="." instance=ExtResource("4_wi7lv")]
+position = Vector2(-819, -330)
+
+[node name="Enemy_Human3" parent="." instance=ExtResource("4_wi7lv")]
+position = Vector2(-1039, -231)
+
+[node name="Enemy_Human4" parent="." instance=ExtResource("3_qpsn0")]
+position = Vector2(-960, -367)
+
+[node name="Enemy_Human5" parent="." instance=ExtResource("3_qpsn0")]
+position = Vector2(-649, -217)
