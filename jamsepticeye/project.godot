@@ -110,3 +110,8 @@ Action={
 2d_physics/layer_8="GURTREPELLANTFIELD"
 2d_physics/layer_9="Traps"
 2d_physics/layer_10="gurtnotouchenemies"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
