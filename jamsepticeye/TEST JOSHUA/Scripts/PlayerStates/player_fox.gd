@@ -3,6 +3,7 @@ extends CharacterBody2D
 const Shroom = preload("res://TEST JOSHUA/Scenes/Objects/object_mushroom.tscn")
 
 @onready var searching_radius: Area2D = $Searching_Radius
+@onready var Sniff = $Sniffing
 
 const speed = 120.0 #Tweak speed to desired speed
 var is_searching = false
@@ -44,6 +45,7 @@ func _physics_process(delta: float) -> void:
 func Action(): #search for traps
 	for area in searching_radius.get_overlapping_areas():
 			if area.is_in_group("Traps"):
+				Sniff.play()
 				var camo = area.get_child(1)
 				camo.set_modulate(Color(1, 1, 1, 0.4))
 

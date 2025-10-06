@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://drxkgxt5gh0ki"]
+[gd_scene load_steps=9 format=3 uid="uid://drxkgxt5gh0ki"]
 
-[ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_gurt.gd" id="1_cxo5h"]
+[ext_resource type="Script" uid="uid://cgjklxd8bv1ce" path="res://TEST JOSHUA/Scripts/PlayerStates/player_gurt.gd" id="1_cxo5h"]
 [ext_resource type="Texture2D" uid="uid://dlwa1pk8aml5q" path="res://TEST JOSHUA/Placeholder Assets/Player/Gurt.png" id="2_7sdgw"]
+[ext_resource type="AudioStream" uid="uid://bjl7vetjmibdo" path="res://Assets/Sounds/Player_Move_Slime.mp3" id="3_3sjh2"]
+[ext_resource type="AudioStream" uid="uid://b16wpp0jxvekr" path="res://Assets/Sounds/Player_Infection_mixdown.mp3" id="4_pqssc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqisk"]
 radius = 12.0
@@ -65,6 +67,14 @@ collision_mask = 32
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_3pbql")
 debug_color = Color(0.827814, 0.334409, 0.552416, 0.42)
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3sjh2")
+bus = &"SFX"
+
+[node name="Infect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pqssc")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Infection_Radius" to="." method="_on_infection_radius_area_entered"]
 [connection signal="area_exited" from="Infection_Radius" to="." method="_on_infection_radius_area_exited"]

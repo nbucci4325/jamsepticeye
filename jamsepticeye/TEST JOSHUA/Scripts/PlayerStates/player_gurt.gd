@@ -7,6 +7,9 @@ extends CharacterBody2D
 @onready var gate = get_tree().get_first_node_in_group("Gate")
 @onready var death = get_tree().get_first_node_in_group("deathzone")
 
+@onready var Walk = $Walk
+@onready var Infect = $Infect
+
 const Player_Rat = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_rat.tscn")
 const Player_Frog = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_frog.tscn")
 const Player_Fox = preload("res://TEST JOSHUA/Scenes/PlayerStates/player_fox.tscn")
@@ -36,14 +39,18 @@ func _physics_process(delta: float) -> void:
 	if !infecting_state:
 		var Xdirection := Input.get_axis("LEFT","RIGHT")
 		if Xdirection:
+			Walk.play()
 			velocity.x = move_toward(velocity.x, (Xdirection * speed), 20)
 		else:
+			Walk.play()
 			velocity.x = move_toward(velocity.x, 0, 5)
 			
 		var Ydirection := Input.get_axis("UP","DOWN")
 		if Ydirection:
+			Walk.play()
 			velocity.y = move_toward(velocity.y, (Ydirection * speed), 20)
 		else:
+			Walk.play()
 			velocity.y = move_toward(velocity.y, 0, 5)
 	
 	if infecting_state:
@@ -53,6 +60,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if can_infect > 0 and Input.is_action_just_pressed("Infect"):
+		Infect.play()
 		var nearest_infectable
 		var shortest_distance = 10000
 		for body in infection_radius.get_overlapping_bodies():
