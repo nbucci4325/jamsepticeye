@@ -77,8 +77,8 @@ func _ready():
 	credits_menu.hide()
 
 	# connect to globals
-	var health_manager = get_node_or_null("/root/HealthManager")
-	var human_counter = get_node_or_null("/root/HumanCounter")
+	var health_manager = get_node("/root/HealthManager")
+	var human_counter = get_node("/root/HumanCounter")
 
 	if human_counter:
 		print("UI: found HumanCounter:", human_counter)
@@ -88,11 +88,17 @@ func _ready():
 	else:
 		print("⚠️ UI: HumanCounter not found under /root!")
 
-
+	if health_manager:
+		print("✅ UI: found HealthManager:", health_manager)
+		health_manager.connect("health_changed", Callable(self, "_on_health_changed"))
+	else:
+		print("❌ UI: could not find /root/HealthManager!")
 
 func _on_health_changed(new_value):
+	print("💚 UI._on_health_changed:", new_value)
 	value = new_value
 	update_ui()
+
 	
 func _on_main_menu_go_to_credits() -> void:
 	main_menu.hide()
