@@ -26,12 +26,10 @@ position = Vector2(0, -3)
 texture = ExtResource("2_7sdgw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_lqisk")
 
 [node name="Infection_Radius" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 32
 
@@ -40,7 +38,6 @@ position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_hvqfr")
 
 [node name="InteractionComponets" type="Node2D" parent="."]
-visible = false
 
 [node name="InteractionArea" type="Area2D" parent="InteractionComponets"]
 collision_layer = 0
@@ -62,7 +59,7 @@ vertical_alignment = 1
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 288
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(-1, 0)

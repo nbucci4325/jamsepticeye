@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b2cqo7bfunm0p"]
 
-[ext_resource type="Script" uid="uid://bova5v6ttx7dl" path="res://TEST JOSHUA/Scripts/PlayerStates/player_human.gd" id="1_0ee03"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_human.gd" id="1_0ee03"]
 [ext_resource type="Texture2D" uid="uid://cp118228rkd1n" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Human.png" id="1_lg2j3"]
 [ext_resource type="AudioStream" uid="uid://uufpc2cisjau" path="res://Assets/Sounds/Town_Human_Walk.mp3" id="3_l5356"]
 [ext_resource type="AudioStream" uid="uid://crvhskgtri72w" path="res://Assets/Sounds/Town_Human_Infection.mp3" id="4_yff80"]
@@ -34,11 +34,9 @@ autostart = true
 
 [node name="HumanWalk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_l5356")
-bus = &"SFX"
 
 [node name="HumanInfect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_yff80")
-bus = &"SFX"
 
 [connection signal="body_entered" from="Infection Radius" to="." method="_on_infection_radius_body_entered"]
 [connection signal="timeout" from="Health_Timer" to="." method="_on_health_timer_timeout"]

@@ -15,6 +15,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8glcj")
 
+[node name="HumanCounter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1526.0
+offset_top = 46.0
+offset_right = 1894.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 120
+text = "50/50"
+
 [node name="HealthBG" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 19.0

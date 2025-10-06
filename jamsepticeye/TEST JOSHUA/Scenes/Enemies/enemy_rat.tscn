@@ -118,7 +118,7 @@ texture_filter = 1
 position = Vector2(0.5, 0)
 sprite_frames = SubResource("SpriteFrames_k2pgj")
 animation = &"Rat_Walk_Up"
-frame_progress = 0.2635572
+frame_progress = 0.263557
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5odej")

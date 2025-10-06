@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://of4ectdeyysd"]
 
-[ext_resource type="Script" uid="uid://bmdylx0ms8vcb" path="res://TEST JOSHUA/Scripts/PlayerStates/player_frog.gd" id="1_83rsn"]
+[ext_resource type="Script" path="res://TEST JOSHUA/Scripts/PlayerStates/player_frog.gd" id="1_83rsn"]
 [ext_resource type="Texture2D" uid="uid://dt65xbbp4lkfe" path="res://TEST JOSHUA/Placeholder Assets/Player/Infected_Frog.png" id="1_bu6sb"]
 [ext_resource type="AudioStream" uid="uid://btn51wwtvinph" path="res://Assets/Sounds/Farm_Creature_Dash.mp3" id="3_1shtl"]
 
@@ -24,6 +24,5 @@ autostart = true
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1shtl")
-bus = &"SFX"
 
 [connection signal="timeout" from="Health_Timer" to="." method="_on_health_timer_timeout"]
