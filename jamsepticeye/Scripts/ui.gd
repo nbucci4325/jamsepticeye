@@ -67,19 +67,28 @@ func _on_credits_menu_closed() -> void:
 	credits_menu.hide()
 	main_menu.show()
 	credits_menu_closed.emit()
-	
+
 func _ready():
+	await get_tree().process_frame  # ensure autoloads are ready
+	print("UI _ready() running")
+
 	main_menu.show()
 	menu.hide()
 	credits_menu.hide()
 
-	# Connect HealthManager signal
-	if Engine.has_singleton("HealthManager"):
-		var health_manager = Engine.get_singleton("HealthManager")
-	else:
-		var health_manager = get_node("/root/HealthManager")
+	# connect to globals
+	var health_manager = get_node_or_null("/root/HealthManager")
+	var human_counter = get_node_or_null("/root/HumanCounter")
 
-	HealthManager.connect("health_changed", Callable(self, "_on_health_changed"))
+	if human_counter:
+		print("UI: found HumanCounter:", human_counter)
+		human_counter.connect("humans_changed", Callable(self, "_on_humans_changed"))
+		human_counter.connect("win_condition_reached", Callable(self, "_on_win_condition"))
+		print("UI: connected to HumanCounter signals")
+	else:
+		print("⚠️ UI: HumanCounter not found under /root!")
+
+
 
 func _on_health_changed(new_value):
 	value = new_value
@@ -108,29 +117,34 @@ func _on_credits_menu_return_to_menu() -> void:
 	main_menu.show()
 
 func win_game():
-	get_tree().paused = true
 	hud.hide()
 	menu.hide()
 	main_menu.hide()
 	win_screen.show()
-	if HumanCounter.win == true:
+
+	if HumanCounter.win:
 		win_screen.update_win_screen()
 
+
 func update_ui():
-	print("HI")
 	if HealthManager.player_health == 5:
 		value = 5
-		print("HI 5")
 	if HealthManager.player_health == 4:
 		value = 4
-		print("HI 4")
 	if HealthManager.player_health == 3:
 		value = 3
-		print("HI 3")
 	if HealthManager.player_health == 2:
 		value = 2
-		print("HI 2")
 	if HealthManager.player_health == 1:
 		value = 1
-		print("HI 1")
 	hud.update_UI(value)
+
+func _on_humans_changed(new_value):
+	# Update the label inside HUD (hud is the instantiated HUD Control)
+	if hud and hud.has_node("HumanCounter"):
+		hud.get_node("HumanCounter").text = str(new_value) + "/50"
+	else:
+		pass
+		
+func _on_win_condition():
+	win_game()
