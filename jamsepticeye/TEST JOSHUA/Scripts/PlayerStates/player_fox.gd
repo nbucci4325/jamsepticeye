@@ -62,8 +62,6 @@ func abandon_host(position):
 	spore.position = self.position
 	spore.infecting_state = false
 	var parent = get_parent()
-	var enemy_spawner = get_tree().get_first_node_in_group("enemyFox")
-	enemy_spawner.max += 1
 	Revert_action()
 	queue_free()  
 	
