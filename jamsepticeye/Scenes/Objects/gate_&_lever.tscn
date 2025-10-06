@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvwe72w8ld815"]
+[gd_scene load_steps=5 format=3 uid="uid://cvwe72w8ld815"]
 
-[ext_resource type="Texture2D" uid="uid://ba33q7tycrsc7" path="res://TESTASSETSNAV/tumblr_inline_o03qftZuni1r4q36m_400.png" id="1_vdmc4"]
+[ext_resource type="Texture2D" uid="uid://685y6pqdijvv" path="res://Assets/Tiles/Forest/Mid/Forest_FenceGate_Closed.png" id="1_bcgae"]
 [ext_resource type="PackedScene" uid="uid://div2vj2j6wwk3" path="res://Scenes/Objects/interaction_area.tscn" id="2_p184w"]
+[ext_resource type="Texture2D" uid="uid://bse05rr7s4fwg" path="res://Assets/Tiles/Forest/Mid/Forest_Lever_Off.png" id="3_8frtv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_te3rg"]
-size = Vector2(31, 384)
+size = Vector2(18, 35)
 
 [node name="Gate & Lever" type="Node2D"]
 
@@ -12,12 +13,11 @@ size = Vector2(31, 384)
 collision_mask = 38
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate"]
-position = Vector2(-0.5, -1)
+position = Vector2(-7, -0.5)
 shape = SubResource("RectangleShape2D_te3rg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Gate"]
-scale = Vector2(0.1, 1)
-texture = ExtResource("1_vdmc4")
+texture = ExtResource("1_bcgae")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_p184w")]
 position = Vector2(-137, -2)
@@ -25,5 +25,4 @@ interact_label = "[E] to Open"
 interact_type = "lever"
 
 [node name="Sprite2D" type="Sprite2D" parent="InteractionArea"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_vdmc4")
+texture = ExtResource("3_8frtv")
